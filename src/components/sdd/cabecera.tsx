@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { organismo } from "@/contenido/sitio";
+import type { EnlaceMenu } from "@/contenido/sitio";
 import { FormularioBusqueda } from "./buscador";
 import { EnlacesInteres } from "./enlaces-interes";
 import { MenuPrincipal } from "./menu-principal";
@@ -11,7 +11,17 @@ import { ControlesMovil } from "./menu-movil";
  * Fija en la parte superior junto al menú principal (3.01.b.vii). Solo contiene: logo,
  * nombre del organismo, buscador, enlaces de interés y menú principal.
  */
-export function Cabecera({ opcion }: { opcion: "A" | "B" }) {
+export function Cabecera({
+  opcion,
+  nombre,
+  siglas,
+  menu,
+}: {
+  opcion: "A" | "B";
+  nombre: string;
+  siglas: string;
+  menu: EnlaceMenu[];
+}) {
   const oscura = opcion === "B";
   return (
     <header className="sticky top-0 z-40 shadow-sm" data-cabecera>
@@ -29,7 +39,7 @@ export function Cabecera({ opcion }: { opcion: "A" | "B" }) {
               data-medida="logo"
             />
             <span className="min-w-0 text-[0.8125rem] leading-tight font-semibold esc:max-w-[26rem] esc:text-[0.9375rem]">
-              {organismo.nombre} <span className="whitespace-nowrap">({organismo.siglas})</span>
+              {nombre} <span className="whitespace-nowrap">({siglas})</span>
               <span className="sr-only">, ir al inicio</span>
             </span>
           </Link>
@@ -40,10 +50,10 @@ export function Cabecera({ opcion }: { opcion: "A" | "B" }) {
             <EnlacesInteres />
           </div>
 
-          <ControlesMovil />
+          <ControlesMovil menu={menu} />
         </div>
       </div>
-      <MenuPrincipal />
+      <MenuPrincipal menu={menu} />
     </header>
   );
 }

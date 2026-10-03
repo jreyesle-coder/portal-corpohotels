@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { menuPrincipal, informate } from "@/contenido/sitio";
+import { obtenerMenu } from "@/sitio/datos";
 import { FormularioBusqueda } from "@/components/sdd/buscador";
 import { RastroNavegacion } from "@/components/sdd/rastro-navegacion";
 
@@ -7,7 +7,8 @@ import { RastroNavegacion } from "@/components/sdd/rastro-navegacion";
  * Error 404 con la identidad gráfica del portal, su estructura y sugerencias (A2 2.01.b.xii)
  * y enlace al inicio (A2 6.01.i).
  */
-export function PaginaNoEncontrada() {
+export async function PaginaNoEncontrada() {
+  const [menuPrincipal, informate] = await Promise.all([obtenerMenu("principal"), obtenerMenu("pie-informate")]);
   return (
     <>
       <RastroNavegacion migas={[{ etiqueta: "Página no encontrada" }]} />

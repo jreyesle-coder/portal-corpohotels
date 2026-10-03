@@ -1,7 +1,8 @@
 /**
  * Datos institucionales y de navegación del portal.
- * En S1 el menú y los enlaces pasan a administrarse desde Payload CMS; mientras tanto,
- * este archivo es la única fuente. Los datos marcados con "novedad" están en docs/novedades.md.
+ * Desde S2, el portal lee el menú y los datos institucionales del CMS; este archivo es el respaldo si
+ * el CMS no responde y la fuente de la carga inicial (npm run sembrar). Los datos marcados con
+ * "novedad" están en docs/novedades.md.
  */
 
 export const organismo = {
@@ -11,8 +12,8 @@ export const organismo = {
   tituloPortada:
     "Corporación de Fomento de la Industria Hotelera y Desarrollo del Turismo (CORPHOTELS)",
   telefono: "(809) 688-3417",
-  /** Novedad N-04: el correo institucional de contacto no aparece en el portal actual. */
-  correo: null as string | null,
+  /** Respaldo si el CMS no responde; el dato vigente está en «Datos institucionales» del CMS. */
+  correo: "info@corphotels.gob.do" as string | null,
   direccion:
     "Av. México esquina 30 de Marzo, edificio de Oficinas Gubernamentales Presidente Profesor Juan Bosch Gaviño, Bloque C, Distrito Nacional, República Dominicana",
 };

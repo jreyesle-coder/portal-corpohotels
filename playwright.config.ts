@@ -6,6 +6,7 @@ export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
   reporter: [["list"]],
+  globalTeardown: "./tests/limpieza-global.ts",
   use: {
     baseURL: `http://localhost:${puerto}`,
     locale: "es-DO",

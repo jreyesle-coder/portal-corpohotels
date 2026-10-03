@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import { OPCION_CABECERA } from "@/contenido/sitio";
+import { obtenerInstitucion, obtenerMenu } from "@/sitio/datos";
+import { AvisoCookies } from "./aviso-cookies";
 import { Cabecera } from "./cabecera";
 import { HerramientaAccesibilidad, scriptPreferencias } from "./herramienta-accesibilidad";
 import { IdentificadorOficial } from "./identificador-oficial";
@@ -17,7 +19,12 @@ const poppins = Poppins({
  * Documento completo del portal: tres divisiones (cabecera, contenido, pie) iguales en todo el
  * sitio (A2 3.01.b). Lo usan el layout del portal y la página 404 global.
  */
-export function MarcoPortal({ children }: { children: React.ReactNode }) {
+export async function MarcoPortal({ children }: { children: React.ReactNode }) {
+  const [institucion, menu, informate] = await Promise.all([
+    obtenerInstitucion(),
+    obtenerMenu("principal"),
+    obtenerMenu("pie-informate"),
+  ]);
   return (
     <html lang="es" className={poppins.variable} suppressHydrationWarning>
       {/* eslint-disable-next-line @next/next/no-head-element -- documento raíz del App Router, no Pages Router */}
@@ -34,11 +41,12 @@ export function MarcoPortal({ children }: { children: React.ReactNode }) {
           Saltar al contenido principal
         </a>
         <IdentificadorOficial opcion={OPCION_CABECERA} />
-        <Cabecera opcion={OPCION_CABECERA} />
+        <Cabecera opcion={OPCION_CABECERA} nombre={institucion.nombre} siglas={institucion.siglas} menu={menu} />
         <main id="contenido" tabIndex={-1} className="flex-1 outline-none">
           {children}
         </main>
-        <Pie />
+        <Pie institucion={institucion} informate={informate} />
+        <AvisoCookies />
         <HerramientaAccesibilidad />
       </body>
     </html>

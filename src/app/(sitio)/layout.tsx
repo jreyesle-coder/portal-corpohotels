@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
 };
 
+// El contenido viene del CMS en cada solicitud; la imagen Docker se compila sin base de datos.
+export const dynamic = "force-dynamic";
+
 export const viewport: Viewport = {
   themeColor: "#0f539c",
 };

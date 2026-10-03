@@ -79,6 +79,40 @@ export const Documentos: CollectionConfig = {
       admin: { position: "sidebar" },
     },
     {
+      name: "seccion",
+      label: "Sección del portal",
+      type: "select",
+      required: true,
+      defaultValue: "general",
+      options: [
+        { label: "General", value: "general" },
+        { label: "Marco legal", value: "marco-legal" },
+        { label: "Organigrama", value: "organigrama" },
+      ],
+      admin: { position: "sidebar" },
+    },
+    {
+      name: "tipoNorma",
+      label: "Tipo de norma",
+      type: "select",
+      options: [
+        { label: "Constitución", value: "constitucion" },
+        { label: "Leyes", value: "ley" },
+        { label: "Decretos", value: "decreto" },
+        { label: "Resoluciones", value: "resolucion" },
+        { label: "Reglamentos", value: "reglamento" },
+        { label: "Normativas", value: "normativa" },
+        { label: "Otras normas", value: "otra" },
+      ],
+      admin: {
+        position: "sidebar",
+        condition: (_, datos) => datos?.seccion === "marco-legal",
+        description: "El Marco legal se presenta agrupado por tipo y ordenado por fecha (A2 4.02).",
+      },
+      validate: (valor: unknown, { siblingData }: { siblingData: Record<string, unknown> }) =>
+        siblingData?.seccion !== "marco-legal" || valor ? true : "Indique el tipo de norma.",
+    },
+    {
       name: "categoria",
       label: "Categoría",
       type: "relationship",

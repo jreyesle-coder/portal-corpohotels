@@ -69,6 +69,9 @@ export interface Config {
   collections: {
     noticias: Noticia;
     paginas: Pagina;
+    servicios: Servicio;
+    banners: Banner;
+    'preguntas-frecuentes': PreguntasFrecuente;
     categorias: Categoria;
     etiquetas: Etiqueta;
     menus: Menu;
@@ -85,6 +88,9 @@ export interface Config {
   collectionsSelect: {
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     paginas: PaginasSelect<false> | PaginasSelect<true>;
+    servicios: ServiciosSelect<false> | ServiciosSelect<true>;
+    banners: BannersSelect<false> | BannersSelect<true>;
+    'preguntas-frecuentes': PreguntasFrecuentesSelect<false> | PreguntasFrecuentesSelect<true>;
     categorias: CategoriasSelect<false> | CategoriasSelect<true>;
     etiquetas: EtiquetasSelect<false> | EtiquetasSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
@@ -101,8 +107,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    institucion: Institucion;
+  };
+  globalsSelect: {
+    institucion: InstitucionSelect<false> | InstitucionSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -198,7 +208,7 @@ export interface Noticia {
 export interface Medio {
   id: number;
   /**
-   * Describa lo que muestra la imagen para quien no puede verla (A2 7.01.a).
+   * Describa lo que muestra la imagen para quien no puede verla (A2 7.01.a). Si la imagen tiene texto, inclúyalo.
    */
   alt: string;
   credito?: string | null;
@@ -285,6 +295,10 @@ export interface Pagina {
    * Por ejemplo, «Historia» va dentro de «Sobre nosotros».
    */
   padre?: (number | null) | Pagina;
+  /**
+   * Por ejemplo, la foto de las instalaciones (Quiénes somos) o del Gerente General.
+   */
+  imagen?: (number | null) | Medio;
   contenido: {
     root: {
       type: string;
@@ -300,6 +314,10 @@ export interface Pagina {
     };
     [k: string]: unknown;
   };
+  /**
+   * Se muestran al final con descripción, tamaño, fecha y tipo (p. ej., el organigrama).
+   */
+  documentos?: (number | Documento)[] | null;
   listaParaRevision?: boolean | null;
   seo?: {
     /**
@@ -312,6 +330,127 @@ export interface Pagina {
     descripcion?: string | null;
     noIndexar?: boolean | null;
   };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "documentos".
+ */
+export interface Documento {
+  id: number;
+  titulo: string;
+  /**
+   * Qué contiene el documento, en lenguaje simple.
+   */
+  descripcion: string;
+  fechaCreacion: string;
+  area: 'institucional' | 'transparencia';
+  seccion: 'general' | 'marco-legal' | 'organigrama';
+  /**
+   * El Marco legal se presenta agrupado por tipo y ordenado por fecha (A2 4.02).
+   */
+  tipoNorma?: ('constitucion' | 'ley' | 'decreto' | 'resolucion' | 'reglamento' | 'normativa' | 'otra') | null;
+  categoria?: (number | null) | Categoria;
+  _objectKey?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "servicios".
+ */
+export interface Servicio {
+  id: number;
+  nombre: string;
+  /**
+   * Se genera del título si se deja vacío. Solo minúsculas, números y guiones.
+   */
+  slug: string;
+  resumen: string;
+  contenido: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  destacado?: boolean | null;
+  seo?: {
+    /**
+     * Si se deja vacío se usa el título. Máximo 70 caracteres.
+     */
+    titulo?: string | null;
+    /**
+     * Resumen propio de esta página. Máximo 160 caracteres.
+     */
+    descripcion?: string | null;
+    noIndexar?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "banners".
+ */
+export interface Banner {
+  id: number;
+  titulo: string;
+  descripcion?: string | null;
+  imagen: number | Medio;
+  /**
+   * Ruta interna (/servicios) o enlace https:// de un portal del Estado.
+   */
+  enlace?: string | null;
+  textoEnlace?: string | null;
+  orden?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "preguntas-frecuentes".
+ */
+export interface PreguntasFrecuente {
+  id: number;
+  pregunta: string;
+  respuesta: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  orden?: number | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -346,33 +485,6 @@ export interface Menu {
     | null;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "documentos".
- */
-export interface Documento {
-  id: number;
-  titulo: string;
-  /**
-   * Qué contiene el documento, en lenguaje simple.
-   */
-  descripcion: string;
-  fechaCreacion: string;
-  area: 'institucional' | 'transparencia';
-  categoria?: (number | null) | Categoria;
-  _objectKey?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * Las cuentas y los roles se administran en Entra ID. Aquí solo se activa o desactiva el acceso.
@@ -462,6 +574,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'paginas';
         value: number | Pagina;
+      } | null)
+    | ({
+        relationTo: 'servicios';
+        value: number | Servicio;
+      } | null)
+    | ({
+        relationTo: 'banners';
+        value: number | Banner;
+      } | null)
+    | ({
+        relationTo: 'preguntas-frecuentes';
+        value: number | PreguntasFrecuente;
       } | null)
     | ({
         relationTo: 'categorias';
@@ -573,7 +697,9 @@ export interface PaginasSelect<T extends boolean = true> {
   titulo?: T;
   slug?: T;
   padre?: T;
+  imagen?: T;
   contenido?: T;
+  documentos?: T;
   listaParaRevision?: T;
   seo?:
     | T
@@ -582,6 +708,54 @@ export interface PaginasSelect<T extends boolean = true> {
         descripcion?: T;
         noIndexar?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "servicios_select".
+ */
+export interface ServiciosSelect<T extends boolean = true> {
+  nombre?: T;
+  slug?: T;
+  resumen?: T;
+  contenido?: T;
+  destacado?: T;
+  seo?:
+    | T
+    | {
+        titulo?: T;
+        descripcion?: T;
+        noIndexar?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "banners_select".
+ */
+export interface BannersSelect<T extends boolean = true> {
+  titulo?: T;
+  descripcion?: T;
+  imagen?: T;
+  enlace?: T;
+  textoEnlace?: T;
+  orden?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "preguntas-frecuentes_select".
+ */
+export interface PreguntasFrecuentesSelect<T extends boolean = true> {
+  pregunta?: T;
+  respuesta?: T;
+  orden?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -694,6 +868,8 @@ export interface DocumentosSelect<T extends boolean = true> {
   descripcion?: T;
   fechaCreacion?: T;
   area?: T;
+  seccion?: T;
+  tipoNorma?: T;
   categoria?: T;
   _objectKey?: T;
   updatedAt?: T;
@@ -777,6 +953,67 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "institucion".
+ */
+export interface Institucion {
+  id: number;
+  nombre: string;
+  siglas: string;
+  telefono: string;
+  fax?: string | null;
+  correo: string;
+  direccion: string;
+  apartadoPostal?: string | null;
+  horario?: string | null;
+  mapa: {
+    latitud: number;
+    longitud: number;
+  };
+  /**
+   * En móvil se muestran las 4 primeras (A2 3.04.c). Íconos oficiales, sin complementos.
+   */
+  redes?:
+    | {
+        red: 'facebook' | 'instagram' | 'x' | 'youtube';
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "institucion_select".
+ */
+export interface InstitucionSelect<T extends boolean = true> {
+  nombre?: T;
+  siglas?: T;
+  telefono?: T;
+  fax?: T;
+  correo?: T;
+  direccion?: T;
+  apartadoPostal?: T;
+  horario?: T;
+  mapa?:
+    | T
+    | {
+        latitud?: T;
+        longitud?: T;
+      };
+  redes?:
+    | T
+    | {
+        red?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

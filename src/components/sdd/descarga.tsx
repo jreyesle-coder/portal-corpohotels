@@ -28,7 +28,7 @@ export function Descarga({ documento }: { documento: Documento }) {
       </dl>
       {documento.url && (
         <EnlaceExterno
-          href={documento.url}
+          href={documento.url.replace(/^https?:\/\/[^/]+(?=\/api\/)/, "")}
           className="mt-3 inline-flex min-h-11 items-center rounded-md bg-primario px-4 font-semibold text-sobre-primario"
         >
           Descargar {documento.titulo} ({tipo}, {tamano})

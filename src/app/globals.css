@@ -82,6 +82,9 @@ html {
 body {
   background: var(--fondo);
   color: var(--texto);
+  /* Reflujo con texto ampliado al 200 % (A2 7.01.u, WCAG 1.4.10): palabras y correos largos se
+     parten antes que desbordar la pantalla. */
+  overflow-wrap: anywhere;
 }
 
 /* Foco siempre visible (A2 7.01.e, j). */
@@ -115,5 +118,37 @@ body {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+}
+
+/* Impresión (A2 2.01.e): solo el contenido, con el nombre del organismo y la dirección de origen. */
+@media print {
+  [data-identificador],
+  [data-cabecera] nav,
+  [data-cabecera] form,
+  [data-cabecera] button,
+  [data-pie],
+  [data-aviso-cookies],
+  [data-herramientas],
+  nav[aria-label="Rastro de navegación"] {
+    display: none !important;
+  }
+  [data-cabecera] {
+    position: static !important;
+    box-shadow: none !important;
+  }
+  .fixed {
+    display: none !important;
+  }
+  body {
+    font-size: 11pt;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+  details > div {
+    display: block !important;
   }
 }

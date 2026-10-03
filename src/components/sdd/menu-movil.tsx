@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useId, useState } from "react";
-import { type EnlaceMenu, menuPrincipal } from "@/contenido/sitio";
+import type { EnlaceMenu } from "@/contenido/sitio";
 import { FormularioBusqueda } from "./buscador";
 import { ListaEnlacesInteres } from "./enlaces-interes";
 import { IconoCerrar, IconoChevron, IconoCuadricula, IconoLupa, IconoMenu } from "./iconos";
@@ -14,7 +14,7 @@ import { esActivo, ramaActiva } from "./menu-principal";
  * desplegado hacia abajo con los enlaces de interés (Figura 3.20) y submenús hasta el nivel II.
  * Los paneles se despliegan en la página, sin vistas modales (A2 2.02.a).
  */
-export function ControlesMovil() {
+export function ControlesMovil({ menu }: { menu: EnlaceMenu[] }) {
   const ruta = usePathname();
   const [panel, setPanel] = useState<"menu" | "buscar" | null>(null);
   const [rutaPrevia, setRutaPrevia] = useState(ruta);
@@ -79,7 +79,7 @@ export function ControlesMovil() {
             </div>
           </Desplegable>
           <ul>
-            {menuPrincipal.map((item) => (
+            {menu.map((item) => (
               <ItemMovil key={item.href} item={item} ruta={ruta} />
             ))}
           </ul>

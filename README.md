@@ -19,6 +19,7 @@ npm install
 cp .env.example .env
 docker compose up -d postgres azurite mailpit matomo entra-simulado
 npm run migrar
+npm run sembrar      # contenido inicial (solo la primera vez)
 npm run dev
 ```
 
@@ -46,8 +47,10 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 y S1 contra la compilación de producción (requiere los servicios de Docker Compose) |
+| `npm run test:e2e` | Pruebas de S0, S1 y S2 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
+| `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
+| `npm run limpiar-pruebas` | Borra del CMS el contenido creado por las pruebas (se ejecuta al terminar `test:e2e`) |
 
 ## Gestor de contenidos (Payload CMS)
 
@@ -68,7 +71,9 @@ Todas las variables se leen y validan en `src/config/index.ts`. En local vienen 
 src/app/(sitio)/        Portal público (layout, inicio, 404 de sección, catálogo de componentes)
 src/app/global-not-found.tsx   404 de toda ruta inexistente
 src/components/sdd/     Componentes del Sistema de Diseño Dominicano
-src/contenido/sitio.ts  Datos institucionales, menú y enlaces (el portal los leerá del CMS en S2)
+src/contenido/sitio.ts  Respaldo de datos institucionales y menú (el portal los lee del CMS)
+src/sitio/              Lectura del CMS para el portal público y plantilla de páginas
+semillas/               Contenido inicial extraído del portal actual
 src/config/             Capa única de configuración
 src/cms/                Colecciones, roles, flujo editorial y bitácora del CMS
 src/auth/               Inicio de sesión con Entra ID (OIDC) y sesión del CMS

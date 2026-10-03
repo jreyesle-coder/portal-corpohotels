@@ -81,7 +81,7 @@ export function HerramientaAccesibilidad() {
         hidden={!abierto}
         role="group"
         aria-label="Herramientas de accesibilidad"
-        className="w-72 rounded-lg border border-borde bg-fondo p-4 text-texto shadow-xl"
+        className="max-h-[calc(100dvh-6rem)] w-[min(18rem,calc(100vw-2rem))] overflow-y-auto rounded-lg border border-borde bg-fondo p-4 text-texto shadow-xl"
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 className="font-semibold">Accesibilidad</h2>
@@ -101,7 +101,7 @@ export function HerramientaAccesibilidad() {
         <p className="mb-2 text-sm" aria-live="polite">
           Tamaño del texto: <strong>{NIVELES[nivel]} %</strong>
         </p>
-        <div className="mb-4 flex gap-2">
+        <div className="mb-4 flex flex-wrap gap-2">
           <button
             type="button"
             className={claseBoton}

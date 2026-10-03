@@ -7,11 +7,11 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 
 | Licencia | Paquetes |
 | --- | --- |
-| MIT | 314 |
-| ISC | 11 |
+| MIT | 353 |
+| ISC | 14 |
 | BSD-3-Clause | 10 |
 | Apache-2.0 | 9 |
-| Sin declarar | 2 |
+| Sin declarar | 3 |
 | Apache-2.0 AND LGPL-3.0-or-later AND MIT | 1 |
 | Apache-2.0 AND LGPL-3.0-or-later | 1 |
 | (MPL-2.0 OR Apache-2.0) | 1 |
@@ -120,6 +120,20 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | @payloadcms/translations | 3.90.2 | MIT | https://payloadcms.com |
 | @payloadcms/ui | 3.90.2 | MIT | https://payloadcms.com |
 | @preact/signals-core | 1.14.4 | MIT | https://preactjs.com |
+| @react-pdf/fns | 3.1.3 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/font | 4.1.2 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/hyphenate | 0.1.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/image | 3.1.2 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/layout | 5.2.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/paginate | 1.0.1 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/primitives | 4.4.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/reconciler | 2.0.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/render | 4.7.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/renderer | 4.9.0 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/stylesheet | 6.3.2 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/svg | 1.1.1 | MIT | https://github.com/diegomura/react-pdf#readme |
+| @react-pdf/textkit | 7.0.1 | MIT | https://github.com/diegomura/react-pdf |
+| @react-pdf/types | 2.14.0 | MIT | https://github.com/diegomura/react-pdf#readme |
 | @swc/helpers | 0.5.23 | Apache-2.0 | https://swc.rs |
 | @tokenizer/inflate | 0.4.1 | MIT | https://github.com/Borewit/tokenizer-inflate |
 | @tokenizer/token | 0.3.0 | MIT | https://github.com/Borewit/tokenizer-token |
@@ -142,13 +156,17 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | @types/unist | 2.0.11 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/unist |
 | @types/whatwg-mimetype | 3.0.2 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/whatwg-mimetype |
 | @types/ws | 8.18.2 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/ws |
+| abs-svg-path | 0.1.1 | MIT | git://github.com/jkroso/abs-svg-path |
 | acorn | 8.16.0 | MIT | https://github.com/acornjs/acorn |
 | anymatch | 3.1.3 | ISC | https://github.com/micromatch/anymatch |
 | anynum | 1.0.1 | MIT | https://github.com/NaturalIntelligence/anynum |
 | apache-arrow | 21.2.0 | Apache-2.0 | https://arrow.apache.org/js/ |
 | babel-plugin-macros | 3.1.0 | MIT | https://github.com/kentcdodds/babel-plugin-macros#readme |
+| base64-js | 1.5.1 | MIT | https://github.com/beatgammit/base64-js |
+| bidi-js | 1.1.0 | MIT | https://github.com/lojjic/bidi-js |
 | binary-extensions | 2.3.0 | MIT | sindresorhus/binary-extensions |
 | braces | 3.0.3 | MIT | https://github.com/micromatch/braces |
+| brotli | 1.3.3 | MIT | https://github.com/devongovett/brotli.js |
 | bson-objectid | 2.0.4 | Apache-2.0 | https://github.com/williamkapke/bson-objectid |
 | buffer-from | 1.1.2 | MIT | LinusU/buffer-from |
 | buffer-image-size | 0.6.4 | MIT | evidentpoint/buffer-image-size |
@@ -161,7 +179,9 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | character-reference-invalid | 2.0.1 | MIT | wooorm/character-reference-invalid |
 | charenc | 0.0.2 | BSD-3-Clause | git://github.com/pvorb/node-charenc |
 | chokidar | 3.6.0 | MIT | https://github.com/paulmillr/chokidar |
+| clone | 2.1.2 | MIT | git://github.com/pvorb/node-clone |
 | clsx | 2.1.1 | MIT | lukeed/clsx |
+| color-string | 2.1.4 | MIT | Qix-/color-string |
 | commander | 2.20.3 | MIT | https://github.com/tj/commander.js |
 | console-table-printer | 2.12.1 | MIT | https://console-table.netlify.app |
 | convert-source-map | 1.9.0 | MIT | https://github.com/thlorenz/convert-source-map |
@@ -178,9 +198,11 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | detect-file | 1.0.0 | MIT | https://github.com/doowb/detect-file |
 | detect-libc | 2.1.2 | Apache-2.0 | git://github.com/lovell/detect-libc |
 | devlop | 1.1.0 | MIT | wooorm/devlop |
+| dfa | 1.2.0 | MIT | https://github.com/devongovett/dfa#readme |
 | dompurify | 3.4.15 | (MPL-2.0 OR Apache-2.0) | https://github.com/cure53/DOMPurify |
 | drizzle-kit | 0.31.7 | MIT | https://orm.drizzle.team |
 | drizzle-orm | 0.45.2 | Apache-2.0 | https://orm.drizzle.team |
+| emoji-regex-xs | 1.0.0 | MIT | https://github.com/slevithan/emoji-regex-xs |
 | entities | 7.0.1 | BSD-2-Clause | https://github.com/fb55/entities |
 | error-ex | 1.3.4 | MIT | qix-/node-error-ex |
 | es-errors | 1.3.0 | MIT | https://github.com/ljharb/es-errors#readme |
@@ -192,6 +214,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | estree-util-is-identifier-name | 3.0.0 | MIT | syntax-tree/estree-util-is-identifier-name |
 | events | 3.3.0 | MIT | git://github.com/Gozala/events |
 | expand-tilde | 2.0.2 | MIT | https://github.com/jonschlinkert/expand-tilde |
+| fast-deep-equal | 3.1.3 | MIT | https://github.com/epoberezkin/fast-deep-equal#readme |
 | fast-xml-builder | 1.3.1 | MIT | https://github.com/NaturalIntelligence/fast-xml-builder |
 | fast-xml-parser | 5.11.2 | MIT | https://github.com/NaturalIntelligence/fast-xml-parser |
 | file-type | 21.3.4 | MIT | sindresorhus/file-type |
@@ -200,6 +223,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | find-root | 1.1.0 | MIT | git@github.com:js-n/find-root |
 | findup-sync | 4.0.0 | MIT | gulpjs/findup-sync |
 | flatbuffers | 25.9.23 | Apache-2.0 | https://google.github.io/flatbuffers/ |
+| fontkit | 2.0.4 | MIT | git://github.com/foliojs/fontkit |
 | function-bind | 1.1.2 | MIT | https://github.com/Raynos/function-bind |
 | get-tsconfig | 4.14.3 | MIT | privatenumber/get-tsconfig |
 | glob-parent | 5.1.2 | ISC | gulpjs/glob-parent |
@@ -213,7 +237,10 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | hasown | 2.0.4 | MIT | https://github.com/inspect-js/hasOwn#readme |
 | hoist-non-react-statics | 3.3.2 | BSD-3-Clause | git://github.com/mridgway/hoist-non-react-statics |
 | homedir-polyfill | 1.0.3 | MIT | https://github.com/doowb/homedir-polyfill |
+| hsl-to-hex | 1.0.0 | MIT | https://github.com/davidmarkclements/hsl-to-hex#readme |
+| hsl-to-rgb-for-reals | 1.1.1 | ISC | https://github.com/davidmarkclements/hsl_rgb_converter/ |
 | http-status | 2.1.0 | BSD-3-Clause | https://github.com/adaltas/node-http-status |
+| hyphen | 1.6.6 | ISC | https://ytiurin.github.io/hyphen |
 | immutable | 4.3.9 | MIT | https://immutable-js.com |
 | import-fresh | 3.3.1 | MIT | sindresorhus/import-fresh |
 | ini | 1.3.8 | ISC | git://github.com/isaacs/ini |
@@ -228,8 +255,10 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | is-hexadecimal | 2.0.1 | MIT | wooorm/is-hexadecimal |
 | is-number | 7.0.0 | MIT | https://github.com/jonschlinkert/is-number |
 | is-unsafe | 2.0.2 | MIT | https://github.com/NaturalIntelligence/is-unsafe |
+| is-url | 1.2.4 | MIT | https://github.com/segmentio/is-url |
 | is-windows | 1.0.2 | MIT | https://github.com/jonschlinkert/is-windows |
 | isexe | 2.0.0 | ISC | https://github.com/isaacs/isexe#readme |
+| jay-peg | 1.1.1 | MIT |  |
 | jose | 6.2.12 | MIT | https://github.com/panva/jose |
 | js-tokens | 4.0.0 | MIT | lydell/js-tokens |
 | jsesc | 3.1.0 | MIT | https://mths.be/jsesc |
@@ -239,7 +268,6 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | lexical | 0.50.0 | MIT | https://github.com/facebook/lexical |
 | lines-and-columns | 1.2.4 | MIT | https://github.com/eventualbuddha/lines-and-columns#readme |
 | longest-streak | 3.1.0 | MIT | wooorm/longest-streak |
-| loose-envify | 1.4.0 | MIT | https://github.com/zertosh/loose-envify |
 | marked | 14.0.0 | MIT | https://marked.js.org |
 | md5 | 2.3.0 | BSD-3-Clause | git://github.com/pvorb/node-md5 |
 | mdast-util-from-markdown | 2.0.2 | MIT | syntax-tree/mdast-util-from-markdown |
@@ -247,6 +275,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | mdast-util-phrasing | 4.1.0 | MIT | syntax-tree/mdast-util-phrasing |
 | mdast-util-to-markdown | 2.2.0 | MIT | syntax-tree/mdast-util-to-markdown |
 | mdast-util-to-string | 4.0.0 | MIT | syntax-tree/mdast-util-to-string |
+| media-engine | 2.0.0 | MIT | https://github.com/diegomura/media-engine |
 | memoize-one | 6.0.0 | MIT | https://github.com/alexreardon/memoize-one |
 | merge | 2.1.1 | MIT | https://github.com/yeikos/js.merge |
 | micromark | 4.0.3 | MIT | https://github.com/micromark/micromark/tree/main/packages/micromark |
@@ -279,6 +308,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | ms | 2.1.3 | MIT | vercel/ms |
 | next | 16.3.8 | MIT | https://nextjs.org |
 | normalize-path | 3.0.0 | MIT | https://github.com/jonschlinkert/normalize-path |
+| normalize-svg-path | 1.1.0 | MIT | git://github.com/jkroso/normalize-svg-path |
 | oauth4webapi | 3.8.8 | MIT | https://github.com/panva/oauth4webapi |
 | object-assign | 4.1.1 | MIT | sindresorhus/object-assign |
 | object-to-formdata | 4.5.1 | MIT | github:therealparmesh/object-to-formdata |
@@ -287,11 +317,13 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | parse-entities | 4.0.2 | MIT | wooorm/parse-entities |
 | parse-json | 5.2.0 | MIT | sindresorhus/parse-json |
 | parse-passwd | 1.0.0 | MIT | https://github.com/doowb/parse-passwd |
+| parse-svg-path | 0.1.2 | MIT | git://github.com/jkroso/parse-svg-path |
 | path-expression-matcher | 1.6.2 | MIT | https://github.com/NaturalIntelligence/path-expression-matcher#readme |
 | path-parse | 1.0.7 | MIT | https://github.com/jbgutierrez/path-parse#readme |
 | path-to-regexp | 6.3.0 | MIT | https://github.com/pillarjs/path-to-regexp |
 | path-type | 4.0.0 | MIT | sindresorhus/path-type |
 | payload | 3.90.2 | MIT | https://payloadcms.com |
+| pdfkit | 0.20.1 | MIT | http://pdfkit.org/ |
 | pg | 8.20.0 | MIT | https://github.com/brianc/node-postgres |
 | pg | 8.23.1 | MIT | https://github.com/brianc/node-postgres |
 | pg-cloudflare | 1.4.1 | MIT | git://github.com/brianc/node-postgres |
@@ -304,6 +336,8 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | picocolors | 1.1.1 | ISC | alexeyraspopov/picocolors |
 | picomatch | 2.3.2 | MIT | https://github.com/micromatch/picomatch |
 | pluralize | 8.0.0 | MIT | https://github.com/blakeembrey/pluralize |
+| png-js | 2.0.0 | Sin declarar | https://github.com/devongovett/png.js |
+| postcss-value-parser | 4.2.0 | MIT | https://github.com/TrySound/postcss-value-parser |
 | postgres-array | 2.0.0 | MIT | bendrucker/postgres-array |
 | postgres-bytea | 1.0.1 | MIT | bendrucker/postgres-bytea |
 | postgres-date | 1.0.7 | MIT | bendrucker/postgres-date |
@@ -311,6 +345,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | prompts | 2.4.2 | MIT | terkelg/prompts |
 | prop-types | 15.8.1 | MIT | https://facebook.github.io/react/ |
 | qs-esm | 8.0.1 | BSD-3-Clause | https://github.com/payloadcms/qs-esm |
+| queue | 6.0.2 | MIT | https://github.com/jessetane/queue |
 | range-parser | 1.3.0 | MIT | jshttp/range-parser |
 | react | 19.2.8 | MIT | https://react.dev/ |
 | react-datepicker | 7.6.0 | MIT | https://github.com/Hacker0x01/react-datepicker |
@@ -321,13 +356,16 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | react-select | 5.9.0 | MIT | https://github.com/JedWatson/react-select/tree/master/packages/react-select |
 | react-transition-group | 4.4.5 | BSD-3-Clause | https://github.com/reactjs/react-transition-group#readme |
 | readdirp | 3.6.0 | MIT | https://github.com/paulmillr/readdirp |
+| require-from-string | 2.0.2 | MIT | floatdrop/require-from-string |
 | resolve | 1.22.12 | MIT | ssh://github.com/browserify/resolve |
 | resolve-dir | 1.0.1 | MIT | https://github.com/jonschlinkert/resolve-dir |
 | resolve-from | 4.0.0 | MIT | sindresorhus/resolve-from |
 | resolve-pkg-maps | 1.0.0 | MIT | privatenumber/resolve-pkg-maps |
+| restructure | 3.0.2 | MIT | https://github.com/devongovett/restructure |
 | sass | 1.77.4 | MIT | https://github.com/sass/dart-sass |
 | scheduler | 0.25.0 | MIT | https://react.dev/ |
 | scheduler | 0.27.0 | MIT | https://react.dev/ |
+| scheduler | 0.25.0-rc-603e6108-20241029 | MIT | https://react.dev/ |
 | semver | 7.8.5 | ISC | https://github.com/npm/node-semver |
 | server-only | 0.0.1 | MIT | https://reactjs.org/ |
 | sharp | 0.35.5 | Apache-2.0 | https://sharp.pixelplumbing.com |
@@ -344,6 +382,8 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | strtok3 | 10.3.5 | MIT | https://github.com/Borewit/strtok3 |
 | stylis | 4.2.0 | MIT | https://github.com/thysultan/stylis.js |
 | supports-preserve-symlinks-flag | 1.0.0 | MIT | https://github.com/inspect-js/node-supports-preserve-symlinks-flag#readme |
+| svg-arc-to-cubic-bezier | 3.2.0 | ISC | https://github.com/colinmeinke/svg-arc-to-cubic-bezier |
+| tiny-inflate | 1.0.3 | MIT | https://github.com/devongovett/tiny-inflate |
 | to-regex-range | 5.0.1 | MIT | https://github.com/micromatch/to-regex-range |
 | to-snake-case | 1.0.0 | MIT | git://github.com/ianstormtaylor/to-snake-case |
 | token-types | 6.1.2 | MIT | https://github.com/Borewit/token-types |
@@ -354,6 +394,8 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | uint8array-extras | 1.6.0 | MIT | sindresorhus/uint8array-extras |
 | undici-types | 6.21.0 | MIT | https://undici.nodejs.org |
 | undici-types | 7.24.6 | MIT | https://undici.nodejs.org |
+| unicode-properties | 1.4.1 | MIT | https://github.com/devongovett/unicode-properties |
+| unicode-trie | 2.0.0 | MIT | https://github.com/devongovett/unicode-trie |
 | unist-util-is | 6.0.1 | MIT | syntax-tree/unist-util-is |
 | unist-util-position-from-estree | 2.0.0 | MIT | syntax-tree/unist-util-position-from-estree |
 | unist-util-stringify-position | 4.0.0 | MIT | syntax-tree/unist-util-stringify-position |
@@ -371,5 +413,6 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | xtend | 4.0.2 | MIT | https://github.com/Raynos/xtend |
 | yaml | 1.10.3 | ISC | https://eemeli.org/yaml/v1/ |
 | yjs | 13.6.33 | MIT | https://docs.yjs.dev |
+| yoga-layout | 3.2.1 | MIT | https://yogalayout.dev/ |
 | zod | 4.6.5 | MIT | https://zod.dev |
 | zwitch | 2.0.4 | MIT | wooorm/zwitch |

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useId, useRef, useState } from "react";
-import { type EnlaceMenu, menuPrincipal } from "@/contenido/sitio";
+import type { EnlaceMenu } from "@/contenido/sitio";
 import { IconoChevron } from "./iconos";
 import { useCerrarFuera } from "./use-cerrar-fuera";
 
@@ -19,12 +19,12 @@ export function ramaActiva(item: EnlaceMenu, ruta: string): boolean {
  * Menú principal horizontal de escritorio, 56 px de alto (A2 3.02.b, 3.02.g).
  * Resalta la sección activa (2.01.b.i) e indica gráficamente los submenús de nivel II (3.01.b.viii).
  */
-export function MenuPrincipal() {
+export function MenuPrincipal({ menu }: { menu: EnlaceMenu[] }) {
   const ruta = usePathname();
   return (
     <nav aria-label="Menú principal" className="hidden border-t border-borde bg-fondo esc:block">
       <ul className="contenedor flex h-[56px] items-stretch gap-1" data-medida="menu-principal">
-        {menuPrincipal.map((item) =>
+        {menu.map((item) =>
           item.hijos ? (
             <ItemConSubmenu key={item.href} item={item} ruta={ruta} />
           ) : (

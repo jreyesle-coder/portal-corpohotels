@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { informate, organismo, redesSociales, sellosNortic } from "@/contenido/sitio";
+import { type EnlaceMenu, sellosNortic } from "@/contenido/sitio";
+import type { DatosInstitucion } from "@/sitio/datos";
 import { AnoActual } from "./ano-actual";
 import { EnlaceExterno } from "./enlace-externo";
 import { IconoChevron, IconoRed } from "./iconos";
@@ -9,7 +10,8 @@ import { IconoChevron, IconoRed } from "./iconos";
  * Pie de página institucional, tema oscuro con isotipo (A2 3.02.f y 3.02.f.i, Figura 3.13;
  * móvil 3.04.c, Figura 3.30). Solo contiene los elementos que fija la norma.
  */
-export function Pie() {
+export function Pie({ institucion: organismo, informate }: { institucion: DatosInstitucion; informate: EnlaceMenu[] }) {
+  const redesSociales = organismo.redes;
   return (
     <footer className="bg-oscuro text-sobre-oscuro" data-pie>
       <div className="contenedor grid gap-8 py-10 lg:grid-cols-[auto_1fr] lg:gap-10">
@@ -43,6 +45,7 @@ export function Pie() {
               <li>
                 Teléfono: <a href={`tel:+1${organismo.telefono.replace(/\D/g, "")}`} className="underline underline-offset-2">{organismo.telefono}</a>
               </li>
+              {organismo.fax && <li>Fax: {organismo.fax}</li>}
               {organismo.correo && (
                 <li>
                   Correo: <a href={`mailto:${organismo.correo}`} className="underline underline-offset-2">{organismo.correo}</a>

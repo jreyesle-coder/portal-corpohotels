@@ -39,8 +39,11 @@ export const Medios: CollectionConfig = {
       label: "Texto alternativo",
       type: "text",
       required: true,
-      maxLength: 150,
-      admin: { description: "Describa lo que muestra la imagen para quien no puede verla (A2 7.01.a)." },
+      maxLength: 250,
+      admin: {
+        description:
+          "Describa lo que muestra la imagen para quien no puede verla (A2 7.01.a). Si la imagen tiene texto, inclúyalo.",
+      },
     },
     { name: "credito", label: "Crédito o autor", type: "text", maxLength: 120 },
   ],

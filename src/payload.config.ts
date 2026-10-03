@@ -6,14 +6,18 @@ import { azureStorage } from "@payloadcms/storage-azure";
 import { es } from "@payloadcms/translations/languages/es";
 import { buildConfig } from "payload";
 import sharp from "sharp";
+import { Banners } from "@/cms/colecciones/banners";
 import { Bitacora } from "@/cms/colecciones/bitacora";
 import { Documentos } from "@/cms/colecciones/documentos";
 import { Medios } from "@/cms/colecciones/medios";
 import { Menus } from "@/cms/colecciones/menus";
 import { Noticias } from "@/cms/colecciones/noticias";
 import { Paginas } from "@/cms/colecciones/paginas";
+import { PreguntasFrecuentes } from "@/cms/colecciones/preguntas";
+import { Servicios } from "@/cms/colecciones/servicios";
 import { Categorias, Etiquetas } from "@/cms/colecciones/taxonomias";
 import { Usuarios } from "@/cms/colecciones/usuarios";
+import { Institucion } from "@/cms/globales/institucion";
 import { RUTA_PANEL } from "@/cms/rutas";
 import { obtenerConfigCms } from "@/config";
 import { migrations } from "./migraciones";
@@ -46,7 +50,21 @@ export default buildConfig({
     importMap: { baseDir: path.resolve(dirname) },
   },
   i18n: { supportedLanguages: { es }, fallbackLanguage: "es" },
-  collections: [Noticias, Paginas, Categorias, Etiquetas, Menus, Medios, Documentos, Usuarios, Bitacora],
+  collections: [
+    Noticias,
+    Paginas,
+    Servicios,
+    Banners,
+    PreguntasFrecuentes,
+    Categorias,
+    Etiquetas,
+    Menus,
+    Medios,
+    Documentos,
+    Usuarios,
+    Bitacora,
+  ],
+  globals: [Institucion],
   editor: lexicalEditor(),
   upload: { limits: { fileSize: 50_000_000 } },
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
