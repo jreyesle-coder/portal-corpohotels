@@ -44,6 +44,34 @@ export const Institucion: GlobalConfig = {
       ],
     },
     {
+      name: "atencion",
+      label: "Atención ciudadana (se muestra al confirmar formularios, A2 2.01.b.x–xi)",
+      type: "group",
+      fields: [
+        {
+          name: "tiempoContacto",
+          label: "Tiempo de respuesta a mensajes de contacto",
+          type: "text",
+          required: true,
+          defaultValue: "5 días laborables",
+        },
+        {
+          name: "tiempoSugerencias",
+          label: "Tiempo de respuesta a sugerencias y quejas",
+          type: "text",
+          required: true,
+          defaultValue: "15 días laborables",
+        },
+        {
+          name: "otrasVias",
+          label: "Otras vías de contacto",
+          type: "textarea",
+          maxLength: 300,
+          admin: { description: "Por ejemplo, el horario de atención presencial." },
+        },
+      ],
+    },
+    {
       name: "redes",
       label: "Redes sociales oficiales",
       type: "array",

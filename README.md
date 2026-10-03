@@ -47,7 +47,7 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0, S1 y S2 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
+| `npm run test:e2e` | Pruebas de S0 a S3 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
 | `npm run limpiar-pruebas` | Borra del CMS el contenido creado por las pruebas (se ejecuta al terminar `test:e2e`) |
@@ -60,6 +60,12 @@ docker compose up --build
 - Colecciones: noticias, páginas (con borradores y aprobación), categorías, etiquetas, menús, imágenes, documentos, usuarios y bitácora (append-only, protegida también en PostgreSQL).
 - El esquema cambia solo por migraciones: `npm run migracion:crear -- <nombre>` y `npm run migrar`. En producción se aplican al arrancar.
 - Tras cambiar colecciones: `npm run generar` (tipos e import map del panel).
+
+## Formularios y casos (S3)
+
+- Formularios por pasos: contacto (`/contactos`), quejas y sugerencias (`/contactos/sugerencias`) y solicitud de servicio (`/servicios/<servicio>/solicitud`, si la ficha lo permite). Definiciones en `src/formularios/definiciones.ts`.
+- Cada envío crea un caso `CPH-<año>-<consecutivo>` con los datos personales cifrados (AES-256-GCM, `CLAVE_CIFRADO_DATOS`) y envía correo al ciudadano y al buzón de atención (en local, bandeja de Mailpit: http://localhost:8025).
+- Los casos y la encuesta de satisfacción se consultan en el panel, grupo «Atención ciudadana».
 
 ## Configuración
 

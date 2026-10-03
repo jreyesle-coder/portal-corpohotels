@@ -28,6 +28,9 @@ services:
       OIDC_ISSUER: http://entra-simulado:8080/entra
       OIDC_CLIENT_ID: cms-corphotels-local
       OIDC_CLIENT_SECRET: simulado
+      # Misma clave que `npm run dev` (archivo .env): ambos comparten la base de datos local.
+      CLAVE_CIFRADO_DATOS: ${CLAVE_CIFRADO_DATOS:?Defina CLAVE_CIFRADO_DATOS en el archivo .env}
+      CORREO_ATENCION: info@corphotels.gob.do
     depends_on:
       postgres:
         condition: service_healthy

@@ -39,6 +39,17 @@ const esquema = z.object({
   MATOMO_URL: z.url().optional(),
   MATOMO_SITE_ID: z.coerce.number().int().positive().optional(),
 
+  /** Clave AES-256 (32 bytes en base64) para cifrar datos personales de formularios (A2 5.05.e). */
+  CLAVE_CIFRADO_DATOS: z
+    .string()
+    .refine((v) => Buffer.from(v, "base64").length === 32, "32 bytes en base64"),
+
+  /** Envíos de formularios permitidos por IP cada 10 minutos (antispam; el WAF complementa). */
+  LIMITE_ENVIOS_POR_IP: z.coerce.number().int().positive().default(5),
+
+  /** Correo que recibe los avisos de nuevos casos (contacto, sugerencias, solicitudes). */
+  CORREO_ATENCION: z.email().default("info@corphotels.gob.do"),
+
   /** Clave del CMS: firma sesiones y cifra datos internos de Payload. Mínimo 32 caracteres. */
   PAYLOAD_SECRET: z.string().min(32),
 
@@ -98,6 +109,7 @@ export function obtenerConfigCms(): Config {
       OIDC_ISSUER: process.env.OIDC_ISSUER ?? "https://login.microsoftonline.com/compilacion/v2.0",
       OIDC_CLIENT_ID: process.env.OIDC_CLIENT_ID ?? "compilacion",
       OIDC_CLIENT_SECRET: process.env.OIDC_CLIENT_SECRET ?? "compilacion",
+      CLAVE_CIFRADO_DATOS: process.env.CLAVE_CIFRADO_DATOS ?? Buffer.alloc(32).toString("base64"),
     });
   }
   return obtenerConfig();

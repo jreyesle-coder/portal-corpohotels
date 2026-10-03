@@ -26,7 +26,11 @@ export type DatosInstitucion = {
   horario?: string | null;
   mapa?: Institucion["mapa"];
   redes: RedSocial[];
+  atencion: { tiempoContacto: string; tiempoSugerencias: string; otrasVias?: string | null };
 };
+
+/** Respaldo si el CMS no responde; los valores vigentes se editan en «Datos institucionales». */
+const ATENCION_RESPALDO = { tiempoContacto: "5 días laborables", tiempoSugerencias: "15 días laborables" };
 
 const NOMBRES_RED: Record<RedSocial["red"], string> = {
   facebook: "Facebook",
@@ -36,7 +40,7 @@ const NOMBRES_RED: Record<RedSocial["red"], string> = {
 };
 
 export const obtenerInstitucion = cache(async (): Promise<DatosInstitucion> => {
-  if (compilando()) return { ...organismo, redes: redesSociales };
+  if (compilando()) return { ...organismo, redes: redesSociales, atencion: ATENCION_RESPALDO };
   try {
     const i = await (await cms()).findGlobal({ slug: "institucion", ...publico });
     if (!i?.nombre) throw new Error("sin datos");
@@ -44,9 +48,10 @@ export const obtenerInstitucion = cache(async (): Promise<DatosInstitucion> => {
       ...i,
       correo: i.correo,
       redes: (i.redes ?? []).map((r) => ({ red: r.red, url: r.url, nombre: NOMBRES_RED[r.red] })),
+      atencion: { ...ATENCION_RESPALDO, ...i.atencion },
     };
   } catch {
-    return { ...organismo, redes: redesSociales };
+    return { ...organismo, redes: redesSociales, atencion: ATENCION_RESPALDO };
   }
 });
 

@@ -14,6 +14,11 @@ import { getPayload, type CollectionSlug, type Payload } from "payload";
 import { menuPrincipal, informate } from "../src/contenido/sitio";
 
 type Imagen = { url: string; alt: string };
+type Ficha = {
+  requisitos: string[];
+  procedimiento: string[];
+  [campo: string]: unknown;
+};
 type Semilla = {
   fuente: string;
   institucion: Record<string, unknown>;
@@ -22,7 +27,7 @@ type Semilla = {
   transparencia: { titulo: string; html: string };
   paginas: { slug: string; titulo: string; padre: string | null; html: string; fuente: string; imagen: Imagen | null; documentos: string[] }[];
   documentos: { clave: string; titulo: string; descripcion: string; seccion: string; tipoNorma?: string; url: string }[];
-  servicios: { slug: string; nombre: string; resumen: string; html: string; fuente: string }[];
+  servicios: { slug: string; nombre: string; resumen: string; html: string; fuente: string; ficha?: Ficha }[];
   noticias: { titulo: string; fecha: string; lugar: string; imagen: Imagen | null; html: string; resumen: string; fuente: string }[];
   preguntas: { pregunta: string; html: string }[];
   banners: { titulo: string; descripcion: string; imagen: Imagen; enlace: string; textoEnlace: string }[];
@@ -42,8 +47,21 @@ async function buscar(collection: CollectionSlug, campo: string, valor: string) 
   return r.docs[0] as { id: number } | undefined;
 }
 
-async function guardar(collection: CollectionSlug, campo: string, valor: string, data: Record<string, unknown>) {
+async function guardar(
+  collection: CollectionSlug,
+  campo: string,
+  valor: string,
+  data: Record<string, unknown>,
+  publicar = true,
+) {
   const existente = await buscar(collection, campo, valor);
+  if (!publicar) {
+    // Un borrador incompleto solo se admite con draft: true; si estaba publicado, se recrea para
+    // que deje de estar visible en el portal.
+    if (existente) await payload.delete({ collection, id: existente.id, ...sistema });
+    const doc = await payload.create({ collection, data: { ...data, _status: "draft" } as never, draft: true, ...sistema });
+    return doc as unknown as { id: number };
+  }
   const datos = { ...data, _status: "published" };
   const doc = existente
     ? await payload.update({ collection, id: existente.id, data: datos as never, ...sistema })
@@ -135,16 +153,25 @@ for (const p of semilla.paginas) {
 }
 console.log(`✓ ${semilla.paginas.length + 3} páginas`);
 
+// Solo se publica el servicio con la ficha A5 completa; los demás quedan en borrador para que su
+// área responsable complete los campos que el portal actual no publica (novedad N-20).
 for (const s of semilla.servicios) {
-  await guardar("servicios", "slug", s.slug, {
-    nombre: s.nombre,
-    slug: s.slug,
-    resumen: s.resumen,
-    contenido: lexical(s.html),
-    destacado: true,
-  });
+  const ficha = s.ficha
+    ? {
+        ...s.ficha,
+        requisitos: s.ficha.requisitos.map((texto) => ({ texto })),
+        procedimiento: s.ficha.procedimiento.map((texto) => ({ texto })),
+      }
+    : {};
+  await guardar(
+    "servicios",
+    "slug",
+    s.slug,
+    { nombre: s.nombre, slug: s.slug, resumen: s.resumen, contenido: lexical(s.html), destacado: true, listaParaRevision: !s.ficha, ...ficha },
+    Boolean(s.ficha),
+  );
 }
-console.log(`✓ ${semilla.servicios.length} servicios`);
+console.log(`✓ ${semilla.servicios.length} servicios (${semilla.servicios.filter((s) => s.ficha).length} publicados con ficha A5 completa)`);
 
 for (const n of semilla.noticias) {
   await guardar("noticias", "titulo", n.titulo, {

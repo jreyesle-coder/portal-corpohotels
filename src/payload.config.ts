@@ -6,9 +6,12 @@ import { azureStorage } from "@payloadcms/storage-azure";
 import { es } from "@payloadcms/translations/languages/es";
 import { buildConfig } from "payload";
 import sharp from "sharp";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { Banners } from "@/cms/colecciones/banners";
 import { Bitacora } from "@/cms/colecciones/bitacora";
+import { Casos } from "@/cms/colecciones/casos";
 import { Documentos } from "@/cms/colecciones/documentos";
+import { Encuestas } from "@/cms/colecciones/encuestas";
 import { Medios } from "@/cms/colecciones/medios";
 import { Menus } from "@/cms/colecciones/menus";
 import { Noticias } from "@/cms/colecciones/noticias";
@@ -61,11 +64,25 @@ export default buildConfig({
     Menus,
     Medios,
     Documentos,
+    Casos,
+    Encuestas,
     Usuarios,
     Bitacora,
   ],
   globals: [Institucion],
   editor: lexicalEditor(),
+  // Correo transaccional (local: Mailpit; Azure: Communication Services o relé de Microsoft 365).
+  email: nodemailerAdapter({
+    defaultFromAddress: c.SMTP_FROM,
+    defaultFromName: "CORPHOTELS",
+    skipVerify: true,
+    transportOptions: {
+      host: c.SMTP_HOST,
+      port: c.SMTP_PORT,
+      secure: c.SMTP_PORT === 465,
+      auth: c.SMTP_USER ? { user: c.SMTP_USER, pass: c.SMTP_PASSWORD } : undefined,
+    },
+  }),
   upload: { limits: { fileSize: 50_000_000 } },
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   db: postgresAdapter({

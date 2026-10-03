@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { EnlaceExterno } from "@/components/sdd/enlace-externo";
+import { FormularioPasos } from "@/components/sdd/formulario-pasos";
 import { PlantillaPagina } from "@/components/sdd/plantilla-pagina";
 import { obtenerInstitucion } from "@/sitio/datos";
 
@@ -10,7 +12,7 @@ export const metadata: Metadata = {
 
 /**
  * Contactos (A2 4.02): dirección, apartado postal, mapa, teléfono y correo. El mapa es de
- * OpenStreetMap, sin cookies de rastreo. El formulario de contacto se incorpora en S3.
+ * OpenStreetMap, sin cookies de rastreo. Incluye el formulario de contacto con número de caso.
  */
 export default async function Contactos() {
   const i = await obtenerInstitucion();
@@ -88,6 +90,24 @@ export default async function Contactos() {
           </figure>
         )}
       </div>
+
+      <section aria-labelledby="titulo-escribanos" className="mt-12 border-t border-borde pt-8">
+        <h2 id="titulo-escribanos" className="mb-2 text-2xl font-semibold text-titulo">
+          Escríbanos
+        </h2>
+        <p className="mb-6 max-w-2xl">
+          Para quejas, sugerencias o felicitaciones use el formulario de{" "}
+          <Link href="/contactos/sugerencias" className="font-semibold text-primario underline">
+            Quejas y sugerencias
+          </Link>
+          .
+        </p>
+        <FormularioPasos
+          tipo="contacto"
+          urlCancelar="/contactos"
+          institucion={{ telefono: i.telefono, correo: i.correo, otrasVias: i.atencion.otrasVias }}
+        />
+      </section>
     </PlantillaPagina>
   );
 }

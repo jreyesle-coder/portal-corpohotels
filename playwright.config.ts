@@ -19,7 +19,7 @@ export default defineConfig({
   // Contra la compilación de producción, como corre en Docker y Azure (sin recarga en caliente).
   webServer: {
     command: `npm run build && npm run start:local`,
-    env: { PORT: String(puerto), HOSTNAME: "127.0.0.1", INCLUIR_CATALOGO: "1", SITE_URL: `http://localhost:${puerto}` },
+    env: { PORT: String(puerto), HOSTNAME: "127.0.0.1", INCLUIR_CATALOGO: "1", LIMITE_ENVIOS_POR_IP: "1000", SITE_URL: `http://localhost:${puerto}` },
     url: `http://localhost:${puerto}/api/salud`,
     // Requiere los servicios de Docker Compose: postgres, azurite y entra-simulado.
     reuseExistingServer: true,

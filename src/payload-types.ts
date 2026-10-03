@@ -77,6 +77,8 @@ export interface Config {
     menus: Menu;
     medios: Medio;
     documentos: Documento;
+    casos: Caso;
+    encuestas: Encuesta;
     usuarios: Usuario;
     bitacora: Bitacora;
     'payload-kv': PayloadKv;
@@ -96,6 +98,8 @@ export interface Config {
     menus: MenusSelect<false> | MenusSelect<true>;
     medios: MediosSelect<false> | MediosSelect<true>;
     documentos: DocumentosSelect<false> | DocumentosSelect<true>;
+    casos: CasosSelect<false> | CasosSelect<true>;
+    encuestas: EncuestasSelect<false> | EncuestasSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
     bitacora: BitacoraSelect<false> | BitacoraSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -367,12 +371,18 @@ export interface Documento {
   focalY?: number | null;
 }
 /**
+ * Para publicar un servicio deben completarse los 15 campos de la ficha (NORTIC A5).
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "servicios".
  */
 export interface Servicio {
   id: number;
   nombre: string;
+  /**
+   * Cómo lo reconoce la ciudadanía, cuando aplique.
+   */
+  nombreColoquial?: string | null;
   /**
    * Se genera del título si se deja vacío. Solo minúsculas, números y guiones.
    */
@@ -393,7 +403,68 @@ export interface Servicio {
     };
     [k: string]: unknown;
   };
+  /**
+   * Por ejemplo: arrendatarios de los complejos administrados por CORPHOTELS.
+   */
+  dirigidoA: string;
+  areaResponsable: string;
+  contactoArea: {
+    telefono: string;
+    extension?: string | null;
+    correo: string;
+  };
+  requisitos: {
+    texto: string;
+    id?: string | null;
+  }[];
+  procedimiento: {
+    texto: string;
+    id?: string | null;
+  }[];
+  /**
+   * Días y horas en que se presta o atiende el servicio.
+   */
+  horario: string;
+  /**
+   * Monto en RD$ y forma de pago, o «Gratuito».
+   */
+  costo: string;
+  /**
+   * Plazo para responder la solicitud, cuando aplique (se muestra también en la confirmación).
+   */
+  tiempoRespuesta?: string | null;
+  /**
+   * Plazo para entregar el resultado del servicio.
+   */
+  tiempoRealizacion: string;
+  canales: ('en-linea' | 'presencial' | 'telefono' | 'correo')[];
+  /**
+   * Plataforma para la prestación del servicio, si existe.
+   */
+  acceso?: {
+    solicitudEnLinea?: boolean | null;
+    /**
+     * Solo https://, por ejemplo una plataforma de servicios del Estado.
+     */
+    url?: string | null;
+  };
+  informacionAdicional?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   destacado?: boolean | null;
+  listaParaRevision?: boolean | null;
   seo?: {
     /**
      * Si se deja vacío se usa el título. Máximo 70 caracteres.
@@ -483,6 +554,47 @@ export interface Menu {
         id?: string | null;
       }[]
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Contactos, sugerencias y solicitudes recibidos por el portal. Los datos personales están cifrados.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "casos".
+ */
+export interface Caso {
+  id: number;
+  numero: string;
+  tipo: 'contacto' | 'sugerencia' | 'solicitud';
+  estado: 'recibido' | 'en-proceso' | 'respondido' | 'cerrado';
+  servicio?: (number | null) | Servicio;
+  asunto?: string | null;
+  nombre?: string | null;
+  correo?: string | null;
+  telefono?: string | null;
+  cedula?: string | null;
+  mensaje?: string | null;
+  consentimiento: {
+    aceptado: boolean;
+    fecha?: string | null;
+    texto?: string | null;
+  };
+  notasInternas?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "encuestas".
+ */
+export interface Encuesta {
+  id: number;
+  calificacion: number;
+  facilidad?: ('si' | 'no') | null;
+  comentario?: string | null;
+  tipo?: string | null;
+  servicio?: (number | null) | Servicio;
   updatedAt: string;
   createdAt: string;
 }
@@ -608,6 +720,14 @@ export interface PayloadLockedDocument {
         value: number | Documento;
       } | null)
     | ({
+        relationTo: 'casos';
+        value: number | Caso;
+      } | null)
+    | ({
+        relationTo: 'encuestas';
+        value: number | Encuesta;
+      } | null)
+    | ({
         relationTo: 'usuarios';
         value: number | Usuario;
       } | null)
@@ -718,10 +838,45 @@ export interface PaginasSelect<T extends boolean = true> {
  */
 export interface ServiciosSelect<T extends boolean = true> {
   nombre?: T;
+  nombreColoquial?: T;
   slug?: T;
   resumen?: T;
   contenido?: T;
+  dirigidoA?: T;
+  areaResponsable?: T;
+  contactoArea?:
+    | T
+    | {
+        telefono?: T;
+        extension?: T;
+        correo?: T;
+      };
+  requisitos?:
+    | T
+    | {
+        texto?: T;
+        id?: T;
+      };
+  procedimiento?:
+    | T
+    | {
+        texto?: T;
+        id?: T;
+      };
+  horario?: T;
+  costo?: T;
+  tiempoRespuesta?: T;
+  tiempoRealizacion?: T;
+  canales?: T;
+  acceso?:
+    | T
+    | {
+        solicitudEnLinea?: T;
+        url?: T;
+      };
+  informacionAdicional?: T;
   destacado?: T;
+  listaParaRevision?: T;
   seo?:
     | T
     | {
@@ -886,6 +1041,45 @@ export interface DocumentosSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "casos_select".
+ */
+export interface CasosSelect<T extends boolean = true> {
+  numero?: T;
+  tipo?: T;
+  estado?: T;
+  servicio?: T;
+  asunto?: T;
+  nombre?: T;
+  correo?: T;
+  telefono?: T;
+  cedula?: T;
+  mensaje?: T;
+  consentimiento?:
+    | T
+    | {
+        aceptado?: T;
+        fecha?: T;
+        texto?: T;
+      };
+  notasInternas?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "encuestas_select".
+ */
+export interface EncuestasSelect<T extends boolean = true> {
+  calificacion?: T;
+  facilidad?: T;
+  comentario?: T;
+  tipo?: T;
+  servicio?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "usuarios_select".
  */
 export interface UsuariosSelect<T extends boolean = true> {
@@ -972,6 +1166,14 @@ export interface Institucion {
     latitud: number;
     longitud: number;
   };
+  atencion: {
+    tiempoContacto: string;
+    tiempoSugerencias: string;
+    /**
+     * Por ejemplo, el horario de atención presencial.
+     */
+    otrasVias?: string | null;
+  };
   /**
    * En móvil se muestran las 4 primeras (A2 3.04.c). Íconos oficiales, sin complementos.
    */
@@ -1003,6 +1205,13 @@ export interface InstitucionSelect<T extends boolean = true> {
     | {
         latitud?: T;
         longitud?: T;
+      };
+  atencion?:
+    | T
+    | {
+        tiempoContacto?: T;
+        tiempoSugerencias?: T;
+        otrasVias?: T;
       };
   redes?:
     | T

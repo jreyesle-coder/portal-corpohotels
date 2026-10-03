@@ -7,7 +7,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 
 | Licencia | Paquetes |
 | --- | --- |
-| MIT | 353 |
+| MIT | 354 |
 | ISC | 14 |
 | BSD-3-Clause | 10 |
 | Apache-2.0 | 9 |
@@ -16,6 +16,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | Apache-2.0 AND LGPL-3.0-or-later | 1 |
 | (MPL-2.0 OR Apache-2.0) | 1 |
 | BSD-2-Clause | 1 |
+| MIT-0 | 1 |
 | 0BSD | 1 |
 
 ## Componentes
@@ -112,6 +113,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | @nodable/entities | 3.1.0 | MIT | https://github.com/nodable/val-parsers |
 | @payloadcms/db-postgres | 3.90.2 | MIT | https://payloadcms.com |
 | @payloadcms/drizzle | 3.90.2 | MIT | https://payloadcms.com |
+| @payloadcms/email-nodemailer | 3.90.2 | MIT | https://payloadcms.com |
 | @payloadcms/graphql | 3.90.2 | MIT | https://payloadcms.com |
 | @payloadcms/next | 3.90.2 | MIT | https://payloadcms.com |
 | @payloadcms/plugin-cloud-storage | 3.90.2 | MIT | https://payloadcms.com |
@@ -307,6 +309,7 @@ Archivo generado con `npm run licencias`; no se edita a mano.
 | monaco-editor | 0.57.0 | MIT | https://github.com/microsoft/monaco-editor |
 | ms | 2.1.3 | MIT | vercel/ms |
 | next | 16.3.8 | MIT | https://nextjs.org |
+| nodemailer | 9.1.1 | MIT-0 | https://nodemailer.com/ |
 | normalize-path | 3.0.0 | MIT | https://github.com/jonschlinkert/normalize-path |
 | normalize-svg-path | 1.1.0 | MIT | git://github.com/jkroso/normalize-svg-path |
 | oauth4webapi | 3.8.8 | MIT | https://github.com/panva/oauth4webapi |

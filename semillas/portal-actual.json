@@ -114,7 +114,45 @@
    "nombre": "Solicitud de No Objeción para obras o intervenciones físicas",
    "resumen": "Este servicio permite a los arrendatarios de los complejos administrados por CORPHOTELS solicitar la autorización para realizar obras, remodelaciones, ampliaciones, reparaciones o cualquier otra intervención física en el inmueble arrendado. La autorización se otorga mediante una…",
    "html": "<p>Este servicio permite a los arrendatarios de los complejos administrados por CORPHOTELS solicitar la autorización para realizar obras, remodelaciones, ampliaciones, reparaciones o cualquier otra intervención física en el inmueble arrendado.</p> <p>La autorización se otorga mediante una Certificación de No Objeción, emitida por el Departamento de Ingeniería y Arquitectura, una vez concluida la evaluación técnica, administrativa y financiera correspondiente.</p> <p><strong>HORARIO DE PRESTACION DE SERVICIO</strong></p> <p>Este servicio estará disponible las veinticuatro (24) horas del día, los siete (7) días de la semana. No obstante, las solicitudes serán atendidas por CORPHOTELS dentro de su horario laboral establecido, de lunes a viernes, de 8:00 a. m. a 3:00 p. m.</p> <p><strong>TIEMPO DE RESPUESTA</strong></p> <p>La solicitud será atendida en un plazo máximo de quince (15) días laborables, contados a partir de la fecha en que se reciba la documentación e información requerida de manera completa y conforme.</p> <p><strong>Costo del servicio</strong></p> <p>Pago inicial de evaluación: RD$5,000.00 (no reembolsable y acreditable al costo final del servicio).</p> <p>Costo final: dependerá del tipo de obra autorizada.</p> <p><strong>DOCUMENTOS REQUERIDOS</strong></p> <p>Dependiendo del tipo de obra, deberá presentar:</p> <p>Formulario de Solicitud de No Objeción.</p> <p>Planos, croquis o diseños (cuando aplique).</p> <p>Presupuesto de la obra.</p> <p>Cronograma de ejecución.</p> <p>Comprobante de pago de la tasa inicial.</p> <p>Cualquier otro documento técnico requerido durante la evaluación.</p> <p><strong>¿Cómo solicitar el servicio?</strong></p> <p>Complete el formulario de Solicitud de No Objeción.</p> <p>Realice el pago de la tasa inicial.</p> <p>Anexe los documentos requeridos.</p> <p>Envíe la solicitud por una de las siguientes vías:</p> <p>Portal web.</p> <p>Correo electrónico.</p> <p>Presencialmente.</p> <p>CORPHOTELS evaluará la solicitud.</p> <p>Si es necesario, se le solicitará información adicional.</p> <p>Una vez aprobada la evaluación y realizado el pago correspondiente, se emitirá la Certificación de No Objeción.</p> <p><strong>CANALES DE PRESTACIÓN</strong></p> <p>En línea (Portal web)</p> <p>Correo electrónico</p> <p>Presencial</p>",
-   "fuente": "https://corphotels.gob.do/index.php/servicios/item/245-emision-de-no-objecion-a-remodelacio"
+   "fuente": "https://corphotels.gob.do/index.php/servicios/item/245-emision-de-no-objecion-a-remodelacio",
+   "ficha": {
+    "nombreColoquial": "No Objeción",
+    "dirigidoA": "Arrendatarios de los complejos administrados por CORPHOTELS que deseen realizar obras, remodelaciones, ampliaciones, reparaciones o cualquier otra intervención física en el inmueble arrendado.",
+    "areaResponsable": "Departamento de Ingeniería y Arquitectura",
+    "contactoArea": {
+     "telefono": "(809) 688-3417",
+     "correo": "info@corphotels.gob.do"
+    },
+    "requisitos": [
+     "Formulario de Solicitud de No Objeción.",
+     "Planos, croquis o diseños (cuando aplique).",
+     "Presupuesto de la obra.",
+     "Cronograma de ejecución.",
+     "Comprobante de pago de la tasa inicial.",
+     "Cualquier otro documento técnico requerido durante la evaluación."
+    ],
+    "procedimiento": [
+     "Complete el formulario de Solicitud de No Objeción.",
+     "Realice el pago de la tasa inicial.",
+     "Anexe los documentos requeridos.",
+     "Envíe la solicitud por el portal web, por correo electrónico o de forma presencial.",
+     "CORPHOTELS evalúa la solicitud y, si es necesario, le pide información adicional.",
+     "Aprobada la evaluación y realizado el pago correspondiente, se emite la Certificación de No Objeción."
+    ],
+    "horario": "Disponible en línea las 24 horas, los 7 días de la semana. Las solicitudes se atienden de lunes a viernes, de 8:00 a. m. a 3:00 p. m.",
+    "costo": "Pago inicial de evaluación: RD$ 5,000.00 (no reembolsable y acreditable al costo final). Costo final: depende del tipo de obra autorizada.",
+    "tiempoRespuesta": "Hasta 15 días laborables, contados desde que se recibe la documentación completa y conforme.",
+    "tiempoRealizacion": "La Certificación de No Objeción se emite al aprobarse la evaluación y realizarse el pago correspondiente, dentro del plazo de hasta 15 días laborables.",
+    "canales": [
+     "en-linea",
+     "correo",
+     "presencial"
+    ],
+    "acceso": {
+     "solicitudEnLinea": false,
+     "url": "https://noobjecion-corphotels.vercel.app/"
+    }
+   }
   },
   {
    "slug": "consulta-de-balance",

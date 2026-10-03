@@ -14,10 +14,11 @@ import pg from "pg";
  *    responde 404 pero el HTML lo dibuja el navegador; la documentación recomienda esta verificación.
  */
 const ARCHIVOS_PUBLICOS = /^\/api\/(medios|documentos)\/file\//;
-const CONTENIDO = /^\/(noticias|servicios|sobre-nosotros)\/([^/]+)\/?$/;
+const CONTENIDO = /^\/(noticias|servicios|sobre-nosotros)\/([^/]+)(\/solicitud)?\/?$/;
 const CONSULTAS: Record<string, string> = {
   noticias: `SELECT 1 FROM noticias WHERE slug = $1 AND _status = 'published' LIMIT 1`,
   servicios: `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published' LIMIT 1`,
+  "servicios/solicitud": `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published' AND acceso_solicitud_en_linea LIMIT 1`,
   // Solo las páginas cuya sección superior es «Sobre nosotros».
   "sobre-nosotros": `SELECT 1 FROM paginas p JOIN paginas s ON s.id = p.padre_id
     WHERE p.slug = $1 AND p._status = 'published' AND s.slug = 'sobre-nosotros' LIMIT 1`,
@@ -62,9 +63,10 @@ export async function proxy(request: NextRequest) {
 
   const coincidencia = CONTENIDO.exec(pathname);
   if (coincidencia && !PAGINAS_FIJAS.has(pathname.replace(/\/$/, ""))) {
-    const [, seccion, slug] = coincidencia;
+    const [, base, slug, solicitud] = coincidencia;
+    const seccion = solicitud ? (base === "servicios" ? "servicios/solicitud" : "") : base;
     const valido = /^[a-z0-9-]{1,120}$/.test(slug);
-    if (!valido || !(await existe(seccion, slug))) {
+    if (!valido || !CONSULTAS[seccion] || !(await existe(seccion, slug))) {
       return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
     }
   }
@@ -72,5 +74,13 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/gestion/:path*", "/auth/:path*", "/api/:path*", "/noticias/:slug", "/servicios/:slug", "/sobre-nosotros/:slug"],
+  matcher: [
+    "/gestion/:path*",
+    "/auth/:path*",
+    "/api/:path*",
+    "/noticias/:slug",
+    "/servicios/:slug",
+    "/servicios/:slug/solicitud",
+    "/sobre-nosotros/:slug",
+  ],
 };
