@@ -67,8 +67,18 @@ test.describe("Ficha de servicio (A2 4.02.b, NORTIC A5)", () => {
     await expect(boton).toHaveAttribute("target", "_blank");
   });
 
-  test("un servicio sin ficha completa no se publica", async ({ request }) => {
-    expect((await request.get("/servicios/actualizacion-de-datos")).status()).toBe(404);
+  test("un servicio con ficha incompleta muestra solo lo disponible y queda marcado en el CMS", async ({ page }) => {
+    await ir(page, "/servicios/actualizacion-de-datos");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Actualización de datos");
+    const ficha = page.locator("[data-ficha-servicio]");
+    await expect(ficha.getByRole("heading", { name: "Descripción del servicio" })).toBeVisible();
+    // No se muestran rótulos vacíos.
+    await expect(ficha.locator("dt", { hasText: "Costo" })).toHaveCount(0);
+    const [fila] = await consultar<{ ficha_completa: boolean; campos_pendientes: string }>(
+      "SELECT ficha_completa, campos_pendientes FROM servicios WHERE slug = 'actualizacion-de-datos'",
+    );
+    expect(fila.ficha_completa).toBe(false);
+    expect(fila.campos_pendientes).toContain("Área responsable");
   });
 });
 

@@ -371,7 +371,7 @@ export interface Documento {
   focalY?: number | null;
 }
 /**
- * Para publicar un servicio deben completarse los 15 campos de la ficha (NORTIC A5).
+ * Complete los 15 campos de la ficha (NORTIC A5). Antes de producción, todos los servicios publicados deben tener la ficha completa.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "servicios".
@@ -406,29 +406,33 @@ export interface Servicio {
   /**
    * Por ejemplo: arrendatarios de los complejos administrados por CORPHOTELS.
    */
-  dirigidoA: string;
-  areaResponsable: string;
-  contactoArea: {
-    telefono: string;
+  dirigidoA?: string | null;
+  areaResponsable?: string | null;
+  contactoArea?: {
+    telefono?: string | null;
     extension?: string | null;
-    correo: string;
+    correo?: string | null;
   };
-  requisitos: {
-    texto: string;
-    id?: string | null;
-  }[];
-  procedimiento: {
-    texto: string;
-    id?: string | null;
-  }[];
+  requisitos?:
+    | {
+        texto: string;
+        id?: string | null;
+      }[]
+    | null;
+  procedimiento?:
+    | {
+        texto: string;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Días y horas en que se presta o atiende el servicio.
    */
-  horario: string;
+  horario?: string | null;
   /**
    * Monto en RD$ y forma de pago, o «Gratuito».
    */
-  costo: string;
+  costo?: string | null;
   /**
    * Plazo para responder la solicitud, cuando aplique (se muestra también en la confirmación).
    */
@@ -436,8 +440,8 @@ export interface Servicio {
   /**
    * Plazo para entregar el resultado del servicio.
    */
-  tiempoRealizacion: string;
-  canales: ('en-linea' | 'presencial' | 'telefono' | 'correo')[];
+  tiempoRealizacion?: string | null;
+  canales?: ('en-linea' | 'presencial' | 'telefono' | 'correo')[] | null;
   /**
    * Plataforma para la prestación del servicio, si existe.
    */
@@ -463,6 +467,11 @@ export interface Servicio {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Lo calcula el CMS al guardar.
+   */
+  fichaCompleta?: boolean | null;
+  camposPendientes?: string | null;
   destacado?: boolean | null;
   listaParaRevision?: boolean | null;
   seo?: {
@@ -875,6 +884,8 @@ export interface ServiciosSelect<T extends boolean = true> {
         url?: T;
       };
   informacionAdicional?: T;
+  fichaCompleta?: T;
+  camposPendientes?: T;
   destacado?: T;
   listaParaRevision?: T;
   seo?:

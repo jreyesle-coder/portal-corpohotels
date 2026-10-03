@@ -17,7 +17,8 @@
     "migracion:crear": "payload migrate:create",
     "licencias": "node scripts/generar-licencias.mjs",
     "sembrar": "payload run scripts/sembrar.ts",
-    "limpiar-pruebas": "payload run scripts/limpiar-pruebas.ts"
+    "limpiar-pruebas": "payload run scripts/limpiar-pruebas.ts",
+    "fichas-pendientes": "payload run scripts/fichas-pendientes.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.90.2",

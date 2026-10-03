@@ -4,6 +4,7 @@ import * as migration_20261003_213953_s2_portal_institucional from './20261003_2
 import * as migration_20261003_2242501_secuencia_casos from './20261003_2242501_secuencia_casos';
 import * as migration_20261003_224250_s3_servicios_formularios from './20261003_224250_s3_servicios_formularios';
 import * as migration_20261003_224353_s3_atencion from './20261003_224353_s3_atencion';
+import * as migration_20261003_231816_servicios_ficha_parcial from './20261003_231816_servicios_ficha_parcial';
 
 export const migrations = [
   {
@@ -34,6 +35,11 @@ export const migrations = [
   {
     up: migration_20261003_224353_s3_atencion.up,
     down: migration_20261003_224353_s3_atencion.down,
-    name: '20261003_224353_s3_atencion'
+    name: '20261003_224353_s3_atencion',
+  },
+  {
+    up: migration_20261003_231816_servicios_ficha_parcial.up,
+    down: migration_20261003_231816_servicios_ficha_parcial.down,
+    name: '20261003_231816_servicios_ficha_parcial'
   },
 ];

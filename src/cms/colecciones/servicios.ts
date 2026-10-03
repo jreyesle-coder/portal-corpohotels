@@ -6,8 +6,11 @@ import { controlPublicacion } from "../flujo-editorial";
 
 /**
  * Ficha de servicio con los 15 campos de la NORTIC A5:2019, sección 2.02.1 (A2 4.02.b.i).
- * Los campos obligatorios se exigen al publicar; un borrador puede guardarse incompleto para que
- * el área responsable lo termine.
+ *
+ * Decisión de TIC (2026-10-03): mientras las áreas completan las fichas, un servicio puede
+ * publicarse solo con nombre y descripción, como en el portal actual. El campo «Ficha A5
+ * completa» lo calcula el CMS y la preauditoría de S9 exige que todos los publicados la tengan
+ * (novedad N-20).
  */
 export const CANALES = [
   { label: "En línea (portal web)", value: "en-linea" },
@@ -16,14 +19,41 @@ export const CANALES = [
   { label: "Correo electrónico", value: "correo" },
 ] as const;
 
-const texto = (name: string, label: string, description: string, required = true, maxLength = 300): Field => ({
+const texto = (name: string, label: string, description: string, maxLength = 300): Field => ({
   name,
   label,
   type: "textarea",
-  required,
   maxLength,
   admin: { description },
 });
+
+type DatosServicio = Record<string, unknown> & {
+  contactoArea?: { telefono?: string | null; correo?: string | null } | null;
+  requisitos?: unknown[] | null;
+  procedimiento?: unknown[] | null;
+  canales?: unknown[] | null;
+};
+
+/** Campos que exige la ficha A5 (el nombre coloquial, el tiempo de respuesta y la información adicional aplican «cuando corresponda»). */
+export function camposFaltantes(d: DatosServicio): string[] {
+  const vacio = (v: unknown) => v === undefined || v === null || (typeof v === "string" && v.trim() === "") || (Array.isArray(v) && v.length === 0);
+  const faltan: string[] = [];
+  const revisar: [unknown, string][] = [
+    [d.contenido, "Descripción"],
+    [d.dirigidoA, "A quién va dirigido"],
+    [d.areaResponsable, "Área responsable"],
+    [d.contactoArea?.telefono, "Teléfono del área"],
+    [d.contactoArea?.correo, "Correo del área"],
+    [d.requisitos, "Requisitos"],
+    [d.procedimiento, "Procedimiento"],
+    [d.horario, "Horario"],
+    [d.costo, "Costo"],
+    [d.tiempoRealizacion, "Tiempo de realización"],
+    [d.canales, "Canales"],
+  ];
+  for (const [valor, nombre] of revisar) if (vacio(valor)) faltan.push(nombre);
+  return faltan;
+}
 
 export const Servicios: CollectionConfig = {
   slug: "servicios",
@@ -31,8 +61,8 @@ export const Servicios: CollectionConfig = {
   admin: {
     useAsTitle: "nombre",
     group: "Contenido",
-    defaultColumns: ["nombre", "areaResponsable", "_status", "listaParaRevision", "updatedAt"],
-    description: "Para publicar un servicio deben completarse los 15 campos de la ficha (NORTIC A5).",
+    defaultColumns: ["nombre", "fichaCompleta", "_status", "updatedAt"],
+    description: "Complete los 15 campos de la ficha (NORTIC A5). Antes de producción, todos los servicios publicados deben tener la ficha completa.",
   },
   versions: { drafts: { schedulePublish: false }, maxPerDoc: 50 },
   defaultSort: "nombre",
@@ -42,7 +72,17 @@ export const Servicios: CollectionConfig = {
     update: con(...PUEDEN_EDITAR),
     delete: con(...PUEDEN_PUBLICAR),
   },
-  hooks: { beforeChange: [controlPublicacion], afterChange: [auditarCambios], afterDelete: [auditarEliminacion] },
+  hooks: {
+    beforeChange: [
+      controlPublicacion,
+      ({ data, originalDoc }) => {
+        const faltan = camposFaltantes({ ...(originalDoc ?? {}), ...data } as DatosServicio);
+        return { ...data, fichaCompleta: faltan.length === 0, camposPendientes: faltan.join(", ") };
+      },
+    ],
+    afterChange: [auditarCambios],
+    afterDelete: [auditarEliminacion],
+  },
   fields: [
     {
       type: "tabs",
@@ -73,7 +113,7 @@ export const Servicios: CollectionConfig = {
         {
           label: "Responsable y contacto",
           fields: [
-            { name: "areaResponsable", label: "5. Área responsable", type: "text", required: true, maxLength: 160 },
+            { name: "areaResponsable", label: "5. Área responsable", type: "text", maxLength: 160 },
             {
               name: "contactoArea",
               label: "6. Contactos del área responsable",
@@ -82,9 +122,9 @@ export const Servicios: CollectionConfig = {
                 {
                   type: "row",
                   fields: [
-                    { name: "telefono", label: "Teléfono", type: "text", required: true, maxLength: 40 },
+                    { name: "telefono", label: "Teléfono", type: "text", maxLength: 40 },
                     { name: "extension", label: "Extensión", type: "text", maxLength: 10 },
-                    { name: "correo", label: "Correo institucional", type: "email", required: true },
+                    { name: "correo", label: "Correo institucional", type: "email" },
                   ],
                 },
               ],
@@ -98,8 +138,6 @@ export const Servicios: CollectionConfig = {
               name: "requisitos",
               label: "7. Requerimientos para obtener el servicio",
               type: "array",
-              required: true,
-              minRows: 1,
               labels: { singular: "Requisito", plural: "Requisitos" },
               fields: [{ name: "texto", label: "Requisito", type: "text", required: true, maxLength: 250 }],
             },
@@ -107,8 +145,6 @@ export const Servicios: CollectionConfig = {
               name: "procedimiento",
               label: "8. Procedimiento a seguir",
               type: "array",
-              required: true,
-              minRows: 1,
               labels: { singular: "Paso", plural: "Pasos" },
               fields: [{ name: "texto", label: "Paso", type: "text", required: true, maxLength: 250 }],
             },
@@ -118,7 +154,6 @@ export const Servicios: CollectionConfig = {
               "tiempoRespuesta",
               "11. Tiempo de respuesta a la solicitud",
               "Plazo para responder la solicitud, cuando aplique (se muestra también en la confirmación).",
-              false,
             ),
             texto("tiempoRealizacion", "12. Tiempo de realización", "Plazo para entregar el resultado del servicio."),
             {
@@ -126,7 +161,6 @@ export const Servicios: CollectionConfig = {
               label: "13. Canales de prestación",
               type: "select",
               hasMany: true,
-              required: true,
               options: [...CANALES],
             },
             {
@@ -154,6 +188,19 @@ export const Servicios: CollectionConfig = {
           ],
         },
       ],
+    },
+    {
+      name: "fichaCompleta",
+      label: "Ficha A5 completa",
+      type: "checkbox",
+      defaultValue: false,
+      admin: { position: "sidebar", readOnly: true, description: "Lo calcula el CMS al guardar." },
+    },
+    {
+      name: "camposPendientes",
+      label: "Campos pendientes de la ficha",
+      type: "textarea",
+      admin: { position: "sidebar", readOnly: true, condition: (d) => !d?.fichaCompleta },
     },
     {
       name: "destacado",

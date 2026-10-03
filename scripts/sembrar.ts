@@ -153,8 +153,8 @@ for (const p of semilla.paginas) {
 }
 console.log(`✓ ${semilla.paginas.length + 3} páginas`);
 
-// Solo se publica el servicio con la ficha A5 completa; los demás quedan en borrador para que su
-// área responsable complete los campos que el portal actual no publica (novedad N-20).
+// Se publican todos con la información del portal actual (decisión de TIC); los que no tienen la
+// ficha A5 completa quedan marcados en el CMS y se completan antes de producción (novedad N-20).
 for (const s of semilla.servicios) {
   const ficha = s.ficha
     ? {
@@ -167,11 +167,10 @@ for (const s of semilla.servicios) {
     "servicios",
     "slug",
     s.slug,
-    { nombre: s.nombre, slug: s.slug, resumen: s.resumen, contenido: lexical(s.html), destacado: true, listaParaRevision: !s.ficha, ...ficha },
-    Boolean(s.ficha),
+    { nombre: s.nombre, slug: s.slug, resumen: s.resumen, contenido: lexical(s.html), destacado: true, ...ficha },
   );
 }
-console.log(`✓ ${semilla.servicios.length} servicios (${semilla.servicios.filter((s) => s.ficha).length} publicados con ficha A5 completa)`);
+console.log(`✓ ${semilla.servicios.length} servicios publicados (${semilla.servicios.filter((s) => s.ficha).length} con ficha A5 completa)`);
 
 for (const n of semilla.noticias) {
   await guardar("noticias", "titulo", n.titulo, {

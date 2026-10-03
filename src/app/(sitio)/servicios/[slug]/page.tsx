@@ -15,7 +15,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return s ? metadatos(s.nombre, s.seo, s.resumen) : {};
 }
 
-/** Ficha del servicio con los 15 campos de la NORTIC A5, sección 2.02.1 (A2 4.02.b.i). */
+/**
+ * Ficha del servicio con los campos de la NORTIC A5, sección 2.02.1 (A2 4.02.b.i). Solo se muestran
+ * los datos cargados: hasta S9 algunos servicios se publican con la información del portal actual.
+ */
 export default async function Servicio({ params }: Props) {
   const s = await obtenerServicio((await params).slug);
   if (!s) notFound();
@@ -67,65 +70,72 @@ export default async function Servicio({ params }: Props) {
           <TextoEnriquecido datos={s.contenido} />
         </Bloque>
 
-        <dl className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
-          <Dato titulo="A quién va dirigido">{s.dirigidoA}</Dato>
-          <Dato titulo="Área responsable">{s.areaResponsable}</Dato>
-          <Dato titulo="Contacto del área">
-            {s.contactoArea?.telefono && (
-              <>
-                Teléfono:{" "}
-                <a href={`tel:+1${s.contactoArea.telefono.replace(/\D/g, "")}`} className="text-primario underline">
-                  {s.contactoArea.telefono}
-                </a>
-                {s.contactoArea.extension && `, ext. ${s.contactoArea.extension}`}
-                <br />
-              </>
-            )}
-            {s.contactoArea?.correo && (
-              <>
-                Correo:{" "}
-                <a href={`mailto:${s.contactoArea.correo}`} className="text-primario underline">
-                  {s.contactoArea.correo}
-                </a>
-              </>
-            )}
-          </Dato>
-          <Dato titulo="Horario de prestación">{s.horario}</Dato>
-          <Dato titulo="Costo">{s.costo}</Dato>
+        <dl className="grid gap-x-8 gap-y-5 empty:hidden sm:grid-cols-2">
+          {s.dirigidoA && <Dato titulo="A quién va dirigido">{s.dirigidoA}</Dato>}
+          {s.areaResponsable && <Dato titulo="Área responsable">{s.areaResponsable}</Dato>}
+          {(s.contactoArea?.telefono || s.contactoArea?.correo) && (
+            <Dato titulo="Contacto del área">
+              {s.contactoArea?.telefono && (
+                <>
+                  Teléfono:{" "}
+                  <a href={`tel:+1${s.contactoArea.telefono.replace(/\D/g, "")}`} className="text-primario underline">
+                    {s.contactoArea.telefono}
+                  </a>
+                  {s.contactoArea.extension && `, ext. ${s.contactoArea.extension}`}
+                  <br />
+                </>
+              )}
+              {s.contactoArea?.correo && (
+                <>
+                  Correo:{" "}
+                  <a href={`mailto:${s.contactoArea.correo}`} className="text-primario underline">
+                    {s.contactoArea.correo}
+                  </a>
+                </>
+              )}
+            </Dato>
+          )}
+          {s.horario && <Dato titulo="Horario de prestación">{s.horario}</Dato>}
+          {s.costo && <Dato titulo="Costo">{s.costo}</Dato>}
           {s.tiempoRespuesta && <Dato titulo="Tiempo de respuesta a la solicitud">{s.tiempoRespuesta}</Dato>}
-          <Dato titulo="Tiempo de realización">{s.tiempoRealizacion}</Dato>
-          <Dato titulo="Canales de prestación">{canales.join(", ")}</Dato>
-          <Dato titulo="Acceso al servicio">
-            {solicitar && (
-              <Link href={`/servicios/${s.slug}/solicitud`} className="text-primario underline">
-                Formulario de solicitud en línea
-              </Link>
-            )}
-            {solicitar && plataforma && <br />}
-            {plataforma && (
-              <EnlaceExterno href={plataforma} className="text-primario underline">
-                Plataforma del servicio
-              </EnlaceExterno>
-            )}
-            {!solicitar && !plataforma && "Presencial o por los contactos del área responsable."}
-          </Dato>
+          {s.tiempoRealizacion && <Dato titulo="Tiempo de realización">{s.tiempoRealizacion}</Dato>}
+          {canales.length > 0 && <Dato titulo="Canales de prestación">{canales.join(", ")}</Dato>}
+          {(solicitar || plataforma) && (
+            <Dato titulo="Acceso al servicio">
+              {solicitar && (
+                <Link href={`/servicios/${s.slug}/solicitud`} className="text-primario underline">
+                  Formulario de solicitud en línea
+                </Link>
+              )}
+              {solicitar && plataforma && <br />}
+              {plataforma && (
+                <EnlaceExterno href={plataforma} className="text-primario underline">
+                  Plataforma del servicio
+                </EnlaceExterno>
+              )}
+            </Dato>
+          )}
         </dl>
 
-        <Bloque titulo="Requisitos">
-          <ul className="list-disc space-y-1 pl-6">
-            {(s.requisitos ?? []).map((r) => (
-              <li key={r.id}>{r.texto}</li>
-            ))}
-          </ul>
-        </Bloque>
+        {(s.requisitos?.length ?? 0) > 0 && (
+          <Bloque titulo="Requisitos">
+            <ul className="list-disc space-y-1 pl-6">
+              {s.requisitos!.map((r) => (
+                <li key={r.id}>{r.texto}</li>
+              ))}
+            </ul>
+          </Bloque>
+        )}
 
-        <Bloque titulo="Procedimiento">
-          <ol className="list-decimal space-y-1 pl-6">
-            {(s.procedimiento ?? []).map((p) => (
-              <li key={p.id}>{p.texto}</li>
-            ))}
-          </ol>
-        </Bloque>
+        {(s.procedimiento?.length ?? 0) > 0 && (
+          <Bloque titulo="Procedimiento">
+            <ol className="list-decimal space-y-1 pl-6">
+              {s.procedimiento!.map((p) => (
+                <li key={p.id}>{p.texto}</li>
+              ))}
+            </ol>
+          </Bloque>
+        )}
 
         {s.informacionAdicional && (
           <Bloque titulo="Información adicional">
