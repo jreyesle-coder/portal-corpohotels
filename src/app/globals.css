@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+@custom-variant contraste (&:where([data-contraste="alto"] *));
+
+/*
+ * Tokens de color del portal.
+ * - Azul SDD #0F539C es el primario (decisión del documento de requerimientos; A2 1.06, 2.01.f).
+ * - Azul oscuro SDD #003876 para el identificador oficial y el pie (sdd-lib, official-seal "dark").
+ * - Azul medianoche #1A4072 y rojo caribe #EB282E son de marca CORPHOTELS; el rojo nunca
+ *   en texto normal (4.3:1 < 4.5:1, A2 7.01.i) ni sobre medianoche (2.4:1).
+ * El modo de alto contraste (A2 7.01.v) redefine las mismas variables.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fondo: #ffffff;
+  --superficie: #f3f6fa;
+  --texto: #1f2937;
+  --texto-suave: #4b5563;
+  --borde: #d1d5db;
+  --primario: #0f539c;
+  --primario-claro: #e8f0fa;
+  --sobre-primario: #ffffff;
+  --oscuro: #003876;
+  --titulo: #003876;
+  --sobre-oscuro: #ffffff;
+  --sobre-oscuro-suave: #dbe5f1;
+  --acento: #eb282e;
+  --sobre-acento: #ffffff;
+  --foco: #0f539c;
+}
+
+:root[data-contraste="alto"] {
+  --fondo: #000000;
+  --superficie: #000000;
+  --texto: #ffffff;
+  --texto-suave: #ffffff;
+  --borde: #ffffff;
+  --primario: #ffff00;
+  --primario-claro: #000000;
+  --sobre-primario: #000000;
+  --oscuro: #000000;
+  --titulo: #ffffff;
+  --sobre-oscuro: #ffffff;
+  --sobre-oscuro-suave: #ffffff;
+  --acento: #ffff00;
+  --sobre-acento: #000000;
+  --foco: #ffff00;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Escritorio: resolución superior a 800 px de ancho (A2 3.02, preámbulo). */
+  --breakpoint-esc: 50.0625rem;
+
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-borde: var(--borde);
+  --color-primario: var(--primario);
+  --color-primario-claro: var(--primario-claro);
+  --color-sobre-primario: var(--sobre-primario);
+  --color-oscuro: var(--oscuro);
+  --color-titulo: var(--titulo);
+  --color-sobre-oscuro: var(--sobre-oscuro);
+  --color-sobre-oscuro-suave: var(--sobre-oscuro-suave);
+  --color-acento: var(--acento);
+  --color-sobre-acento: var(--sobre-acento);
+  --color-foco: var(--foco);
+
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Herramienta de tamaño de texto (A2 7.01.u–v): escala la raíz; el texto usa rem. */
+:root[data-texto="1"] { font-size: 112.5%; }
+:root[data-texto="2"] { font-size: 125%; }
+:root[data-texto="3"] { font-size: 150%; }
+:root[data-texto="4"] { font-size: 200%; }
+
+html {
+  scroll-padding-top: 9rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+/* Foco siempre visible (A2 7.01.e, j). */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+:root[data-contraste="alto"] a {
+  text-decoration: underline;
+}
+
+@layer components {
+  /* Contenedor centrado e igual en las tres divisiones (A2 3.01.b). */
+  .contenedor {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 50.0625rem) {
+    .contenedor {
+      padding-inline: 1.5rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

@@ -1,0 +1,102 @@
+# Entorno local con paridad Azure (ver docs/requerimientos.md, "Paridad entre local y Azure").
+#   docker compose up --build            → todo, incluido el portal en http://localhost:3000
+#   docker compose up -d postgres azurite mailpit matomo   → solo servicios, para `npm run dev`
+# Credenciales solo de desarrollo; no reutilizar en ningún otro entorno.
+
+name: portal-corphotels
+
+services:
+  portal:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      SITE_URL: http://localhost:3000
+      DATABASE_URL: postgres://portal:portal_dev@postgres:5432/portal
+      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;
+      AZURE_STORAGE_CONTAINER: medios
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_FROM: no-responder@corphotels.gob.do
+      MATOMO_URL: http://localhost:8080
+      MATOMO_SITE_ID: "1"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      azurite:
+        condition: service_started
+      mailpit:
+        condition: service_started
+
+  # Azure Database for PostgreSQL Flexible Server: misma versión mayor (novedad N-02).
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: portal
+      POSTGRES_USER: portal
+      POSTGRES_PASSWORD: portal_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portal -d portal"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Azure Blob Storage.
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    command: azurite-blob --blobHost 0.0.0.0 --blobPort 10000 --location /data --loose
+    ports:
+      - "10000:10000"
+    volumes:
+      - azurite:/data
+
+  # Azure Communication Services (Email): bandeja en http://localhost:8025.
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  # Matomo autohospedado (A2 5.04.3): asistente en http://localhost:8080.
+  # Matomo requiere MySQL/MariaDB, no PostgreSQL (novedad N-03).
+  matomo:
+    image: matomo:5-apache
+    ports:
+      - "8080:80"
+    environment:
+      MATOMO_DATABASE_HOST: matomo-db
+      MATOMO_DATABASE_ADAPTER: mysql
+      MATOMO_DATABASE_TABLES_PREFIX: matomo_
+      MATOMO_DATABASE_USERNAME: matomo
+      MATOMO_DATABASE_PASSWORD: matomo_dev
+      MATOMO_DATABASE_DBNAME: matomo
+    volumes:
+      - matomo:/var/www/html
+    depends_on:
+      matomo-db:
+        condition: service_healthy
+
+  matomo-db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: matomo
+      MARIADB_USER: matomo
+      MARIADB_PASSWORD: matomo_dev
+      MARIADB_ROOT_PASSWORD: matomo_root_dev
+    volumes:
+      - matomo-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres:
+  azurite:
+  matomo:
+  matomo-db:

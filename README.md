@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portal CORPHOTELS
 
-## Getting Started
+Portal institucional de la Corporación de Fomento de la Industria Hotelera y Desarrollo del Turismo (CORPHOTELS), conforme a la NORTIC A2:2023.
 
-First, run the development server:
+- Requerimientos y plan de sprints: [docs/requerimientos.md](docs/requerimientos.md)
+- Novedades por confirmar: [docs/novedades.md](docs/novedades.md)
+
+## Requisitos
+
+- Node.js 24 LTS
+- Docker Desktop (para PostgreSQL, Azurite, Mailpit y Matomo)
+
+## Desarrollo local
 
 ```bash
+npm install
+cp .env.example .env
+docker compose up -d postgres azurite mailpit matomo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Servicio | Dirección | Equivale en Azure a |
+| --- | --- | --- |
+| Portal | http://localhost:3000 | App Service |
+| PostgreSQL | localhost:5432 | PostgreSQL Flexible Server |
+| Azurite (Blob) | http://localhost:10000 | Blob Storage |
+| Mailpit | http://localhost:8025 | Communication Services (Email) |
+| Matomo | http://localhost:8080 | Matomo en App Service |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Todo el entorno, incluida la imagen de producción del portal:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+docker compose up --build
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Script | Uso |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo. El catálogo de componentes está en `/componentes` |
+| `npm run build` | Compilación de producción (`standalone`) |
+| `npm run start:local` | Ejecuta la compilación standalone como en Docker |
+| `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
+| `npm run typecheck` / `npm run lint` | Tipos y lint |
+| `npm run test:e2e` | Pruebas de S0 (medidas A2, accesibilidad axe, 404), contra la compilación de producción |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuración
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todas las variables se leen y validan en `src/config/index.ts`. En local vienen de `.env`; en Azure son App Settings, con los secretos como referencias de Key Vault (`@Microsoft.KeyVault(SecretUri=...)`). `/api/salud` es la sonda de salud de Docker y App Service.
 
-## Deploy on Vercel
+## Estructura
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/app/(sitio)/        Portal público (layout, inicio, 404 de sección, catálogo de componentes)
+src/app/global-not-found.tsx   404 de toda ruta inexistente
+src/components/sdd/     Componentes del Sistema de Diseño Dominicano
+src/contenido/sitio.ts  Datos institucionales, menú y enlaces (pasan a Payload en S1)
+src/config/             Capa única de configuración
+public/brand/           Activos de marca (marcadores de posición hasta recibir el kit)
+```
