@@ -3,6 +3,7 @@
 Portal institucional de la Corporación de Fomento de la Industria Hotelera y Desarrollo del Turismo (CORPHOTELS), conforme a la NORTIC A2:2023.
 
 - Requerimientos y plan de sprints: [docs/requerimientos.md](docs/requerimientos.md)
+- Requisitos de salida a producción: [docs/salida-a-produccion.md](docs/salida-a-produccion.md)
 - Novedades por confirmar: [docs/novedades.md](docs/novedades.md)
 - Registro del CMS en Entra ID: [docs/entra-id.md](docs/entra-id.md)
 - Créditos de licencias de código abierto: [LICENCIAS-TERCEROS.md](LICENCIAS-TERCEROS.md)
@@ -50,6 +51,7 @@ docker compose up --build
 | `npm run test:e2e` | Pruebas de S0 a S3 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
+| `npm run fichas-pendientes` | Lista los servicios publicados sin ficha A5 completa; falla si hay alguno (paso obligatorio antes de producción) |
 | `npm run limpiar-pruebas` | Borra del CMS el contenido creado por las pruebas (se ejecuta al terminar `test:e2e`) |
 
 ## Gestor de contenidos (Payload CMS)

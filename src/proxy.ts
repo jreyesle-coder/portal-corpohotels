@@ -17,8 +17,11 @@ const ARCHIVOS_PUBLICOS = /^\/api\/(medios|documentos)\/file\//;
 const CONTENIDO = /^\/(noticias|servicios|sobre-nosotros)\/([^/]+)(\/solicitud)?\/?$/;
 const CONSULTAS: Record<string, string> = {
   noticias: `SELECT 1 FROM noticias WHERE slug = $1 AND _status = 'published' LIMIT 1`,
-  servicios: `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published' LIMIT 1`,
-  "servicios/solicitud": `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published' AND acceso_solicitud_en_linea LIMIT 1`,
+  // En producción (EXIGIR_FICHA_A5_COMPLETA=1) solo existen los servicios con la ficha A5 completa.
+  servicios: `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published'
+    AND (ficha_completa OR $2 = '0') LIMIT 1`,
+  "servicios/solicitud": `SELECT 1 FROM servicios WHERE slug = $1 AND _status = 'published'
+    AND acceso_solicitud_en_linea AND (ficha_completa OR $2 = '0') LIMIT 1`,
   // Solo las páginas cuya sección superior es «Sobre nosotros».
   "sobre-nosotros": `SELECT 1 FROM paginas p JOIN paginas s ON s.id = p.padre_id
     WHERE p.slug = $1 AND p._status = 'published' AND s.slug = 'sobre-nosotros' LIMIT 1`,
@@ -40,7 +43,9 @@ async function existe(seccion: string, slug: string): Promise<boolean> {
   const guardado = cache.get(clave);
   if (guardado && guardado.vence > Date.now()) return guardado.existe;
   try {
-    const r = await pool().query(CONSULTAS[seccion], [slug]);
+    const consulta = CONSULTAS[seccion];
+    const parametros = consulta.includes("$2") ? [slug, process.env.EXIGIR_FICHA_A5_COMPLETA === "1" ? "1" : "0"] : [slug];
+    const r = await pool().query(consulta, parametros);
     const resultado = (r.rowCount ?? 0) > 0;
     if (cache.size > 2000) cache.clear();
     cache.set(clave, { existe: resultado, vence: Date.now() + VIGENCIA_MS });

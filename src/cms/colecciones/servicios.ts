@@ -1,5 +1,6 @@
-import type { CollectionConfig, Field } from "payload";
-import { con, leerPublicado, PUEDEN_EDITAR, PUEDEN_PUBLICAR } from "../acceso";
+import { APIError, type Access, type CollectionConfig, type Field, type Where } from "payload";
+import { obtenerConfigCms } from "@/config";
+import { con, PUEDEN_EDITAR, PUEDEN_PUBLICAR, ROLES, tieneRol } from "../acceso";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
 import { campoSeo, campoSlug } from "../campos";
 import { controlPublicacion } from "../flujo-editorial";
@@ -7,11 +8,19 @@ import { controlPublicacion } from "../flujo-editorial";
 /**
  * Ficha de servicio con los 15 campos de la NORTIC A5:2019, sección 2.02.1 (A2 4.02.b.i).
  *
- * Decisión de TIC (2026-10-03): mientras las áreas completan las fichas, un servicio puede
- * publicarse solo con nombre y descripción, como en el portal actual. El campo «Ficha A5
- * completa» lo calcula el CMS y la preauditoría de S9 exige que todos los publicados la tengan
- * (novedad N-20).
+ * Decisión de TIC (2026-10-03): en desarrollo y QA un servicio puede publicarse solo con nombre y
+ * descripción, como en el portal actual. En producción (EXIGIR_FICHA_A5_COMPLETA=1) no se puede
+ * publicar sin la ficha completa y el portal no muestra los incompletos. El despliegue a
+ * producción se detiene si `npm run fichas-pendientes` encuentra alguno (novedad N-20).
  */
+const exigirFicha = () => obtenerConfigCms().EXIGIR_FICHA_A5_COMPLETA === "1";
+
+/** El público solo ve lo publicado y, en producción, solo con la ficha completa. */
+const leerServicios: Access = ({ req }) => {
+  if (tieneRol(req.user, ...ROLES)) return true;
+  const publicado: Where = { _status: { equals: "published" } };
+  return exigirFicha() ? { and: [publicado, { fichaCompleta: { equals: true } }] } : publicado;
+};
 export const CANALES = [
   { label: "En línea (portal web)", value: "en-linea" },
   { label: "Presencial", value: "presencial" },
@@ -67,7 +76,7 @@ export const Servicios: CollectionConfig = {
   versions: { drafts: { schedulePublish: false }, maxPerDoc: 50 },
   defaultSort: "nombre",
   access: {
-    read: leerPublicado,
+    read: leerServicios,
     create: con(...PUEDEN_EDITAR),
     update: con(...PUEDEN_EDITAR),
     delete: con(...PUEDEN_PUBLICAR),
@@ -77,6 +86,9 @@ export const Servicios: CollectionConfig = {
       controlPublicacion,
       ({ data, originalDoc }) => {
         const faltan = camposFaltantes({ ...(originalDoc ?? {}), ...data } as DatosServicio);
+        if (exigirFicha() && data._status === "published" && faltan.length > 0) {
+          throw new APIError(`No se puede publicar sin la ficha A5 completa. Falta: ${faltan.join(", ")}.`, 400, undefined, true);
+        }
         return { ...data, fichaCompleta: faltan.length === 0, camposPendientes: faltan.join(", ") };
       },
     ],

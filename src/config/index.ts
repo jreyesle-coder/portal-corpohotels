@@ -44,6 +44,12 @@ const esquema = z.object({
     .string()
     .refine((v) => Buffer.from(v, "base64").length === 32, "32 bytes en base64"),
 
+  /**
+   * "1" en producción: ningún servicio se publica ni se muestra sin la ficha A5 completa
+   * (A2 4.02.b). "0" en desarrollo y QA mientras las áreas completan las fichas (decisión de TIC).
+   */
+  EXIGIR_FICHA_A5_COMPLETA: z.enum(["0", "1"]).default("0"),
+
   /** Envíos de formularios permitidos por IP cada 10 minutos (antispam; el WAF complementa). */
   LIMITE_ENVIOS_POR_IP: z.coerce.number().int().positive().default(5),
 
