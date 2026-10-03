@@ -1,4 +1,5 @@
 import { APIError, type Access, type CollectionBeforeChangeHook, type CollectionConfig, type Where } from "payload";
+import { OPCIONES_DESTINO, PERIODOS } from "@/contenido/transparencia";
 import { tieneRol, todos } from "../acceso";
 import { normalizarNombreArchivo, TIPOS_DOCUMENTO } from "../archivos";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
@@ -6,7 +7,8 @@ import { auditarCambios, auditarEliminacion } from "../bitacora";
 /**
  * Gestor documental. Cada descarga muestra descripción, tamaño, fecha de creación y tipo
  * (A2 2.01.b.xiii): la descripción y la fecha se capturan aquí; tamaño y tipo los calcula el CMS.
- * Área institucional: editores y publicadores. Área de transparencia: la OAI (S4).
+ * Área institucional: editores y publicadores. Área de transparencia: la OAI, que clasifica cada
+ * documento por sección, año y periodo (A2 4.03; publicación periódica por categoría y año).
  */
 const areaPermitida = (usuario: unknown): Where | boolean => {
   if (tieneRol(usuario, "publicador", "administrador")) return true;
@@ -71,7 +73,8 @@ export const Documentos: CollectionConfig = {
       label: "Área",
       type: "select",
       required: true,
-      defaultValue: "institucional",
+      // La OAI solo carga en transparencia: el formulario ya lo trae elegido.
+      defaultValue: ({ user }) => (tieneRol(user, "oai") && !tieneRol(user, "editor", "publicador", "administrador") ? "transparencia" : "institucional"),
       options: [
         { label: "Institucional", value: "institucional" },
         { label: "Transparencia", value: "transparencia" },
@@ -89,7 +92,47 @@ export const Documentos: CollectionConfig = {
         { label: "Marco legal", value: "marco-legal" },
         { label: "Organigrama", value: "organigrama" },
       ],
-      admin: { position: "sidebar" },
+      admin: { position: "sidebar", condition: (datos) => datos?.area !== "transparencia" },
+    },
+    {
+      name: "seccionTransparencia",
+      label: "Sección de transparencia",
+      type: "select",
+      index: true,
+      options: OPCIONES_DESTINO,
+      admin: {
+        condition: (datos) => datos?.area === "transparencia",
+        description: "Sección o subsección del menú de transparencia donde se publica (Resolución DIGEIG 002-2021).",
+      },
+      validate: (valor: unknown, { siblingData }: { siblingData: Record<string, unknown> }) =>
+        siblingData?.area !== "transparencia" || valor ? true : "Indique la sección de transparencia.",
+    },
+    {
+      type: "row",
+      admin: { condition: (datos) => datos?.area === "transparencia" },
+      fields: [
+        {
+          name: "anio",
+          label: "Año",
+          type: "number",
+          min: 1990,
+          max: 2100,
+          index: true,
+          defaultValue: () => new Date().getFullYear(),
+          admin: { description: "Año al que corresponde la información.", width: "50%" },
+          validate: (valor: unknown, { siblingData }: { siblingData: Record<string, unknown> }) =>
+            siblingData?.area !== "transparencia" || (typeof valor === "number" && valor >= 1990 && valor <= 2100)
+              ? true
+              : "Indique el año (1990-2100).",
+        },
+        {
+          name: "periodo",
+          label: "Periodo",
+          type: "select",
+          options: [...PERIODOS],
+          admin: { description: "Mes, trimestre o anual, si la publicación es periódica.", width: "50%" },
+        },
+      ],
     },
     {
       name: "tipoNorma",

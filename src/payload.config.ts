@@ -19,6 +19,7 @@ import { Paginas } from "@/cms/colecciones/paginas";
 import { PreguntasFrecuentes } from "@/cms/colecciones/preguntas";
 import { Servicios } from "@/cms/colecciones/servicios";
 import { Categorias, Etiquetas } from "@/cms/colecciones/taxonomias";
+import { TextosTransparencia } from "@/cms/colecciones/textos-transparencia";
 import { Usuarios } from "@/cms/colecciones/usuarios";
 import { Institucion } from "@/cms/globales/institucion";
 import { RUTA_PANEL } from "@/cms/rutas";
@@ -64,6 +65,7 @@ export default buildConfig({
     Menus,
     Medios,
     Documentos,
+    TextosTransparencia,
     Casos,
     Encuestas,
     Usuarios,

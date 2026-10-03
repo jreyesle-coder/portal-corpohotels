@@ -12,5 +12,7 @@ Condiciones que deben cumplirse antes de desplegar en producción (S8) y del cor
 | 6 | Contenido heredado revisado por cada dueño (errores de redacción, texto de la CGR, política de privacidad conforme a la Ley 172-13) | Informe de S5 firmado por los dueños | N-16, N-17 |
 | 7 | Tiempos de respuesta de contacto y sugerencias confirmados | «Datos institucionales» del CMS | N-21 |
 | 8 | Clave `CLAVE_CIFRADO_DATOS` en Key Vault con respaldo y procedimiento de rotación | Entregables del proveedor | N-24 |
+| 9 | Ninguna sección de transparencia sin contenido: documentos, texto de la OAI o constancia de «no aplica» | `npm run transparencia-pendientes` debe terminar sin pendientes; paso obligatorio del pipeline de despliegue a producción | A2 4.01.h, 4.03; N-28 |
+| 10 | Estructura de transparencia confirmada por la OAI con la resolución DIGEIG vigente y las inconsistencias de la A2 aclaradas | Acta o correo de la OAI | N-26, N-27 |
 
 Esta lista se completa en cada sprint y se verifica en la preauditoría de S9 junto con la matriz de [requerimientos.md](requerimientos.md).

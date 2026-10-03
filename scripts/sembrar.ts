@@ -136,11 +136,10 @@ await guardar("paginas", "slug", "marco-legal", {
   padre: sobreNosotros.id,
   contenido: lexical(semilla.marcoLegal.html),
 });
-await guardar("paginas", "slug", "transparencia", {
-  titulo: semilla.transparencia.titulo,
-  slug: "transparencia",
-  contenido: lexical(semilla.transparencia.html),
-});
+// Desde S4, /transparencia tiene su propia estructura (src/contenido/transparencia.ts); se retira
+// la página provisional que enlazaba al portal de transparencia anterior (novedad N-18).
+const provisional = await buscar("paginas", "slug", "transparencia");
+if (provisional) await payload.delete({ collection: "paginas", id: provisional.id, ...sistema });
 for (const p of semilla.paginas) {
   await guardar("paginas", "slug", p.slug, {
     titulo: p.titulo,
@@ -151,7 +150,7 @@ for (const p of semilla.paginas) {
     documentos: p.documentos.map((c) => documentos.get(c)).filter(Boolean),
   });
 }
-console.log(`✓ ${semilla.paginas.length + 3} páginas`);
+console.log(`✓ ${semilla.paginas.length + 2} páginas`);
 
 // Se publican todos con la información del portal actual (decisión de TIC); los que no tienen la
 // ficha A5 completa quedan marcados en el CMS y se completan antes de producción (novedad N-20).

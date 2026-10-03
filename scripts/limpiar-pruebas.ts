@@ -13,7 +13,14 @@ const borrar = async (collection: "noticias" | "documentos" | "medios" | "catego
   borrados[collection] = r.docs.length;
 };
 await borrar("noticias", { titulo: { like: "Noticia de prueba" } });
-await borrar("documentos", { or: [{ titulo: { like: "Memoria institucional " } }, { titulo: { equals: "Otro" } }] });
+await borrar("documentos", {
+  or: [{ titulo: { like: "Memoria institucional " } }, { titulo: { like: "Prueba transparencia " } }, { titulo: { equals: "Otro" } }],
+});
+// Textos de transparencia de las pruebas (el contenido es JSON de Lexical: se revisa ya leído).
+const textos = await payload.find({ collection: "textos-transparencia", pagination: false, depth: 0, ...sistema });
+const deTextos = textos.docs.filter((t) => JSON.stringify(t.contenido).includes("prueba automatizada"));
+for (const t of deTextos) await payload.delete({ collection: "textos-transparencia", id: t.id, ...sistema });
+borrados["textos-transparencia"] = deTextos.length;
 await borrar("medios", { alt: { equals: "Fachada de la sede de CORPHOTELS" } });
 await borrar("categorias", { nombre: { like: "Categoría " } });
 // Casos y encuestas de las pruebas: los datos están cifrados, así que se filtran ya descifrados.

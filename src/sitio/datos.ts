@@ -173,3 +173,53 @@ export function comoMedio(valor: unknown): Medio | null {
   ) as Medio["sizes"];
   return { ...m, url: rutaPropia(m.url), sizes };
 }
+
+/** Documentos de transparencia de una sección o subsección (A2 4.03). */
+export const documentosTransparencia = cache(async (destino: string) =>
+  (
+    await (await cms()).find({
+      collection: "documentos",
+      where: { area: { equals: "transparencia" }, seccionTransparencia: { equals: destino } },
+      sort: ["-anio", "-fechaCreacion"],
+      limit: 1000,
+      ...publico,
+    })
+  ).docs,
+);
+
+/** Cantidad de documentos por sección de transparencia, para los menús de archivos. */
+export const conteoTransparencia = cache(async (): Promise<Map<string, number>> => {
+  const { docs } = await (await cms()).find({
+    collection: "documentos",
+    where: { area: { equals: "transparencia" } },
+    select: { seccionTransparencia: true },
+    pagination: false,
+    ...publico,
+    depth: 0,
+  });
+  const conteo = new Map<string, number>();
+  for (const d of docs) if (d.seccionTransparencia) conteo.set(d.seccionTransparencia, (conteo.get(d.seccionTransparencia) ?? 0) + 1);
+  return conteo;
+});
+
+export const recientesTransparencia = cache(async (limite = 5) =>
+  (
+    await (await cms()).find({
+      collection: "documentos",
+      where: { area: { equals: "transparencia" } },
+      sort: "-createdAt",
+      limit: limite,
+      ...publico,
+    })
+  ).docs,
+);
+
+export const textoTransparencia = cache(async (seccion: string) => {
+  const { docs } = await (await cms()).find({
+    collection: "textos-transparencia",
+    where: { seccion: { equals: seccion } },
+    limit: 1,
+    ...publico,
+  });
+  return docs[0] ?? null;
+});

@@ -48,10 +48,11 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 a S3 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
+| `npm run test:e2e` | Pruebas de S0 a S4 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
 | `npm run fichas-pendientes` | Lista los servicios publicados sin ficha A5 completa; falla si hay alguno (paso obligatorio antes de producción) |
+| `npm run transparencia-pendientes` | Lista las secciones de transparencia sin contenido; falla si hay alguna (paso obligatorio antes de producción) |
 | `npm run limpiar-pruebas` | Borra del CMS el contenido creado por las pruebas (se ejecuta al terminar `test:e2e`) |
 
 ## Gestor de contenidos (Payload CMS)
@@ -69,6 +70,12 @@ docker compose up --build
 - Cada envío crea un caso `CPH-<año>-<consecutivo>` con los datos personales cifrados (AES-256-GCM, `CLAVE_CIFRADO_DATOS`) y envía correo al ciudadano y al buzón de atención (en local, bandeja de Mailpit: http://localhost:8025).
 - Los casos y la encuesta de satisfacción se consultan en el panel, grupo «Atención ciudadana».
 
+## Transparencia (S4)
+
+- `/transparencia` con las 19 secciones de la A2 4.03 (Resolución DIGEIG 002-2021): menú vertical expandible a la izquierda en escritorio y cinco grupos más Contactos en móvil (A2 4.04). La estructura está en `src/contenido/transparencia.ts`; no se edita en el CMS porque la norma fija orden y nombres.
+- La OAI (rol OAI) carga los documentos en el panel, grupo «Archivos» › Documentos, con área «Transparencia», sección, año y periodo. Las secciones de publicación periódica se muestran por año, el más reciente primero.
+- Los textos de cada sección (datos del RAI, miembros de la CEP, presentación…) se editan en el grupo «Transparencia» › Textos de transparencia.
+
 ## Configuración
 
 Todas las variables se leen y validan en `src/config/index.ts`. En local vienen de `.env`; en Azure son App Settings, con los secretos como referencias de Key Vault (`@Microsoft.KeyVault(SecretUri=...)`). `/api/salud` es la sonda de salud de Docker y App Service.
@@ -80,6 +87,7 @@ src/app/(sitio)/        Portal público (layout, inicio, 404 de sección, catál
 src/app/global-not-found.tsx   404 de toda ruta inexistente
 src/components/sdd/     Componentes del Sistema de Diseño Dominicano
 src/contenido/sitio.ts  Respaldo de datos institucionales y menú (el portal los lee del CMS)
+src/contenido/transparencia.ts  Estructura fija de la sección de transparencia (A2 4.03 y 4.04)
 src/sitio/              Lectura del CMS para el portal público y plantilla de páginas
 semillas/               Contenido inicial extraído del portal actual
 src/config/             Capa única de configuración

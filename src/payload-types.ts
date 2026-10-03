@@ -77,6 +77,7 @@ export interface Config {
     menus: Menu;
     medios: Medio;
     documentos: Documento;
+    'textos-transparencia': TextosTransparencia;
     casos: Caso;
     encuestas: Encuesta;
     usuarios: Usuario;
@@ -98,6 +99,7 @@ export interface Config {
     menus: MenusSelect<false> | MenusSelect<true>;
     medios: MediosSelect<false> | MediosSelect<true>;
     documentos: DocumentosSelect<false> | DocumentosSelect<true>;
+    'textos-transparencia': TextosTransparenciaSelect<false> | TextosTransparenciaSelect<true>;
     casos: CasosSelect<false> | CasosSelect<true>;
     encuestas: EncuestasSelect<false> | EncuestasSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
@@ -351,7 +353,101 @@ export interface Documento {
   descripcion: string;
   fechaCreacion: string;
   area: 'institucional' | 'transparencia';
-  seccion: 'general' | 'marco-legal' | 'organigrama';
+  seccion?: ('general' | 'marco-legal' | 'organigrama') | null;
+  /**
+   * Sección o subsección del menú de transparencia donde se publica (Resolución DIGEIG 002-2021).
+   */
+  seccionTransparencia?:
+    | (
+        | 'base-legal/constitucion'
+        | 'base-legal/leyes'
+        | 'base-legal/decretos'
+        | 'base-legal/resoluciones'
+        | 'base-legal/otras-normativas'
+        | 'marco-legal/leyes'
+        | 'marco-legal/decretos'
+        | 'marco-legal/resoluciones'
+        | 'marco-legal/otras-normativas'
+        | 'estructura-organica'
+        | 'oai/derechos'
+        | 'oai/estructura'
+        | 'oai/manual-organizacion'
+        | 'oai/manual-procedimiento'
+        | 'oai/estadisticas'
+        | 'oai/rai'
+        | 'oai/informacion-clasificada'
+        | 'oai/indice-documentos'
+        | 'oai/saip'
+        | 'oai/indice-transparencia'
+        | 'plan-estrategico/planificacion'
+        | 'plan-estrategico/poa'
+        | 'plan-estrategico/memorias'
+        | 'publicaciones'
+        | 'estadisticas'
+        | 'servicios'
+        | 'portal-311/enlace'
+        | 'portal-311/estadisticas'
+        | 'declaracion-jurada'
+        | 'presupuesto/aprobado'
+        | 'presupuesto/ejecucion'
+        | 'recursos-humanos/nomina'
+        | 'recursos-humanos/jubilaciones'
+        | 'recursos-humanos/concursa'
+        | 'programas-asistenciales'
+        | 'compras/registro-proveedor'
+        | 'compras/pacc'
+        | 'compras/licitacion-publica'
+        | 'compras/licitacion-restringida'
+        | 'compras/sorteo-obras'
+        | 'compras/comparaciones-precios'
+        | 'compras/compras-menores'
+        | 'compras/subasta-inversa'
+        | 'compras/debajo-umbral'
+        | 'compras/mipymes'
+        | 'compras/casos-excepcion'
+        | 'compras/estados-cuentas-suplidores'
+        | 'proyectos'
+        | 'finanzas/estados-financieros'
+        | 'finanzas/informes-financieros'
+        | 'finanzas/ingresos-egresos'
+        | 'finanzas/auditorias'
+        | 'finanzas/activos-fijos'
+        | 'finanzas/inventario'
+        | 'datos-abiertos'
+        | 'cep/miembros'
+        | 'cep/compromiso'
+        | 'cep/plan-trabajo'
+        | 'consulta-publica'
+      )
+    | null;
+  /**
+   * Año al que corresponde la información.
+   */
+  anio?: number | null;
+  /**
+   * Mes, trimestre o anual, si la publicación es periódica.
+   */
+  periodo?:
+    | (
+        | 'anual'
+        | 't1'
+        | 't2'
+        | 't3'
+        | 't4'
+        | 'm01'
+        | 'm02'
+        | 'm03'
+        | 'm04'
+        | 'm05'
+        | 'm06'
+        | 'm07'
+        | 'm08'
+        | 'm09'
+        | 'm10'
+        | 'm11'
+        | 'm12'
+      )
+    | null;
   /**
    * El Marco legal se presenta agrupado por tipo y ordenado por fecha (A2 4.02).
    */
@@ -567,6 +663,103 @@ export interface Menu {
   createdAt: string;
 }
 /**
+ * Texto que se muestra arriba de los documentos de una sección de transparencia.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "textos-transparencia".
+ */
+export interface TextosTransparencia {
+  id: number;
+  seccion:
+    | 'inicio'
+    | 'base-legal'
+    | 'marco-legal'
+    | 'oai'
+    | 'plan-estrategico'
+    | 'portal-311'
+    | 'presupuesto'
+    | 'recursos-humanos'
+    | 'compras'
+    | 'finanzas'
+    | 'cep'
+    | 'base-legal/constitucion'
+    | 'base-legal/leyes'
+    | 'base-legal/decretos'
+    | 'base-legal/resoluciones'
+    | 'base-legal/otras-normativas'
+    | 'marco-legal/leyes'
+    | 'marco-legal/decretos'
+    | 'marco-legal/resoluciones'
+    | 'marco-legal/otras-normativas'
+    | 'estructura-organica'
+    | 'oai/derechos'
+    | 'oai/estructura'
+    | 'oai/manual-organizacion'
+    | 'oai/manual-procedimiento'
+    | 'oai/estadisticas'
+    | 'oai/rai'
+    | 'oai/informacion-clasificada'
+    | 'oai/indice-documentos'
+    | 'oai/saip'
+    | 'oai/indice-transparencia'
+    | 'plan-estrategico/planificacion'
+    | 'plan-estrategico/poa'
+    | 'plan-estrategico/memorias'
+    | 'publicaciones'
+    | 'estadisticas'
+    | 'servicios'
+    | 'portal-311/enlace'
+    | 'portal-311/estadisticas'
+    | 'declaracion-jurada'
+    | 'presupuesto/aprobado'
+    | 'presupuesto/ejecucion'
+    | 'recursos-humanos/nomina'
+    | 'recursos-humanos/jubilaciones'
+    | 'recursos-humanos/concursa'
+    | 'programas-asistenciales'
+    | 'compras/registro-proveedor'
+    | 'compras/pacc'
+    | 'compras/licitacion-publica'
+    | 'compras/licitacion-restringida'
+    | 'compras/sorteo-obras'
+    | 'compras/comparaciones-precios'
+    | 'compras/compras-menores'
+    | 'compras/subasta-inversa'
+    | 'compras/debajo-umbral'
+    | 'compras/mipymes'
+    | 'compras/casos-excepcion'
+    | 'compras/estados-cuentas-suplidores'
+    | 'proyectos'
+    | 'finanzas/estados-financieros'
+    | 'finanzas/informes-financieros'
+    | 'finanzas/ingresos-egresos'
+    | 'finanzas/auditorias'
+    | 'finanzas/activos-fijos'
+    | 'finanzas/inventario'
+    | 'datos-abiertos'
+    | 'cep/miembros'
+    | 'cep/compromiso'
+    | 'cep/plan-trabajo'
+    | 'consulta-publica';
+  contenido: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Contactos, sugerencias y solicitudes recibidos por el portal. Los datos personales están cifrados.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -727,6 +920,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'documentos';
         value: number | Documento;
+      } | null)
+    | ({
+        relationTo: 'textos-transparencia';
+        value: number | TextosTransparencia;
       } | null)
     | ({
         relationTo: 'casos';
@@ -1035,6 +1232,9 @@ export interface DocumentosSelect<T extends boolean = true> {
   fechaCreacion?: T;
   area?: T;
   seccion?: T;
+  seccionTransparencia?: T;
+  anio?: T;
+  periodo?: T;
   tipoNorma?: T;
   categoria?: T;
   _objectKey?: T;
@@ -1049,6 +1249,16 @@ export interface DocumentosSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "textos-transparencia_select".
+ */
+export interface TextosTransparenciaSelect<T extends boolean = true> {
+  seccion?: T;
+  contenido?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

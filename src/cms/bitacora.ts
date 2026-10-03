@@ -51,7 +51,7 @@ export async function registrarEvento(payload: Payload, entrada: EntradaBitacora
 
 function tituloDe(doc: Record<string, unknown>): string | undefined {
   // Los casos se identifican por su número: su nombre es un dato personal cifrado y no va a la bitácora.
-  const t = doc.numero ?? doc.titulo ?? doc.nombre ?? doc.filename ?? doc.email;
+  const t = doc.numero ?? doc.titulo ?? doc.nombre ?? doc.filename ?? doc.email ?? doc.seccion;
   return typeof t === "string" ? t : undefined;
 }
 

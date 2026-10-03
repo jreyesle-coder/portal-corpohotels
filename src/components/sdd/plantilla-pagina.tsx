@@ -13,6 +13,7 @@ export function PlantillaPagina({
   titulo,
   migas,
   seccion,
+  lateral,
   urlPdf,
   antesDelTitulo,
   children,
@@ -20,6 +21,8 @@ export function PlantillaPagina({
   titulo: string;
   migas: Miga[];
   seccion?: { titulo: string; enlaces: EnlaceSeccion[] };
+  /** Panel izquierdo propio, en lugar de la lista de `seccion` (menú vertical de transparencia). */
+  lateral?: React.ReactNode;
   urlPdf?: string;
   antesDelTitulo?: React.ReactNode;
   children: React.ReactNode;
@@ -27,7 +30,10 @@ export function PlantillaPagina({
   return (
     <>
       <RastroNavegacion migas={migas} />
-      <div className={`contenedor grid gap-8 py-8 ${seccion ? "esc:grid-cols-[15rem_1fr] esc:gap-10" : ""}`}>
+      <div className={`contenedor grid gap-8 py-8 ${
+          lateral ? "esc:grid-cols-[18rem_1fr] esc:gap-10" : seccion ? "esc:grid-cols-[15rem_1fr] esc:gap-10" : ""
+        }`}>
+        {lateral}
         {seccion && (
           <nav aria-label={`Secciones de ${seccion.titulo}`} className="order-2 esc:order-none print:hidden">
             <h2 className="mb-2 text-sm font-semibold tracking-wide text-texto-suave uppercase">{seccion.titulo}</h2>

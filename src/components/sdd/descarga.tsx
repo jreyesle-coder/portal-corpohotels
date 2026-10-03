@@ -9,7 +9,7 @@ const fecha = (iso?: string | null) =>
  * Descarga de documento con descripción, tamaño, fecha de creación y tipo (A2 2.01.b.xiii);
  * se abre en pestaña nueva (A2 2.01.g).
  */
-export function Descarga({ documento }: { documento: Documento }) {
+export function Descarga({ documento, periodo }: { documento: Documento; periodo?: string | null }) {
   const tipo = tipoLegible(documento.mimeType);
   const tamano = tamanoLegible(documento.filesize);
   return (
@@ -19,6 +19,14 @@ export function Descarga({ documento }: { documento: Documento }) {
         {documento.descripcion}
       </p>
       <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
+        {periodo && (
+          <>
+            <dt className="font-semibold">Periodo:</dt>
+            <dd data-meta="periodo">
+              {periodo} {documento.anio}
+            </dd>
+          </>
+        )}
         <dt className="font-semibold">Tipo:</dt>
         <dd data-meta="tipo">{tipo}</dd>
         <dt className="font-semibold">Tamaño:</dt>

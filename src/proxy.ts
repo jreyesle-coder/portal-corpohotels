@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import pg from "pg";
+import { RUTAS_TRANSPARENCIA } from "./contenido/transparencia";
 
 /**
  * Antes de que la solicitud llegue al portal:
@@ -8,7 +9,8 @@ import pg from "pg";
  *    (PANEL_HABILITADO=0) no existen el panel, el inicio de sesión ni la API de escritura: solo se
  *    sirven los archivos de imágenes y documentos. El panel corre como app aparte, sin acceso público.
  *
- * 2. Contenido inexistente (noticias, servicios y páginas de «Sobre nosotros»): si el slug no está
+ * 2. Contenido inexistente (noticias, servicios, páginas de «Sobre nosotros» y secciones de
+ *    transparencia): si el slug no está
  *    publicado, se reescribe a una ruta inexistente para que responda el 404 institucional
  *    renderizado en el servidor (A2 2.01.b.xii). En Next 16, notFound() dentro de una página
  *    responde 404 pero el HTML lo dibuja el navegador; la documentación recomienda esta verificación.
@@ -66,6 +68,11 @@ export async function proxy(request: NextRequest) {
     return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
   }
 
+  // Las secciones de transparencia son fijas por norma: se validan sin consultar la base de datos.
+  if (pathname.startsWith("/transparencia/") && !RUTAS_TRANSPARENCIA.has(pathname.replace(/\/$/, ""))) {
+    return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+  }
+
   const coincidencia = CONTENIDO.exec(pathname);
   if (coincidencia && !PAGINAS_FIJAS.has(pathname.replace(/\/$/, ""))) {
     const [, base, slug, solicitud] = coincidencia;
@@ -87,5 +94,6 @@ export const config = {
     "/servicios/:slug",
     "/servicios/:slug/solicitud",
     "/sobre-nosotros/:slug",
+    "/transparencia/:path+",
   ],
 };
