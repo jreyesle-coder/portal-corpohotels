@@ -4,6 +4,8 @@ Portal institucional de la Corporación de Fomento de la Industria Hotelera y De
 
 - Requerimientos y plan de sprints: [docs/requerimientos.md](docs/requerimientos.md)
 - Novedades por confirmar: [docs/novedades.md](docs/novedades.md)
+- Registro del CMS en Entra ID: [docs/entra-id.md](docs/entra-id.md)
+- Créditos de licencias de código abierto: [LICENCIAS-TERCEROS.md](LICENCIAS-TERCEROS.md)
 
 ## Requisitos
 
@@ -15,7 +17,8 @@ Portal institucional de la Corporación de Fomento de la Industria Hotelera y De
 ```bash
 npm install
 cp .env.example .env
-docker compose up -d postgres azurite mailpit matomo
+docker compose up -d postgres azurite mailpit matomo entra-simulado
+npm run migrar
 npm run dev
 ```
 
@@ -26,6 +29,7 @@ npm run dev
 | Azurite (Blob) | http://localhost:10000 | Blob Storage |
 | Mailpit | http://localhost:8025 | Communication Services (Email) |
 | Matomo | http://localhost:8080 | Matomo en App Service |
+| Simulador de Entra ID | http://localhost:8090/entra | Entra ID corporativo |
 
 Todo el entorno, incluida la imagen de producción del portal:
 
@@ -42,7 +46,17 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 (medidas A2, accesibilidad axe, 404), contra la compilación de producción |
+| `npm run test:e2e` | Pruebas de S0 y S1 contra la compilación de producción (requiere los servicios de Docker Compose) |
+| `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
+
+## Gestor de contenidos (Payload CMS)
+
+- Panel: `/gestion` (con `npm run dev`, http://localhost:3004/gestion). Solo se entra con Entra ID y doble factor; en local, el simulador muestra un formulario donde se escriben el usuario y sus reclamos, por ejemplo:
+  `{"oid":"u1","email":"editor@corphotels.gob.do","name":"Editor","roles":["Editor"],"amr":["pwd","mfa"]}`
+- Roles (roles de aplicación en Entra): Editor, Publicador, OAI, Administrador, Auditor. Ver `src/cms/acceso.ts`.
+- Colecciones: noticias, páginas (con borradores y aprobación), categorías, etiquetas, menús, imágenes, documentos, usuarios y bitácora (append-only, protegida también en PostgreSQL).
+- El esquema cambia solo por migraciones: `npm run migracion:crear -- <nombre>` y `npm run migrar`. En producción se aplican al arrancar.
+- Tras cambiar colecciones: `npm run generar` (tipos e import map del panel).
 
 ## Configuración
 
@@ -54,7 +68,11 @@ Todas las variables se leen y validan en `src/config/index.ts`. En local vienen 
 src/app/(sitio)/        Portal público (layout, inicio, 404 de sección, catálogo de componentes)
 src/app/global-not-found.tsx   404 de toda ruta inexistente
 src/components/sdd/     Componentes del Sistema de Diseño Dominicano
-src/contenido/sitio.ts  Datos institucionales, menú y enlaces (pasan a Payload en S1)
+src/contenido/sitio.ts  Datos institucionales, menú y enlaces (el portal los leerá del CMS en S2)
 src/config/             Capa única de configuración
+src/cms/                Colecciones, roles, flujo editorial y bitácora del CMS
+src/auth/               Inicio de sesión con Entra ID (OIDC) y sesión del CMS
+src/migraciones/        Migraciones de la base de datos
+src/proxy.ts            Bloquea panel y API de escritura en la app pública (PANEL_HABILITADO=0)
 public/brand/           Activos de marca (marcadores de posición hasta recibir el kit)
 ```

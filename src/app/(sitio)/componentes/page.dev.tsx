@@ -3,14 +3,20 @@ import Link from "next/link";
 import { Alerta, Boton, Campo, Destacado, Prosa } from "@/components/sdd/base";
 import { EnlaceExterno } from "@/components/sdd/enlace-externo";
 import { RastroNavegacion } from "@/components/sdd/rastro-navegacion";
+import { Descarga } from "@/components/sdd/descarga";
+import config from "@payload-config";
+import { getPayload } from "payload";
 
 export const metadata: Metadata = { title: "Catálogo de componentes", robots: { index: false } };
+export const dynamic = "force-dynamic";
 
 /**
  * Catálogo de componentes SDD (A2 1.06.a.iii) y de la división de contenido en cinco paneles
  * (A2 3.02.e). Solo existe en desarrollo: la extensión .dev.tsx se excluye al compilar (A2 4.01.h).
  */
-export default function Componentes() {
+export default async function Componentes() {
+  const payload = await getPayload({ config });
+  const { docs: documentos } = await payload.find({ collection: "documentos", sort: "-createdAt", limit: 3, depth: 0 });
   return (
     <>
       <RastroNavegacion migas={[{ etiqueta: "Catálogo de componentes" }]} />
@@ -18,7 +24,7 @@ export default function Componentes() {
         <nav aria-label="Panel izquierdo: secciones internas" className="text-sm">
           <h2 className="mb-2 font-semibold text-titulo">Panel izquierdo</h2>
           <ul className="space-y-1">
-            {["Encabezados y texto", "Botones", "Alertas", "Formularios"].map((s) => (
+            {["Encabezados y texto", "Botones", "Alertas", "Formularios", "Descargas"].map((s) => (
               <li key={s}>
                 <a href={`#${s.toLowerCase().replaceAll(" ", "-")}`} className="text-primario underline underline-offset-2">
                   {s}
@@ -85,6 +91,15 @@ export default function Componentes() {
               defaultValue="correo-invalido"
               autoComplete="email"
             />
+          </section>
+
+          <section id="descargas" aria-labelledby="t-descargas" className="max-w-3xl space-y-3">
+            <h2 id="t-descargas" className="text-2xl font-semibold text-titulo">Descargas</h2>
+            {documentos.length === 0 ? (
+              <p>Aún no hay documentos cargados en el CMS.</p>
+            ) : (
+              documentos.map((d) => <Descarga key={d.id} documento={d} />)
+            )}
           </section>
         </div>
 

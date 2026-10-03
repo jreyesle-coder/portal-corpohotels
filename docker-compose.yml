@@ -1,6 +1,8 @@
 # Entorno local con paridad Azure (ver docs/requerimientos.md, "Paridad entre local y Azure").
 #   docker compose up --build            → todo, incluido el portal en http://localhost:3000
-#   docker compose up -d postgres azurite mailpit matomo   → solo servicios, para `npm run dev`
+#   docker compose up -d postgres azurite mailpit matomo entra-simulado   → solo servicios, para `npm run dev`
+# El contenedor "portal" corre como el portal público de producción (PANEL_HABILITADO=0): sin panel
+# del CMS ni inicio de sesión. El panel se usa con `npm run dev`, igual que la app privada en Azure.
 # Credenciales solo de desarrollo; no reutilizar en ningún otro entorno.
 
 name: portal-corphotels
@@ -20,6 +22,12 @@ services:
       SMTP_FROM: no-responder@corphotels.gob.do
       MATOMO_URL: http://localhost:8080
       MATOMO_SITE_ID: "1"
+      AZURE_STORAGE_BASE_URL: http://localhost:10000/devstoreaccount1
+      PAYLOAD_SECRET: clave-de-desarrollo-solo-para-docker-compose-local
+      PANEL_HABILITADO: "0"
+      OIDC_ISSUER: http://entra-simulado:8080/entra
+      OIDC_CLIENT_ID: cms-corphotels-local
+      OIDC_CLIENT_SECRET: simulado
     depends_on:
       postgres:
         condition: service_healthy
@@ -48,7 +56,8 @@ services:
   # Azure Blob Storage.
   azurite:
     image: mcr.microsoft.com/azure-storage/azurite
-    command: azurite-blob --blobHost 0.0.0.0 --blobPort 10000 --location /data --loose
+    # --skipApiVersionCheck: el SDK de Azure suele usar una versión de API más nueva que Azurite.
+    command: azurite-blob --blobHost 0.0.0.0 --blobPort 10000 --location /data --loose --skipApiVersionCheck
     ports:
       - "10000:10000"
     volumes:
@@ -60,6 +69,15 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
+
+  # Simulador de Entra ID (OpenID Connect) para desarrollo y pruebas: formulario donde se indican
+  # usuario, roles y métodos de autenticación (amr). En Azure se usa Entra ID corporativo.
+  entra-simulado:
+    image: ghcr.io/navikt/mock-oauth2-server:3.0.1
+    ports:
+      - "8090:8080"
+    environment:
+      JSON_CONFIG: '{"interactiveLogin": true}'
 
   # Matomo autohospedado (A2 5.04.3): asistente en http://localhost:8080.
   # Matomo requiere MySQL/MariaDB, no PostgreSQL (novedad N-03).

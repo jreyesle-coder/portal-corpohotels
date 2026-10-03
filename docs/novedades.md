@@ -14,9 +14,15 @@ Ambigüedades y hallazgos detectados durante el desarrollo. No se resuelven a cr
 | N-08 | S0 | Ubicación de la herramienta de tamaño de texto y contraste (A2 7.01.v): la norma no la ubica y la cabecera "solo debe contener" sus elementos | Botón flotante abajo a la derecha que abre un panel no modal | OGTIC | S7 |
 | N-09 | S0 | Encabezado de contactos del pie: la norma dice "Contactos" en el texto y "Contáctanos" en las figuras 3.10–3.13 | "Contáctanos", igual que las figuras y el sdd-lib | OGTIC | S2 |
 | N-10 | S0 | Color del identificador y del pie: el sdd-lib usa `#003876`; el documento fija `#0F539C` como primario | Identificador y pie en `#003876` (SDD), componentes en `#0F539C` | OGTIC | S2 |
+| N-11 | S1 | Reclamo que prueba el doble factor en Entra ID: el token v2.0 puede no traer `amr`; el método previsto es el contexto de autenticación `c1` de acceso condicional (`acrs`) | `OIDC_VERIFICACION_MFA` admite `amr` (simulador) y `acrs:c1` (Entra real); se confirma en la primera prueba con una cuenta institucional | Administrador de Entra ID | S1 (prueba real) |
+| N-12 | S1 | Licencia Entra ID P1 para acceso condicional (requisito del MFA obligatorio y de la directiva del CMS) | Documentado en `docs/entra-id.md` | TIC / DAF | S1 (prueba real) |
+| N-13 | S1 | Equivalente de "ocultar escritorio" (A2 5.02.a): el panel está en `/gestion` (no la ruta predeterminada) y la app pública no lo sirve (`PANEL_HABILITADO=0`) | Riesgo 7 del documento: proponer a OGTIC | OGTIC | S8 |
+| N-14 | S1 | `sharp` (procesamiento de imágenes) incluye binarios de libvips bajo LGPL-3.0; `busboy` y `streamsearch` no declaran licencia en su `package.json` (su repositorio indica MIT) | Listados en `LICENCIAS-TERCEROS.md` | Jurídica | S9 |
 
 ## Notas técnicas
 
 - **404 dentro de una página (Next 16).** `notFound()` llamado dentro de una página responde con estado 404, pero el HTML lo dibuja el navegador. Las rutas inexistentes sí salen renderizadas en servidor gracias a `src/app/global-not-found.tsx`. En S2, cuando una noticia o un servicio no exista, se resolverá en `proxy` (reescribir a una ruta 404) para mantener el 404 renderizado en servidor.
 - **Catálogo de componentes.** `src/app/(sitio)/componentes/page.dev.tsx` solo se compila en desarrollo, o con `INCLUIR_CATALOGO=1` para las pruebas automáticas.
 - **Dependencias.** `npm audit` reporta 5 vulnerabilidades altas en dependencias de desarrollo (cadena de `braces` vía ESLint). Se tratan en S7 con el análisis de dependencias del pipeline.
+- **Contenedor del portal sin panel.** El contenedor `portal` de Docker Compose corre como la app pública (`PANEL_HABILITADO=0`). El panel del CMS se prueba con `npm run dev`, porque el simulador de Entra entrega direcciones `localhost` que no existen dentro de la red de Docker.
+- **Azurite.** Se arranca con `--skipApiVersionCheck`: el SDK de Azure usa versiones de API más nuevas que las que reconoce Azurite.
