@@ -1,13 +1,12 @@
 # Activos de marca
 
-Los SVG de esta carpeta son **marcadores de posición** (novedad N-01). Copiar aquí los archivos oficiales
-del kit de marca CORPHOTELS con estos mismos nombres y ejecutar `npm run iconos`:
-
-| Archivo | Activo oficial | Uso |
+| Archivo | Origen | Uso |
 | --- | --- | --- |
-| `icono-azul.svg` | Icono (escudo), variante azul | Cabecera opción A (40 px escritorio, 44 px móvil); fuente de favicon e íconos |
-| `icono-blanco.svg` | Icono (escudo), variante blanca | Cabecera opción B; isotipo del pie (56 px) |
-| `gobierno-azul.svg` | Logo Gobierno de la República, azul | Pie en tema claro |
-| `gobierno-blanco.svg` | Logo Gobierno de la República, blanco | Pie en tema oscuro (80 px escritorio, 75 px móvil) |
+| `gobierno-azul.svg`, `gobierno-blanco.svg` | Logo oficial «Gobierno de la República Dominicana», publicado por la OGTIC (`ogtic.gob.do/wp-content/uploads/2026/07/LOGO_GOB_hor_*.svg`), con el margen recortado | Pie: 80 px escritorio, 75 px móvil (A2 3.02.f, 3.04.c) |
+| `icono-azul.png`, `icono-blanco.png` | **Provisional (novedad N-01):** escudo de CORPHOTELS extraído del banner del portal actual (66×102 px de origen) | Cabecera opción A (40 px escritorio, 44 px móvil); isotipo del pie (56 px); fuente de favicon e íconos |
+
+Al recibir el kit de marca oficial, reemplazar los PNG del escudo por los SVG del kit (`icono-azul.svg`,
+`icono-blanco.svg`), actualizar las rutas en `cabecera.tsx`, `pie.tsx`, `cms/componentes/marca.tsx` y
+`scripts/generar-iconos.mjs`, y ejecutar `npm run iconos`.
 
 Los archivos OTF de Futura PT no se suben al repositorio.

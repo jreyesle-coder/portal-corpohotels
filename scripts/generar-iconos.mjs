@@ -8,12 +8,12 @@ import pngToIco from "png-to-ico";
 const raiz = path.resolve(import.meta.dirname, "..");
 const publico = path.join(raiz, "public");
 const destino = path.join(publico, "iconos");
-const icono = await readFile(path.join(publico, "brand", "icono-azul.svg"));
+const icono = await readFile(path.join(publico, "brand", "icono-azul.png"));
 
 await mkdir(destino, { recursive: true });
 
 const png = (tamano, fondo) =>
-  sharp(icono, { density: 600 })
+  sharp(icono)
     .resize(tamano, tamano, { fit: "contain", background: fondo ?? { r: 0, g: 0, b: 0, alpha: 0 } })
     .flatten(fondo ? { background: fondo } : false)
     .png()

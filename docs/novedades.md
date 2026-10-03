@@ -4,7 +4,7 @@ Ambigüedades y hallazgos detectados durante el desarrollo. No se resuelven a cr
 
 | # | Sprint | Novedad | Estado actual en el código | Consultar a | Antes de |
 | --- | --- | --- | --- | --- | --- |
-| N-01 | S0 | Faltan los SVG oficiales del kit de marca (icono azul y blanco, logo de Gobierno azul y blanco) | Marcadores de posición en `public/brand/`; ver `public/brand/LEEME.md`. Al copiarlos, ejecutar `npm run iconos` | TIC / Comunicaciones | S2 |
+| N-01 | S0 | Faltan los SVG oficiales del kit de marca de CORPHOTELS | **Parcial:** el logo del Gobierno ya es el oficial vigente (SVG publicado por la OGTIC). El escudo de CORPHOTELS es provisional: PNG extraído del banner del portal actual (66×102 px de origen, algo suave en pantallas de alta densidad). Ver `public/brand/LEEME.md` | TIC / Comunicaciones | S2 |
 | N-02 | S0 | Versión mayor de PostgreSQL Flexible Server que entregará el proveedor | Docker Compose usa `postgres:17` | Proveedor | S1 |
 | N-03 | S0 | Matomo requiere MySQL o MariaDB, no PostgreSQL. En Azure implica un Azure Database for MySQL Flexible Server, que no está en la lista del proceso CORPHOTEL-DAF-CM-2026-0009 | Local: `mariadb:11` en Docker Compose | Proveedor / DAF | S6 |
 | N-04 | S0 | ~~El correo institucional de contacto no aparece en el portal actual~~ **Resuelta en S2:** el portal actual lo publica protegido: `info@corphotels.gob.do` | En «Datos institucionales» del CMS | Comunicaciones (confirmar) | — |

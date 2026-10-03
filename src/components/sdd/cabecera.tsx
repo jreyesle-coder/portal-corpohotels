@@ -30,12 +30,12 @@ export function Cabecera({
           {/* Logo y nombre enlazan al inicio (A2 2.01.d). */}
           <Link href="/" className="flex min-w-0 items-center gap-3" data-medida="logo-enlace">
             <Image
-              src={oscura ? "/brand/icono-blanco.svg" : "/brand/icono-azul.svg"}
+              src={oscura ? "/brand/icono-blanco.png" : "/brand/icono-azul.png"}
               alt=""
-              width={44}
+              width={29}
               height={44}
               priority
-              className="size-[44px] esc:size-[40px]"
+              className="h-[44px] w-auto esc:h-[40px]"
               data-medida="logo"
             />
             <span className="min-w-0 text-[0.8125rem] leading-tight font-semibold esc:max-w-[26rem] esc:text-[0.9375rem]">

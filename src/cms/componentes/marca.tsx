@@ -4,7 +4,7 @@
 export function Logo() {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-      <img src="/brand/icono-azul.svg" alt="" width={48} height={48} />
+      <img src="/brand/icono-azul.png" alt="" width={31} height={48} />
       <span style={{ fontWeight: 600, fontSize: "1.1rem", lineHeight: 1.2, textAlign: "left" }}>
         CORPHOTELS
         <br />
@@ -15,5 +15,5 @@ export function Logo() {
 }
 
 export function Icono() {
-  return <img src="/brand/icono-azul.svg" alt="CORPHOTELS" width={24} height={24} />;
+  return <img src="/brand/icono-azul.png" alt="CORPHOTELS" width={16} height={24} />;
 }

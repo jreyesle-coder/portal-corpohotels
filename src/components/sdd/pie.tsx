@@ -17,18 +17,18 @@ export function Pie({ institucion: organismo, informate }: { institucion: DatosI
       <div className="contenedor grid gap-8 py-10 lg:grid-cols-[auto_1fr] lg:gap-10">
         <div className="flex items-center gap-6 lg:border-r lg:border-sobre-oscuro/30 lg:pr-10">
           <Image
-            src="/brand/icono-blanco.svg"
+            src="/brand/icono-blanco.png"
             alt={`Isotipo de ${organismo.siglas}`}
-            width={56}
+            width={37}
             height={56}
-            className="size-[56px]"
+            className="h-[56px] w-auto"
             data-medida="isotipo"
           />
           <Image
             src="/brand/gobierno-blanco.svg"
             alt="Gobierno de la República Dominicana"
-            width={200}
-            height={80}
+            width={191}
+            height={77}
             className="h-[75px] w-auto esc:h-[80px]"
             data-medida="logo-gobierno"
           />
