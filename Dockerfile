@@ -1,19 +1,19 @@
 # Imagen única del portal: la misma en local (docker compose) y en Azure App Service.
 # Node.js LTS; salida "standalone" de Next.js; usuario sin privilegios.
 
-FROM node:24-alpine AS dependencias
+FROM node:26-alpine AS dependencias
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:24-alpine AS compilacion
+FROM node:26-alpine AS compilacion
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=dependencias /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-FROM node:24-alpine AS ejecucion
+FROM node:26-alpine AS ejecucion
 WORKDIR /app
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1 \
