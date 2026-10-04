@@ -48,7 +48,7 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 a S5 y del diseño contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
+| `npm run test:e2e` | Pruebas de S0 a S6 y del diseño contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
 | `npm run fichas-pendientes` | Lista los servicios publicados sin ficha A5 completa; falla si hay alguno (paso obligatorio antes de producción) |
@@ -91,6 +91,13 @@ docker compose up --build
 4. `npm run migracion:informe`: escribe `docs/migracion/informe.md` (para la revisión de cada dueño) y `docs/migracion/equivalencias.csv` (ID anterior → URL nueva).
 
 Las equivalencias del menú anterior con la estructura nueva están en `scripts/migracion/mapas.ts`. El proxy aplica las redirecciones (`src/migracion/redireccion.ts`).
+
+## Buscador, SEO y estadísticas (S6)
+
+- Buscador en `/buscar`: búsqueda de texto completo de PostgreSQL en español y sin tildes (`src/busqueda/buscar.ts`, vista `busqueda_indice`). El CMS refresca el índice al guardar; tras una carga masiva lo refrescan `sembrar` y `migracion:importar`.
+- Cada página tiene título «Página | CORPHOTELS | Fomento hotelero y turístico», meta descripción propia y URL canónica (el proxy la calcula). NoIndex y NoFollow se marcan por página en la pestaña «Buscadores (SEO)» del CMS.
+- `/mapa-del-sitio`, `/sitemap.xml`, `/robots.txt` y marcado Schema.org (organización, noticias, servicios y rastro de navegación).
+- Estadísticas: Matomo solo mide si la persona acepta en el aviso de cookies, sin cookies y sin terceros: el navegador habla con `/estadisticas/…` y el portal reenvía a Matomo. Instalación local: asistente en http://localhost:8080 (usuario y clave en `.env`), luego en el contenedor `config/config.ini.php` › `[General]` › `proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"`, y la meta «Envío de formulario» (evento de categoría «Formulario»). Informe mensual: `docs/estadisticas/plantilla-informe-cigetic.md`.
 
 ## Configuración
 

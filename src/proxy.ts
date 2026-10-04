@@ -107,7 +107,17 @@ export async function proxy(request: NextRequest) {
       return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
     }
   }
-  return NextResponse.next();
+
+  // Dirección canónica de la página (A2 6.01.g.iii): la ruta sin parámetros, salvo los que cambian
+  // el contenido (página de un listado, año de transparencia). El layout la publica en <link rel=canonical>.
+  const cabeceras = new Headers(request.headers);
+  const canonica = new URLSearchParams();
+  for (const p of ["pagina", "anio"]) {
+    const v = request.nextUrl.searchParams.get(p);
+    if (v && /^\d{1,4}$/.test(v)) canonica.set(p, v);
+  }
+  cabeceras.set("x-ruta-canonica", pathname.replace(/(.)\/$/, "$1") + (canonica.size ? `?${canonica}` : ""));
+  return NextResponse.next({ request: { headers: cabeceras } });
 }
 
 export const config = {
@@ -126,5 +136,7 @@ export const config = {
     "/images/:path*",
     "/media/k2/:path*",
     "/component/:path*",
+    // Todas las páginas del portal, para la dirección canónica.
+    "/((?!_next/|api/|gestion|auth/|brand/|iconos/|favicon|manifest|robots.txt|sitemap.xml|exportar-pdf|estadisticas/).*)",
   ],
 };

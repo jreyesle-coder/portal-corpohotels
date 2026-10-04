@@ -12,6 +12,7 @@ import { convertHTMLToLexical, editorConfigFactory } from "@payloadcms/richtext-
 import { JSDOM } from "jsdom";
 import { getPayload, type CollectionSlug, type Payload } from "payload";
 import { menuPrincipal, informate } from "../src/contenido/sitio";
+import { refrescarIndiceAhora } from "../src/busqueda/refrescar";
 
 type Imagen = { url: string; alt: string };
 type Ficha = {
@@ -211,4 +212,6 @@ for (const [i, b] of semilla.banners.entries()) {
 }
 console.log(`✓ ${semilla.banners.length} banners`);
 
+// El índice del buscador se refresca al terminar la carga (S6).
+await refrescarIndiceAhora();
 process.exit(0);

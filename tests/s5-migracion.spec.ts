@@ -30,13 +30,15 @@ test.describe("Normalización de URL anteriores", () => {
 
 test.describe("Redirecciones 301 del proxy", () => {
   const base = `/index.php/prueba-${corrida}`;
+  // Identificador anterior único por corrida (la limpieza global borra estas redirecciones).
+  const idPrueba = String(900000 + (Number.parseInt(corrida, 16) % 99999));
 
   test.beforeAll(async ({ browser, baseURL }) => {
     const admin = await sesion(browser, "admin-redirecciones", { roles: ["Administrador"] });
     for (const data of [
       { origen: base, destino: "/sobre-nosotros", tipo: "prefijo", nota: "prueba automatizada" },
       { origen: `${base}/exacta`, destino: "/contactos", tipo: "exacta", nota: "prueba automatizada" },
-      { origen: `phoca:portal:9${corrida.replace(/\D/g, "").slice(0, 6) || "1"}`, destino: "/transparencia", tipo: "identificador", nota: "prueba automatizada" },
+      { origen: `phoca:portal:${idPrueba}`, destino: "/transparencia", tipo: "identificador", nota: "prueba automatizada" },
     ]) {
       const r = await admin.api.post("/api/redirecciones", { headers: origen(baseURL!), data });
       expect(r.status(), await r.text()).toBe(201);
@@ -59,8 +61,7 @@ test.describe("Redirecciones 301 del proxy", () => {
     // El prefijo no captura rutas que solo empiezan igual.
     expect((await request.get(`${base}x`, sinSeguir)).status()).toBe(404);
 
-    const id = `9${corrida.replace(/\D/g, "").slice(0, 6) || "1"}`;
-    const descarga = await request.get(`/index.php/cualquier-menu?download=${id}:archivo`, sinSeguir);
+    const descarga = await request.get(`/index.php/cualquier-menu?download=${idPrueba}:archivo`, sinSeguir);
     expect(descarga.status()).toBe(301);
     expect(new URL(descarga.headers().location, "http://x").pathname).toBe("/transparencia");
   });

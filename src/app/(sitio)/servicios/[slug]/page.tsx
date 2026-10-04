@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { DatosEstructurados } from "@/components/sdd/datos-estructurados";
 import { EnlaceExterno } from "@/components/sdd/enlace-externo";
 import { PlantillaPagina } from "@/components/sdd/plantilla-pagina";
 import { TextoEnriquecido } from "@/components/sdd/texto-enriquecido";
@@ -12,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = await obtenerServicio((await params).slug);
-  return s ? metadatos(s.nombre, s.seo, s.resumen) : {};
+  return s ? metadatos(s.nombre, s.seo, s.resumen, s.contenido) : {};
 }
 
 /**
@@ -37,6 +38,17 @@ export default async function Servicio({ params }: Props) {
           También conocido como: <strong className="text-texto">{s.nombreColoquial}</strong>
         </p>
       )}
+      <DatosEstructurados
+        datos={{
+          "@type": "GovernmentService",
+          name: s.nombre,
+          ...(s.nombreColoquial ? { alternateName: s.nombreColoquial } : {}),
+          description: s.resumen,
+          areaServed: { "@type": "Country", name: "República Dominicana" },
+          provider: { "@type": "GovernmentOrganization", name: "CORPHOTELS" },
+          ...(s.dirigidoA ? { audience: { "@type": "Audience", audienceType: s.dirigidoA } } : {}),
+        }}
+      />
       <p className="mb-6 max-w-3xl text-lg">{s.resumen}</p>
 
       {(solicitar || plataforma) && (

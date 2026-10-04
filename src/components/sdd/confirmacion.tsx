@@ -17,6 +17,10 @@ type Enviado = Extract<ResultadoEnvio, { estado: "enviado" }>;
 export function Confirmacion({ resultado, institucion }: { resultado: Enviado; institucion: ContactoInstitucion }) {
   const titulo = useRef<HTMLHeadingElement>(null);
   useEffect(() => titulo.current?.focus(), []);
+  // Conversión para las estadísticas (A2 5.04.3): solo existe el rastreador si la persona aceptó.
+  useEffect(() => {
+    window._paq?.push(["trackEvent", "Formulario", "Enviado", resultado.tipo]);
+  }, [resultado.tipo]);
   const esSolicitud = resultado.tipo === "solicitud";
 
   return (

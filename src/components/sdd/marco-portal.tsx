@@ -1,8 +1,11 @@
 import { Poppins } from "next/font/google";
+import { Suspense } from "react";
+import { obtenerConfigCms } from "@/config";
 import { OPCION_CABECERA } from "@/contenido/sitio";
 import { obtenerInstitucion, obtenerMenu } from "@/sitio/datos";
 import { AvisoCookies } from "./aviso-cookies";
 import { Cabecera } from "./cabecera";
+import { Estadisticas } from "./estadisticas";
 import { HerramientaAccesibilidad, scriptPreferencias } from "./herramienta-accesibilidad";
 import { IdentificadorOficial } from "./identificador-oficial";
 import { Pie } from "./pie";
@@ -25,6 +28,7 @@ export async function MarcoPortal({ children }: { children: React.ReactNode }) {
     obtenerMenu("principal"),
     obtenerMenu("pie-informate"),
   ]);
+  const sitioMatomo = obtenerConfigCms().MATOMO_SITE_ID;
   return (
     <html lang="es" className={poppins.variable} suppressHydrationWarning>
       {/* eslint-disable-next-line @next/next/no-head-element -- documento raíz del App Router, no Pages Router */}
@@ -47,6 +51,11 @@ export async function MarcoPortal({ children }: { children: React.ReactNode }) {
         </main>
         <Pie institucion={institucion} informate={informate} />
         <AvisoCookies />
+        {sitioMatomo && (
+          <Suspense>
+            <Estadisticas sitio={sitioMatomo} />
+          </Suspense>
+        )}
         <HerramientaAccesibilidad />
       </body>
     </html>

@@ -57,6 +57,8 @@ export const informate: EnlaceMenu[] = [
   { etiqueta: "Términos de uso", href: "/terminos-de-uso" },
   { etiqueta: "Política de privacidad", href: "/politica-de-privacidad" },
   { etiqueta: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
+  // Mapa del sitio en HTML (A2 6.01.i.i).
+  { etiqueta: "Mapa del sitio", href: "/mapa-del-sitio" },
 ];
 
 export type EnlaceInteres = { nombre: string; siglas: string; url: string };

@@ -28,7 +28,6 @@ const JUSTIFICACIONES: [RegExp, string][] = [
   [/^\/index\.php\/galeria-de-fotos(\/|\?|$)/, "Galería de fotos rota en el portal anterior (sus carpetas respondían «Error 404»); sin equivalente en A2 4.02 (novedad N-33)."],
   [/^\/index\.php\/(propiedades\/)?propiedades-disponibles-de-inversion(\/|\?|$)/, "Contenido conservado como borrador en el CMS hasta que se decida su ubicación (novedad N-33)."],
   [/^\/index\.php\/de-interes(\/|\?|$)/, "Sección «De interés» con un artículo de otra institución sin fecha; sin equivalente en A2 4.02 (informe de migración)."],
-  [/^\/(transparencia\/)?index\.php\/(mapa-de-sitio|resultado-de-busqueda)(\/|\?|$)/, "Mapa del sitio y buscador: el portal nuevo los tiene desde S6; la redirección se agrega entonces."],
   [/^\/(\.well-known|wp-|xmlrpc|cgi-bin|phpmyadmin)/i, "Sondeo automático de robots; nunca fue contenido del portal."],
   [/^\/(robots\.txt|sitemap\.xml|favicon\.ico|humans\.txt|ads\.txt)$/, "Archivo técnico: el portal nuevo publica el suyo (S6)."],
   [/^\/[\d/,.\-]+$|\s|%20/, "Dirección malformada registrada por el archivo web; nunca fue contenido."],

@@ -4,6 +4,7 @@ import { con, PUEDEN_EDITAR, PUEDEN_PUBLICAR, ROLES, tieneRol } from "../acceso"
 import { auditarCambios, auditarEliminacion } from "../bitacora";
 import { campoSeo, campoSlug } from "../campos";
 import { controlPublicacion } from "../flujo-editorial";
+import { refrescarBusqueda, refrescarBusquedaAlBorrar } from "@/busqueda/refrescar";
 
 /**
  * Ficha de servicio con los 15 campos de la NORTIC A5:2019, sección 2.02.1 (A2 4.02.b.i).
@@ -92,8 +93,8 @@ export const Servicios: CollectionConfig = {
         return { ...data, fichaCompleta: faltan.length === 0, camposPendientes: faltan.join(", ") };
       },
     ],
-    afterChange: [auditarCambios],
-    afterDelete: [auditarEliminacion],
+    afterChange: [auditarCambios, refrescarBusqueda],
+    afterDelete: [auditarEliminacion, refrescarBusquedaAlBorrar],
   },
   fields: [
     {

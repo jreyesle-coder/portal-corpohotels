@@ -179,6 +179,9 @@ export const MAPA_PORTAL: Record<string, { destino: string; revisar?: string }> 
   "preguntas-frecuentes": { destino: "/preguntas-frecuentes" },
   "preguntasfre-p": { destino: "/preguntas-frecuentes" },
   transparencia: { destino: "/transparencia" },
+  // Desde S6 el portal nuevo tiene mapa del sitio y buscador propios.
+  "mapa-de-sitio": { destino: "/mapa-del-sitio" },
+  "resultado-de-busqueda": { destino: "/buscar" },
 };
 
 /** Servicios del portal anterior (K2) → ficha nueva. */

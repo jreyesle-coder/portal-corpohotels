@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 import { con, leerPublicado, PUEDEN_EDITAR, PUEDEN_PUBLICAR } from "../acceso";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
 import { controlPublicacion } from "../flujo-editorial";
+import { refrescarBusqueda, refrescarBusquedaAlBorrar } from "@/busqueda/refrescar";
 
 /** Preguntas frecuentes (A2 4.02). */
 export const PreguntasFrecuentes: CollectionConfig = {
@@ -16,7 +17,7 @@ export const PreguntasFrecuentes: CollectionConfig = {
     update: con(...PUEDEN_EDITAR),
     delete: con(...PUEDEN_PUBLICAR),
   },
-  hooks: { beforeChange: [controlPublicacion], afterChange: [auditarCambios], afterDelete: [auditarEliminacion] },
+  hooks: { beforeChange: [controlPublicacion], afterChange: [auditarCambios, refrescarBusqueda], afterDelete: [auditarEliminacion, refrescarBusquedaAlBorrar] },
   fields: [
     { name: "pregunta", label: "Pregunta", type: "text", required: true, maxLength: 200 },
     { name: "respuesta", label: "Respuesta", type: "richText", required: true },

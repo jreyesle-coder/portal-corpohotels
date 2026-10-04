@@ -8,20 +8,42 @@ import { TextoEnriquecido } from "@/components/sdd/texto-enriquecido";
 import type { Documento } from "@/payload-types";
 import { comoMedio, obtenerMenu, obtenerPagina } from "./datos";
 
-type Seo = { titulo?: string | null; descripcion?: string | null; noIndexar?: boolean | null } | null | undefined;
+type Seo =
+  | { titulo?: string | null; descripcion?: string | null; noIndexar?: boolean | null; noSeguir?: boolean | null }
+  | null
+  | undefined;
 
-/** Título y meta descripción propios de cada página (A2 6.01.d–e); NoIndex por página (6.01.j). */
-export function metadatos(titulo: string, seo: Seo, resumen?: string | null): Metadata {
+/** Primeras frases del texto enriquecido, hasta ~155 caracteres, para la meta descripción. */
+export function extracto(contenido: unknown, maximo = 155): string | undefined {
+  const textos: string[] = [];
+  const recorrer = (n: unknown) => {
+    if (!n || typeof n !== "object") return;
+    const nodo = n as { text?: unknown; children?: unknown[]; root?: unknown };
+    if (typeof nodo.text === "string") textos.push(nodo.text);
+    if (nodo.root) recorrer(nodo.root);
+    nodo.children?.forEach(recorrer);
+  };
+  recorrer(contenido);
+  const texto = textos.join(" ").replace(/\s+/g, " ").trim();
+  if (!texto) return undefined;
+  return texto.length <= maximo ? texto : `${texto.slice(0, maximo - 1).replace(/\s+\S*$/, "")}…`;
+}
+
+/**
+ * Título y meta descripción propios de cada página (A2 6.01.d–e): si no se escribió una
+ * descripción, se toma el resumen o el inicio del contenido. NoIndex y NoFollow por página (6.01.j).
+ */
+export function metadatos(titulo: string, seo: Seo, resumen?: string | null, contenido?: unknown): Metadata {
   return {
     title: seo?.titulo || titulo,
-    description: seo?.descripcion || resumen || undefined,
-    robots: seo?.noIndexar ? { index: false } : undefined,
+    description: seo?.descripcion || resumen || extracto(contenido),
+    robots: seo?.noIndexar || seo?.noSeguir ? { index: !seo?.noIndexar, follow: !seo?.noSeguir } : undefined,
   };
 }
 
 export async function metadatosPagina(slug: string): Promise<Metadata> {
   const p = await obtenerPagina(slug);
-  return p ? metadatos(p.titulo, p.seo) : {};
+  return p ? metadatos(p.titulo, p.seo, null, p.contenido) : {};
 }
 
 /** Navegación lateral de «Sobre nosotros», tomada del menú principal del CMS. */

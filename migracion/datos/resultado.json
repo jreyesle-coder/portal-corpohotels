@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-04T02:20:02.727Z",
+ "generado": "2026-10-04T02:55:35.045Z",
  "documentos": {
   "nuevos": 0,
   "existentes": 3463,
@@ -452,16 +452,6 @@
    "tipo": "k2-item"
   },
   {
-   "url": "/index.php/mapa-de-sitio",
-   "titulo": "[Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado.",
-   "tipo": "k2-item"
-  },
-  {
-   "url": "/index.php/mapa-de-sitio?id=1&view=html",
-   "titulo": "[Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado.",
-   "tipo": "k2-item"
-  },
-  {
    "url": "/index.php/nombre-de-usuario",
    "titulo": "",
    "tipo": "articulo"
@@ -484,11 +474,6 @@
   {
    "url": "/index.php/registro",
    "titulo": "",
-   "tipo": "articulo"
-  },
-  {
-   "url": "/index.php/resultado-de-busqueda",
-   "titulo": "Resultado de búsqueda",
    "tipo": "articulo"
   }
  ],
@@ -732,13 +717,13 @@
     "destino": "finanzas/ingresos-egresos"
    },
    {
-    "titulo": "acta de adjudicacion",
-    "veces": 4,
+    "titulo": "cuota comprometer",
+    "veces": 3,
     "destino": "compras/comparaciones-precios"
    },
    {
-    "titulo": "cuota comprometer",
-    "veces": 3,
+    "titulo": "acta de adjudicacion",
+    "veces": 4,
     "destino": "compras/comparaciones-precios"
    },
    {
@@ -867,12 +852,12 @@
     "destino": "recursos-humanos/nomina"
    },
    {
-    "titulo": "nomina personal contratado diciembre 2021",
+    "titulo": "nomina personal de seguridad diciembre 2021",
     "veces": 2,
     "destino": "recursos-humanos/nomina"
    },
    {
-    "titulo": "nomina personal de seguridad diciembre 2021",
+    "titulo": "nomina personal contratado diciembre 2021",
     "veces": 2,
     "destino": "recursos-humanos/nomina"
    },
@@ -1302,14 +1287,14 @@
     "destino": "compras/debajo-umbral"
    },
    {
-    "titulo": "relacion de procesos de compras a mipymes agosto 2022",
-    "veces": 2,
-    "destino": "compras/mipymes"
-   },
-   {
     "titulo": "ejecucion presupuestaria agosto 2022",
     "veces": 2,
     "destino": "presupuesto/ejecucion"
+   },
+   {
+    "titulo": "relacion de procesos de compras a mipymes agosto 2022",
+    "veces": 2,
+    "destino": "compras/mipymes"
    },
    {
     "titulo": "relacion de pagos a suplidores -agosto- 2022",
@@ -1382,14 +1367,14 @@
     "destino": "compras/mipymes"
    },
    {
-    "titulo": "relacion de ingreso y egreso octubre 2022",
-    "veces": 2,
-    "destino": "finanzas/ingresos-egresos"
-   },
-   {
     "titulo": "ejecucion presupuestaria octubre 2022",
     "veces": 2,
     "destino": "presupuesto/ejecucion"
+   },
+   {
+    "titulo": "relacion de ingreso y egreso octubre 2022",
+    "veces": 2,
+    "destino": "finanzas/ingresos-egresos"
    },
    {
     "titulo": "relacion de pagos a suplidores octubre 2022",
@@ -1647,12 +1632,12 @@
     "destino": "recursos-humanos/nomina"
    },
    {
-    "titulo": "nomina personal de seguridad enero 2023",
+    "titulo": "nomina personal de seguridad febrero 2023",
     "veces": 2,
     "destino": "recursos-humanos/nomina"
    },
    {
-    "titulo": "nomina personal de seguridad febrero 2023",
+    "titulo": "nomina personal de seguridad enero 2023",
     "veces": 2,
     "destino": "recursos-humanos/nomina"
    },
@@ -4617,14 +4602,14 @@
     "destino": "recursos-humanos/nomina"
    },
    {
-    "titulo": "nomina personal de seguridad julio 2026",
-    "veces": 2,
-    "destino": "recursos-humanos/nomina"
-   },
-   {
     "titulo": "informe de cuentas por pagar julio 2026",
     "veces": 2,
     "destino": "finanzas/informes-financieros"
+   },
+   {
+    "titulo": "nomina personal de seguridad julio 2026",
+    "veces": 2,
+    "destino": "recursos-humanos/nomina"
    },
    {
     "titulo": "pagos a proveedores julio 2026",
@@ -4814,15 +4799,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/marco-legal-de-transparencia/leyes?download=2:ley-498-06-de-planificacion-e-inversion-publica-de-fecha-19-de-diciembre-2006",
-   "id": "phoca:transparencia:2",
-   "nueva": "/api/documentos/file/ley-498-06.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/marco-legal-de-transparencia/leyes?download=3:ley-567-05-que-regula-la-tesoreria-nacional-de-fecha-13-de-diciembre-de-2005",
    "id": "phoca:transparencia:3",
    "nueva": "/api/documentos/file/ley-567-05.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/marco-legal-de-transparencia/leyes?download=2:ley-498-06-de-planificacion-e-inversion-publica-de-fecha-19-de-diciembre-2006",
+   "id": "phoca:transparencia:2",
+   "nueva": "/api/documentos/file/ley-498-06.pdf",
    "tipo": "documento"
   },
   {
@@ -5276,15 +5261,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/336-2016?download=118:ejecucion-presupuestaria-febrero-2016",
-   "id": "phoca:transparencia:118",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-febrero-2016.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/336-2016?download=117:ejecucion-presupuestaria-enero-2016",
    "id": "phoca:transparencia:117",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-enero-2016.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/336-2016?download=118:ejecucion-presupuestaria-febrero-2016",
+   "id": "phoca:transparencia:118",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-febrero-2016.pdf",
    "tipo": "documento"
   },
   {
@@ -5720,15 +5705,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/363-marzo2018?download=222:compra-menor-marzo-0186-2018-camara-digital-centro-especializado-de-computacion-srl-cecomsa",
-   "id": "phoca:transparencia:222",
-   "nueva": "/api/documentos/file/compra-menor-marzo-0186-2018-camara-digital-centro-especializado-de-computacion-srl-cecomsa.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/363-marzo2018?download=223:compra-menor-marzo-0187-2018-equipos-suministros-y-componentes-electricos-jh-electro-alambres-srl",
    "id": "phoca:transparencia:223",
    "nueva": "/api/documentos/file/compra-menor-marzo-0187-2018-equipos-suministros-y-componentes-electricos-jh-electro-alambres-srl.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/363-marzo2018?download=222:compra-menor-marzo-0186-2018-camara-digital-centro-especializado-de-computacion-srl-cecomsa",
+   "id": "phoca:transparencia:222",
+   "nueva": "/api/documentos/file/compra-menor-marzo-0186-2018-camara-digital-centro-especializado-de-computacion-srl-cecomsa.pdf",
    "tipo": "documento"
   },
   {
@@ -5882,15 +5867,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/373-cfih-cp-2018-001?download=285:notificacion-adjudicacion-cp-2018-001",
-   "id": "phoca:transparencia:285",
-   "nueva": "/api/documentos/file/notificacion-adjudicacion-cp-2018-001.jpg",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/balance-general/category/324-finanzas-informes-financieros-balance-general-mensual-2018?download=292:balance-general-septiembre-2018",
    "id": "phoca:transparencia:292",
    "nueva": "/api/documentos/file/balance-general-septiembre-2018.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/373-cfih-cp-2018-001?download=285:notificacion-adjudicacion-cp-2018-001",
+   "id": "phoca:transparencia:285",
+   "nueva": "/api/documentos/file/notificacion-adjudicacion-cp-2018-001.jpg",
    "tipo": "documento"
   },
   {
@@ -5948,9 +5933,9 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/1289-2018?download=342:presupuesto-aprobado-2018",
-   "id": "phoca:transparencia:342",
-   "nueva": "/api/documentos/file/presupuesto-aprobado-2018.pdf",
+   "anterior": "/transparencia/index.php/oficina-de-libre-acceso-a-la-informacion/manual-organizacional-oai?download=338:manual-de-organizacion-oai",
+   "id": "phoca:transparencia:338",
+   "nueva": "/api/documentos/file/manual-de-organizacion-oai.pdf",
    "tipo": "documento"
   },
   {
@@ -5960,9 +5945,9 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oficina-de-libre-acceso-a-la-informacion/manual-organizacional-oai?download=338:manual-de-organizacion-oai",
-   "id": "phoca:transparencia:338",
-   "nueva": "/api/documentos/file/manual-de-organizacion-oai.pdf",
+   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/1289-2018?download=342:presupuesto-aprobado-2018",
+   "id": "phoca:transparencia:342",
+   "nueva": "/api/documentos/file/presupuesto-aprobado-2018.pdf",
    "tipo": "documento"
   },
   {
@@ -7232,15 +7217,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/485-junio-2019?download=700:nomina-personal-seguridad-junio-2019",
-   "id": "phoca:transparencia:700",
-   "nueva": "/api/documentos/file/nomina-personal-seguridad-junio-2019.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/412-recursos-humanos-jubilaciones-pensiones-y-retiros-2019?download=701:nomina-empleados-en-proceso-de-pension-junio-2019",
    "id": "phoca:transparencia:701",
    "nueva": "/api/documentos/file/nomina-empleados-en-proceso-de-pension-junio-2019.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/485-junio-2019?download=700:nomina-personal-seguridad-junio-2019",
+   "id": "phoca:transparencia:700",
+   "nueva": "/api/documentos/file/nomina-personal-seguridad-junio-2019.pdf",
    "tipo": "documento"
   },
   {
@@ -7454,15 +7439,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/500-cp20190003?download=782:especificaciones-tecnicas",
-   "id": "phoca:transparencia:782",
-   "nueva": "/api/documentos/file/especificaciones-tecnicas.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/500-cp20190003?download=783:formularios",
    "id": "phoca:transparencia:783",
    "nueva": "/api/documentos/file/formularios.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/500-cp20190003?download=782:especificaciones-tecnicas",
+   "id": "phoca:transparencia:782",
+   "nueva": "/api/documentos/file/especificaciones-tecnicas.pdf",
    "tipo": "documento"
   },
   {
@@ -8006,15 +7991,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/519-noviembre-2019?download=922:nomina-personal-de-seguridad-noviembre-2019",
-   "id": "phoca:transparencia:922",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-noviembre-2019.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/519-noviembre-2019?download=923:nomina-personal-fijo-noviembre-2019",
    "id": "phoca:transparencia:923",
    "nueva": "/api/documentos/file/nomina-personal-fijo-noviembre-2019.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/519-noviembre-2019?download=922:nomina-personal-de-seguridad-noviembre-2019",
+   "id": "phoca:transparencia:922",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-noviembre-2019.pdf",
    "tipo": "documento"
   },
   {
@@ -8126,15 +8111,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/420-compras-estado-de-cuenta-de-suplidores-2019?download=957:estado-de-cuenta-a-suplidores-diciembre-2019",
-   "id": "phoca:transparencia:957",
-   "nueva": "/api/documentos/file/estado-de-cuenta-a-suplidores-diciembre-2019.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/407-2019?download=959:informacion-clasificada-diciembre-2019",
    "id": "phoca:transparencia:959",
    "nueva": "/api/documentos/file/informacion-clasificada-diciembre-2019.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/420-compras-estado-de-cuenta-de-suplidores-2019?download=957:estado-de-cuenta-a-suplidores-diciembre-2019",
+   "id": "phoca:transparencia:957",
+   "nueva": "/api/documentos/file/estado-de-cuenta-a-suplidores-diciembre-2019.pdf",
    "tipo": "documento"
   },
   {
@@ -8246,15 +8231,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/529-enero-2020?download=982:nomina-personal-de-seguridad-enero-2020",
-   "id": "phoca:transparencia:982",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-enero-2020.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/529-enero-2020?download=984:nomina-personal-fijo-enero-2020",
    "id": "phoca:transparencia:984",
    "nueva": "/api/documentos/file/nomina-personal-fijo-enero-2020.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/529-enero-2020?download=982:nomina-personal-de-seguridad-enero-2020",
+   "id": "phoca:transparencia:982",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-enero-2020.pdf",
    "tipo": "documento"
   },
   {
@@ -8282,15 +8267,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/553-2020?download=993:informacion-clasificada-enero-2020",
-   "id": "phoca:transparencia:993",
-   "nueva": "/api/documentos/file/informacion-clasificada-enero-2020.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/790-2020-indice-de-documentos?download=992:indice-de-informacion-disponible-para-entrega-enero-2020",
    "id": "phoca:transparencia:992",
    "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-enero-2020.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/553-2020?download=993:informacion-clasificada-enero-2020",
+   "id": "phoca:transparencia:993",
+   "nueva": "/api/documentos/file/informacion-clasificada-enero-2020.pdf",
    "tipo": "documento"
   },
   {
@@ -8426,15 +8411,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/553-2020?download=1034:informacion-clasificada-febrero-2020",
-   "id": "phoca:transparencia:1034",
-   "nueva": "/api/documentos/file/informacion-clasificada-febrero-2020.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/562-febrero-2020?download=1033:nomina-personal-fijo-febrero-2020",
    "id": "phoca:transparencia:1033",
    "nueva": "/api/documentos/file/nomina-personal-fijo-febrero-2020.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/553-2020?download=1034:informacion-clasificada-febrero-2020",
+   "id": "phoca:transparencia:1034",
+   "nueva": "/api/documentos/file/informacion-clasificada-febrero-2020.pdf",
    "tipo": "documento"
   },
   {
@@ -9884,15 +9869,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/928-marzo-2021?download=1417:nomina-personal-de-seguridad-marzo-2021",
-   "id": "phoca:transparencia:1417",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-marzo-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/928-marzo-2021?download=1416:nomina-personal-contratado-marzo-2021",
    "id": "phoca:transparencia:1416",
    "nueva": "/api/documentos/file/nomina-personal-contratado-marzo-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/928-marzo-2021?download=1417:nomina-personal-de-seguridad-marzo-2021",
+   "id": "phoca:transparencia:1417",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-marzo-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -9956,15 +9941,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/beneficiarios-de-programas-asistenciales/category/953-abril-2021-beneficiarios?download=1460:beneficiarios-de-programas-asistenciales-abril-2021",
-   "id": "phoca:transparencia:1460",
-   "nueva": "/api/documentos/file/beneficiarios-de-programas-asistenciales-abril-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/929-abril-2021-nomina?download=1459:nomina-personal-fijo-abril-2021",
    "id": "phoca:transparencia:1459",
    "nueva": "/api/documentos/file/nomina-personal-fijo-abril-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/beneficiarios-de-programas-asistenciales/category/953-abril-2021-beneficiarios?download=1460:beneficiarios-de-programas-asistenciales-abril-2021",
+   "id": "phoca:transparencia:1460",
+   "nueva": "/api/documentos/file/beneficiarios-de-programas-asistenciales-abril-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -9992,15 +9977,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/declaraciones-juradas-de-bienes/category/786-2020-2024?download=1466:declaracion-jurada-encargado-administrativo-financiero-daniel-febriel",
-   "id": "phoca:transparencia:1466",
-   "nueva": "/api/documentos/file/declaracion-jurada-encargado-administrativo-financiero-daniel-febriel.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1213-corphotel-daf-cm-2021-0001-compra-de-computadoras?download=1467:anexos-termino-de-referencia-formularios",
    "id": "phoca:transparencia:1467",
    "nueva": "/api/documentos/file/anexos-termino-de-referencia-formularios.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/declaraciones-juradas-de-bienes/category/786-2020-2024?download=1466:declaracion-jurada-encargado-administrativo-financiero-daniel-febriel",
+   "id": "phoca:transparencia:1466",
+   "nueva": "/api/documentos/file/declaracion-jurada-encargado-administrativo-financiero-daniel-febriel.pdf",
    "tipo": "documento"
   },
   {
@@ -10064,27 +10049,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/1029-mayo-2021-relacion-de-compras-por-debajo-del-umbral?download=1478:relacion-de-compra-por-debajo-del-umbral-mayo-2021",
-   "id": "phoca:transparencia:1478",
-   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-mayo-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/declaraciones-juradas-de-bienes/category/786-2020-2024?download=1482:declaracion-jurada-subdirectora-virginia-de-la-nuez",
    "id": "phoca:transparencia:1482",
    "nueva": "/api/documentos/file/declaracion-jurada-subdirectora-virginia-de-la-nuez.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1155-mayo-2021-relacion-de-ingresos-y-egresos?download=1485:relacion-ingreso-y-egreso-mayo-2021",
-   "id": "phoca:transparencia:1485",
-   "nueva": "/api/documentos/file/relacion-ingreso-y-egreso-mayo-2021.pdf",
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/1029-mayo-2021-relacion-de-compras-por-debajo-del-umbral?download=1478:relacion-de-compra-por-debajo-del-umbral-mayo-2021",
+   "id": "phoca:transparencia:1478",
+   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-mayo-2021.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/853-mayo-2021-indice-de-documentos?download=1487:indice-de-informacion-disponible-para-entrega-mayo-2021",
    "id": "phoca:transparencia:1487",
    "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-mayo-2021.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1155-mayo-2021-relacion-de-ingresos-y-egresos?download=1485:relacion-ingreso-y-egreso-mayo-2021",
+   "id": "phoca:transparencia:1485",
+   "nueva": "/api/documentos/file/relacion-ingreso-y-egreso-mayo-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -10238,15 +10223,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1238-micro-junio-2021?download=1529:relacion-de-procesos-de-compras-a-mipymes-junio-2021",
-   "id": "phoca:transparencia:1529",
-   "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-junio-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/1028-junio-2021-relacion-de-compras-por-debajo-del-umbral?download=1528:relacion-de-compras-por-debajo-del-umbral-junio-2021",
    "id": "phoca:transparencia:1528",
    "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-junio-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1238-micro-junio-2021?download=1529:relacion-de-procesos-de-compras-a-mipymes-junio-2021",
+   "id": "phoca:transparencia:1529",
+   "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-junio-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -10334,15 +10319,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1256-corphotel-daf-cm-2021-0004-compra-de-computadoras?download=1563:anexos-termino-de-referencia-formularios",
-   "id": "phoca:transparencia:1563",
-   "nueva": "/api/documentos/file/anexos-termino-de-referencia-formularios-1.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1256-corphotel-daf-cm-2021-0004-compra-de-computadoras?download=1562:acta-de-inicio-proceso-de-compra-menor-adquisicion-de-computadoras",
    "id": "phoca:transparencia:1562",
    "nueva": "/api/documentos/file/acta-de-inicio-proceso-de-compra-menor-adquisicion-de-computadoras.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1256-corphotel-daf-cm-2021-0004-compra-de-computadoras?download=1563:anexos-termino-de-referencia-formularios",
+   "id": "phoca:transparencia:1563",
+   "nueva": "/api/documentos/file/anexos-termino-de-referencia-formularios-1.pdf",
    "tipo": "documento"
   },
   {
@@ -10496,15 +10481,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1594:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2021",
-   "id": "phoca:transparencia:1594",
-   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1593:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-enero-2021",
    "id": "phoca:transparencia:1593",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-enero-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1594:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2021",
+   "id": "phoca:transparencia:1594",
+   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -10598,15 +10583,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1141-julio-2021-balance-general?download=1621:balance-general-julio-2021",
-   "id": "phoca:transparencia:1621",
-   "nueva": "/api/documentos/file/balance-general-julio-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1273-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2021?download=1622:informe-de-cuenta-por-pagar-julio-2021",
    "id": "phoca:transparencia:1622",
    "nueva": "/api/documentos/file/informe-de-cuenta-por-pagar-julio-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1141-julio-2021-balance-general?download=1621:balance-general-julio-2021",
+   "id": "phoca:transparencia:1621",
+   "nueva": "/api/documentos/file/balance-general-julio-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -10694,15 +10679,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1305-daf-cm-2021-0010-adquisicion-de-montacarga?download=1639:acta-de-presentacion-de-ofertas-motocargas",
-   "id": "phoca:transparencia:1639",
-   "nueva": "/api/documentos/file/acta-de-presentacion-de-ofertas-motocargas.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1305-daf-cm-2021-0010-adquisicion-de-montacarga?download=1638:acta-de-adjudicacion",
    "id": "phoca:transparencia:1638",
    "nueva": "/api/documentos/file/acta-de-adjudicacion-7.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1305-daf-cm-2021-0010-adquisicion-de-montacarga?download=1639:acta-de-presentacion-de-ofertas-motocargas",
+   "id": "phoca:transparencia:1639",
+   "nueva": "/api/documentos/file/acta-de-presentacion-de-ofertas-motocargas.pdf",
    "tipo": "documento"
   },
   {
@@ -10748,27 +10733,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1304-daf-cm-2021-0009-adquisicion-de-ticket-de-combustible?download=1647:solicitud-de-compra-adquisicion-de-combustible",
-   "id": "phoca:transparencia:1647",
-   "nueva": "/api/documentos/file/solicitud-de-compra-adquisicion-de-combustible.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1648:acta-que-da-inicio-al-proceso-de-compra-menor-para-la-adquisicion-de-uniforme",
    "id": "phoca:transparencia:1648",
    "nueva": "/api/documentos/file/acta-que-da-inicio-al-proceso-de-compra-menor-para-la-adquisicion-de-uniforme.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1649:certificacion-de-fondo",
-   "id": "phoca:transparencia:1649",
-   "nueva": "/api/documentos/file/certificacion-de-fondo-26.pdf",
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1304-daf-cm-2021-0009-adquisicion-de-ticket-de-combustible?download=1647:solicitud-de-compra-adquisicion-de-combustible",
+   "id": "phoca:transparencia:1647",
+   "nueva": "/api/documentos/file/solicitud-de-compra-adquisicion-de-combustible.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1650:pliego-de-condiciones",
    "id": "phoca:transparencia:1650",
    "nueva": "/api/documentos/file/pliego-de-condiciones-6.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1649:certificacion-de-fondo",
+   "id": "phoca:transparencia:1649",
+   "nueva": "/api/documentos/file/certificacion-de-fondo-26.pdf",
    "tipo": "documento"
   },
   {
@@ -10784,15 +10769,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1653:acta-de-inicio-que-aprueba-el-proceso-de-compra-menor-para-el-diseno-de-la-entrada-principal-del-proyecto-ercilia-pepin",
-   "id": "phoca:transparencia:1653",
-   "nueva": "/api/documentos/file/acta-de-inicio-que-aprueba-el-proceso-de-compra-menor-para-el-disea-o-de-la-entrada-principal-del-pr.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1654:certificacion-de-fondos",
    "id": "phoca:transparencia:1654",
    "nueva": "/api/documentos/file/certificacion-de-fondos-8.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1653:acta-de-inicio-que-aprueba-el-proceso-de-compra-menor-para-el-diseno-de-la-entrada-principal-del-proyecto-ercilia-pepin",
+   "id": "phoca:transparencia:1653",
+   "nueva": "/api/documentos/file/acta-de-inicio-que-aprueba-el-proceso-de-compra-menor-para-el-disea-o-de-la-entrada-principal-del-pr.pdf",
    "tipo": "documento"
   },
   {
@@ -10820,15 +10805,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1304-daf-cm-2021-0009-adquisicion-de-ticket-de-combustible?download=1659:acta-presentacion-de-oferta-combustible",
-   "id": "phoca:transparencia:1659",
-   "nueva": "/api/documentos/file/acta-presentacion-de-oferta-combustible.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1304-daf-cm-2021-0009-adquisicion-de-ticket-de-combustible?download=1660:listado-de-participantes",
    "id": "phoca:transparencia:1660",
    "nueva": "/api/documentos/file/listado-de-participantes-6.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1304-daf-cm-2021-0009-adquisicion-de-ticket-de-combustible?download=1659:acta-presentacion-de-oferta-combustible",
+   "id": "phoca:transparencia:1659",
+   "nueva": "/api/documentos/file/acta-presentacion-de-oferta-combustible.pdf",
    "tipo": "documento"
   },
   {
@@ -10862,15 +10847,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1666:acta-de-adjudicacion-calzado",
-   "id": "phoca:transparencia:1666",
-   "nueva": "/api/documentos/file/acta-de-adjudicacion-calzado.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1667:acta-de-adjudicacion-textil",
    "id": "phoca:transparencia:1667",
    "nueva": "/api/documentos/file/acta-de-adjudicacion-textil.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1666:acta-de-adjudicacion-calzado",
+   "id": "phoca:transparencia:1666",
+   "nueva": "/api/documentos/file/acta-de-adjudicacion-calzado.pdf",
    "tipo": "documento"
   },
   {
@@ -10886,15 +10871,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1670:listado-de-participantes",
-   "id": "phoca:transparencia:1670",
-   "nueva": "/api/documentos/file/listado-de-participantes-7.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1671:orden-de-compra-calzado",
    "id": "phoca:transparencia:1671",
    "nueva": "/api/documentos/file/orden-de-compra-calzado.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1303-daf-cm-2021-0011-adquisicion-de-uniformes?download=1670:listado-de-participantes",
+   "id": "phoca:transparencia:1670",
+   "nueva": "/api/documentos/file/listado-de-participantes-7.pdf",
    "tipo": "documento"
   },
   {
@@ -10910,15 +10895,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1140-agosto-2021-balance-general?download=1686:balance-general-agosto-2021",
-   "id": "phoca:transparencia:1686",
-   "nueva": "/api/documentos/file/balance-general-agosto-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1236-micro-agosto-2021?download=1676:relacion-de-procesos-de-compras-a-mipymes-agosto-2021",
    "id": "phoca:transparencia:1676",
    "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-agosto-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1140-agosto-2021-balance-general?download=1686:balance-general-agosto-2021",
+   "id": "phoca:transparencia:1686",
+   "nueva": "/api/documentos/file/balance-general-agosto-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -11006,15 +10991,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1704:acta-de-apertura-diseno-de-entrada-proyecto-ercilia-pepin",
-   "id": "phoca:transparencia:1704",
-   "nueva": "/api/documentos/file/acta-de-apertura-disea-o-de-entrada-proyecto-ercilia-pepin.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1705:acta-de-adjudicacion-diseno-de-entrada-proyecto-ercilia-pepin",
    "id": "phoca:transparencia:1705",
    "nueva": "/api/documentos/file/acta-de-adjudicacion-disea-o-de-entrada-proyecto-ercilia-pepin.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1306-daf-cm-2021-0008-diseno-de-entrada-proyecto-ercilia-pepin?download=1704:acta-de-apertura-diseno-de-entrada-proyecto-ercilia-pepin",
+   "id": "phoca:transparencia:1704",
+   "nueva": "/api/documentos/file/acta-de-apertura-disea-o-de-entrada-proyecto-ercilia-pepin.pdf",
    "tipo": "documento"
   },
   {
@@ -11036,15 +11021,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/publicaciones-oficiales/certificacion-carta-compromiso?download=1710:certificacion-carta-compromiso",
-   "id": "phoca:transparencia:1710",
-   "nueva": "/api/documentos/file/certificacin-carta-compromiso.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/marco-legal-de-transparencia/decretos?download=1728:decreto-no-491-07-que-establece-el-reglamento-de-aplicacion-del-sistema-nacional-de-control-interno-de-fecha-30-de-agosto-de-2007",
    "id": "phoca:transparencia:1728",
    "nueva": "/api/documentos/file/decreto-no-491-07-que-establece-el-reglamento-de-aplicacion-del-sistema-nacional-de-control-interno.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/publicaciones-oficiales/certificacion-carta-compromiso?download=1710:certificacion-carta-compromiso",
+   "id": "phoca:transparencia:1710",
+   "nueva": "/api/documentos/file/certificacin-carta-compromiso.pdf",
    "tipo": "documento"
   },
   {
@@ -11078,15 +11063,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1139-septiembre-2021-balance-general?download=1738:balance-general-septiembre-2021",
-   "id": "phoca:transparencia:1738",
-   "nueva": "/api/documentos/file/balance-general-septiembre-2021.xls",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/beneficiarios-de-programas-asistenciales/category/958-septiembre-2021-beneficiarios?download=1739:beneficiarios-de-programas-asistenciales-septiembre-2021",
    "id": "phoca:transparencia:1739",
    "nueva": "/api/documentos/file/beneficiarios-de-programas-asistenciales-septiembre-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1139-septiembre-2021-balance-general?download=1738:balance-general-septiembre-2021",
+   "id": "phoca:transparencia:1738",
+   "nueva": "/api/documentos/file/balance-general-septiembre-2021.xls",
    "tipo": "documento"
   },
   {
@@ -11144,15 +11129,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/799-2021-reporte-de-quejas-reclamaciones-y-sugerencias?download=1759:reporte-trimestral-atencion-ciudadana-311-julio-septiembre-2021",
-   "id": "phoca:transparencia:1759",
-   "nueva": "/api/documentos/file/reporte-trimestral-atencion-ciudadana-311-julio-septiembre-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/857-septiembre-2021-indice-de-documentos?download=1760:indice-de-informacion-disponible-para-entrega-septiembre-2021",
    "id": "phoca:transparencia:1760",
    "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-septiembre-2021.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/799-2021-reporte-de-quejas-reclamaciones-y-sugerencias?download=1759:reporte-trimestral-atencion-ciudadana-311-julio-septiembre-2021",
+   "id": "phoca:transparencia:1759",
+   "nueva": "/api/documentos/file/reporte-trimestral-atencion-ciudadana-311-julio-septiembre-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -11198,15 +11183,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/marco-legal-de-transparencia/decretos?download=1772:decreto-143-17-que-crea-las-comisiones-de-etica-pblica-de-fecha-26-de-abril-de-2017",
-   "id": "phoca:transparencia:1772",
-   "nueva": "/api/documentos/file/decreto-143-17-que-crea-las-comisiones-de-etica-pblica-de-fecha-26-de-abril-de-2017.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/base-legal/decretos?download=1771:decreto-no-16-05-que-declara-a-corphotels-como-responsable-de-las-instalaciones-del-hotel-la-mansin-y-el-complejo-vacacional-la-mansin",
    "id": "phoca:transparencia:1771",
    "nueva": "/api/documentos/file/decreto-no-16-05-que-declara-a-corphotels-como-responsable-de-las-instalaciones-del-hotel-la-mansin.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/marco-legal-de-transparencia/decretos?download=1772:decreto-143-17-que-crea-las-comisiones-de-etica-pblica-de-fecha-26-de-abril-de-2017",
+   "id": "phoca:transparencia:1772",
+   "nueva": "/api/documentos/file/decreto-143-17-que-crea-las-comisiones-de-etica-pblica-de-fecha-26-de-abril-de-2017.pdf",
    "tipo": "documento"
   },
   {
@@ -11264,27 +11249,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/inventario-en-almacen/category/1208-inventario-de-almacen-trimestral-2021?download=1782:relacion-inventario-de-almacen-trimestre-julio-septiembre-2021",
-   "id": "phoca:transparencia:1782",
-   "nueva": "/api/documentos/file/relacion-inventario-de-almacen-trimestre-julio-septiembre-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1786:acta-de-inicio-reacondicionamiento-plaza-el-naranjo",
    "id": "phoca:transparencia:1786",
    "nueva": "/api/documentos/file/acta-de-inicio-reacondicionamiento-plaza-el-naranjo.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1787:anexos-formularios",
-   "id": "phoca:transparencia:1787",
-   "nueva": "/api/documentos/file/anexos-formularios.pdf",
+   "anterior": "/transparencia/index.php/finanzas/inventario-en-almacen/category/1208-inventario-de-almacen-trimestral-2021?download=1782:relacion-inventario-de-almacen-trimestre-julio-septiembre-2021",
+   "id": "phoca:transparencia:1782",
+   "nueva": "/api/documentos/file/relacion-inventario-de-almacen-trimestre-julio-septiembre-2021.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1788:certificacion-de-fondo",
    "id": "phoca:transparencia:1788",
    "nueva": "/api/documentos/file/certificacion-de-fondo-27.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1787:anexos-formularios",
+   "id": "phoca:transparencia:1787",
+   "nueva": "/api/documentos/file/anexos-formularios.pdf",
    "tipo": "documento"
   },
   {
@@ -11372,15 +11357,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1820:acta-de-adjudicacion",
-   "id": "phoca:transparencia:1820",
-   "nueva": "/api/documentos/file/acta-de-adjudicacion-9.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1821:cuota-comprometer",
    "id": "phoca:transparencia:1821",
    "nueva": "/api/documentos/file/cuota-comprometer-8.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1310-corphotel-ccc-cp-2021-0002-reacondicionamiento-plaza-el-naranjo?download=1820:acta-de-adjudicacion",
+   "id": "phoca:transparencia:1820",
+   "nueva": "/api/documentos/file/acta-de-adjudicacion-9.pdf",
    "tipo": "documento"
   },
   {
@@ -11432,15 +11417,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1312-corphotel-daf-cm-2021-0013-renovacion-licencia-antivirus-y-fortigate?download=1831:pliego-de-condiciones",
-   "id": "phoca:transparencia:1831",
-   "nueva": "/api/documentos/file/pliego-de-condiciones-9.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1312-corphotel-daf-cm-2021-0013-renovacion-licencia-antivirus-y-fortigate?download=1832:solicitud-de-compra",
    "id": "phoca:transparencia:1832",
    "nueva": "/api/documentos/file/solicitud-de-compra-31.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1312-corphotel-daf-cm-2021-0013-renovacion-licencia-antivirus-y-fortigate?download=1831:pliego-de-condiciones",
+   "id": "phoca:transparencia:1831",
+   "nueva": "/api/documentos/file/pliego-de-condiciones-9.pdf",
    "tipo": "documento"
   },
   {
@@ -11486,15 +11471,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1313-corphotel-daf-cm-2021-0014-tickets-de-combustibles?download=1840:acta-de-adjudicacion",
-   "id": "phoca:transparencia:1840",
-   "nueva": "/api/documentos/file/acta-de-adjudicacion-10.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1313-corphotel-daf-cm-2021-0014-tickets-de-combustibles?download=1841:acta-presentacion-de-ofertas",
    "id": "phoca:transparencia:1841",
    "nueva": "/api/documentos/file/acta-presentacion-de-ofertas-1.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1313-corphotel-daf-cm-2021-0014-tickets-de-combustibles?download=1840:acta-de-adjudicacion",
+   "id": "phoca:transparencia:1840",
+   "nueva": "/api/documentos/file/acta-de-adjudicacion-10.pdf",
    "tipo": "documento"
   },
   {
@@ -11648,15 +11633,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/1065-agosto-2021-estado-de-cuenta-de-suplidores?download=1881:estado-de-cuentas-por-pagar-a-suplidores-agosto-2021",
-   "id": "phoca:transparencia:1881",
-   "nueva": "/api/documentos/file/estado-de-cuentas-por-pagar-a-suplidores-agosto-2021-v2.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1233-micro-noviembre-2021?download=1880:relacion-de-procesos-de-compras-a-mipymes-noviembre-2021",
    "id": "phoca:transparencia:1880",
    "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-noviembre-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/1065-agosto-2021-estado-de-cuenta-de-suplidores?download=1881:estado-de-cuentas-por-pagar-a-suplidores-agosto-2021",
+   "id": "phoca:transparencia:1881",
+   "nueva": "/api/documentos/file/estado-de-cuentas-por-pagar-a-suplidores-agosto-2021-v2.pdf",
    "tipo": "documento"
   },
   {
@@ -11726,15 +11711,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1311-corphotel-ccc-cp-2021-0003-remozamiento-en-entrada-y-construccion-de-capilla-y-oficina-en-el-ercilia-pepin?download=1898:acta-administrativa-que-aprueba-el-inicio-del-proceso-de-compracion-de-precio-para-el-remozamiento-de-la-entrada-del-proyecto-ercilia-pepin",
-   "id": "phoca:transparencia:1898",
-   "nueva": "/api/documentos/file/acta-administrativa-que-aprueba-el-inicio-del-proceso-de-compracion-de-precio-para-el-remozamiento-d.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1312-corphotel-daf-cm-2021-0013-renovacion-licencia-antivirus-y-fortigate?download=1899:acta-de-adjudicacion",
    "id": "phoca:transparencia:1899",
    "nueva": "/api/documentos/file/acta-de-adjudicacion-11.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1311-corphotel-ccc-cp-2021-0003-remozamiento-en-entrada-y-construccion-de-capilla-y-oficina-en-el-ercilia-pepin?download=1898:acta-administrativa-que-aprueba-el-inicio-del-proceso-de-compracion-de-precio-para-el-remozamiento-de-la-entrada-del-proyecto-ercilia-pepin",
+   "id": "phoca:transparencia:1898",
+   "nueva": "/api/documentos/file/acta-administrativa-que-aprueba-el-inicio-del-proceso-de-compracion-de-precio-para-el-remozamiento-d.pdf",
    "tipo": "documento"
   },
   {
@@ -11912,15 +11897,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1607-trimestral?download=1951:informe-estadisitica-y-balance-de-gestion-oai-octubre-diciembre-2021",
-   "id": "phoca:transparencia:1951",
-   "nueva": "/api/documentos/file/informe-estadisitica-y-balance-de-gestion-oai-octubre-diciembre-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1607-trimestral?download=1952:informe-estadistica-y-balance-de-gestion-oai-octubre-diciembre-2021",
    "id": "phoca:transparencia:1952",
    "nueva": "/api/documentos/file/informe-estadistica-y-balance-de-gestion-oai-octubre-diciembre-2021.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1607-trimestral?download=1951:informe-estadisitica-y-balance-de-gestion-oai-octubre-diciembre-2021",
+   "id": "phoca:transparencia:1951",
+   "nueva": "/api/documentos/file/informe-estadisitica-y-balance-de-gestion-oai-octubre-diciembre-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -11960,27 +11945,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1960:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2021",
-   "id": "phoca:transparencia:1960",
-   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2021.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1961:reporte-de-evaluacion-del-indice-de-transparecia-estandarizado-emitido-por-la-digeig-septiembre-2021",
    "id": "phoca:transparencia:1961",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparecia-estandarizado-emitido-por-la-digeig-septiembre-2021.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1962:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2021",
-   "id": "phoca:transparencia:1962",
-   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2021.pdf",
+   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1960:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2021",
+   "id": "phoca:transparencia:1960",
+   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2021.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/plan-estrategico/planes-operativos-anuales/category/792-2021-planes-operativos?download=1963:informe-cumplimiento-de-poa-julio-diciembre-2021",
    "id": "phoca:transparencia:1963",
    "nueva": "/api/documentos/file/informe-cumplimiento-de-poa-julio-diciembre-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1277-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig?download=1962:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2021",
+   "id": "phoca:transparencia:1962",
+   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -12062,15 +12047,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1284-2021?download=1986:ejecucion-meta-fisica-enero-diciembre-2021",
-   "id": "phoca:transparencia:1986",
-   "nueva": "/api/documentos/file/ejecucin-meta-fsica-anual-2021.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1284-2021?download=1985:ejecucion-meta-fisica-enero-diciembre-2021",
    "id": "phoca:transparencia:1985",
    "nueva": "/api/documentos/file/ejecucion-meta-fisica-enero-diciembre-2021.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1284-2021?download=1986:ejecucion-meta-fisica-enero-diciembre-2021",
+   "id": "phoca:transparencia:1986",
+   "nueva": "/api/documentos/file/ejecucin-meta-fsica-anual-2021.xlsx",
    "tipo": "documento"
   },
   {
@@ -12236,15 +12221,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1149-noviembre-2021-relacion-de-ingresos-y-egresos?download=2041:relacion-de-ingresos-y-egresos-noviembre-2021",
-   "id": "phoca:transparencia:2041",
-   "nueva": "/api/documentos/file/relacion-de-ingresos-y-egresos-noviembre-2021.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1148-diciembre-2021-relacion-de-ingresos-y-egresos?download=2040:relacion-de-ingresos-y-egresos-diciembre-2021",
    "id": "phoca:transparencia:2040",
    "nueva": "/api/documentos/file/relacion-de-ingresos-y-egresos-diciembre-2021.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1149-noviembre-2021-relacion-de-ingresos-y-egresos?download=2041:relacion-de-ingresos-y-egresos-noviembre-2021",
+   "id": "phoca:transparencia:2041",
+   "nueva": "/api/documentos/file/relacion-de-ingresos-y-egresos-noviembre-2021.xlsx",
    "tipo": "documento"
   },
   {
@@ -12278,15 +12263,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/937-diciembre-2021-nomina?download=2049:nomina-personal-contratado-diciembre-2021-v3",
-   "id": "phoca:transparencia:2049",
-   "nueva": "/api/documentos/file/nomina-personal-contratado-diciembre-2021-v3.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/937-diciembre-2021-nomina?download=2050:nomina-personal-de-seguridad-diciembre-2021-v3",
    "id": "phoca:transparencia:2050",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-diciembre-2021-v3.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/937-diciembre-2021-nomina?download=2049:nomina-personal-contratado-diciembre-2021-v3",
+   "id": "phoca:transparencia:2049",
+   "nueva": "/api/documentos/file/nomina-personal-contratado-diciembre-2021-v3.pdf",
    "tipo": "documento"
   },
   {
@@ -12662,15 +12647,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1768-marzo-2022-balance-general-mensual?download=2157:balance-general-marzo-2022",
-   "id": "phoca:transparencia:2157",
-   "nueva": "/api/documentos/file/balance-general-marzo-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1768-marzo-2022-balance-general-mensual?download=2158:balance-general-marzo-2022",
    "id": "phoca:transparencia:2158",
    "nueva": "/api/documentos/file/balance-general-marzo-2022.xls",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1768-marzo-2022-balance-general-mensual?download=2157:balance-general-marzo-2022",
+   "id": "phoca:transparencia:2157",
+   "nueva": "/api/documentos/file/balance-general-marzo-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -12764,15 +12749,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/1591-marzo-2022-relacion-de-compras-por-debajo-del-umbral?download=2248:relacion-de-compra-por-debajo-del-umbral-marzo-2022",
-   "id": "phoca:transparencia:2248",
-   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-marzo-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1480-marzo-2022-nomina?download=2287:nomina-personal-contratado-marzo-2022",
    "id": "phoca:transparencia:2287",
    "nueva": "/api/documentos/file/nomina-personal-contratado-marzo-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/1591-marzo-2022-relacion-de-compras-por-debajo-del-umbral?download=2248:relacion-de-compra-por-debajo-del-umbral-marzo-2022",
+   "id": "phoca:transparencia:2248",
+   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-marzo-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -13334,15 +13319,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1779-mayo-2022-informe-mensual-de-cuentas-por-pagar?download=2443:informe-de-cuentas-por-pagar-mayo-2022",
-   "id": "phoca:transparencia:2443",
-   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-mayo-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/inventario-en-almacen/category/1928-reporte-trimestral-abril-junio-2022?download=2444:relacion-de-inventario-de-almacen-trimestral-abril-junio-2022",
    "id": "phoca:transparencia:2444",
    "nueva": "/api/documentos/file/relacion-de-inventario-de-almacen-trimestral-abril-junio-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1779-mayo-2022-informe-mensual-de-cuentas-por-pagar?download=2443:informe-de-cuentas-por-pagar-mayo-2022",
+   "id": "phoca:transparencia:2443",
+   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-mayo-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -13466,15 +13451,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general/category/1375-finanzas-estado-financieros-estado-de-cambios-patrimonio-2022?download=2474:estado-de-cambio-de-patrimonio-enero-junio-2022",
-   "id": "phoca:transparencia:2474",
-   "nueva": "/api/documentos/file/estado-de-cambio-de-patrimonio-enero-junio-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1925-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2022?download=2473:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-mayo-2022",
    "id": "phoca:transparencia:2473",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-mayo-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general/category/1375-finanzas-estado-financieros-estado-de-cambios-patrimonio-2022?download=2474:estado-de-cambio-de-patrimonio-enero-junio-2022",
+   "id": "phoca:transparencia:2474",
+   "nueva": "/api/documentos/file/estado-de-cambio-de-patrimonio-enero-junio-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -13526,15 +13511,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1477-junio-2022-nomina?download=2488:nomina-personal-fijo-junio-2022",
-   "id": "phoca:transparencia:2488",
-   "nueva": "/api/documentos/file/nomina-personal-fijo-junio-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1477-junio-2022-nomina?download=2487:nomina-personal-de-seguridad-junio-2022",
    "id": "phoca:transparencia:2487",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-junio-2022.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1477-junio-2022-nomina?download=2488:nomina-personal-fijo-junio-2022",
+   "id": "phoca:transparencia:2488",
+   "nueva": "/api/documentos/file/nomina-personal-fijo-junio-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -13616,15 +13601,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/estadisticas-institucionales/category/1911-estadistica-trimestre-enero-marzo-2022?download=2509:estadstica-institucional-enero-marzo-2022",
-   "id": "phoca:transparencia:2509",
-   "nueva": "/api/documentos/file/estadstica-institucional-enero-marzo-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1778-junio-2022-informe-mensual-de-cuentas-por-pagar?download=2508:informe-de-cuentas-por-pagar-junio-2022",
    "id": "phoca:transparencia:2508",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-junio-2022.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/estadisticas-institucionales/category/1911-estadistica-trimestre-enero-marzo-2022?download=2509:estadstica-institucional-enero-marzo-2022",
+   "id": "phoca:transparencia:2509",
+   "nueva": "/api/documentos/file/estadstica-institucional-enero-marzo-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -13640,15 +13625,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/1848-reporte-semestral-enero-junio-2022?download=2512:relacion-de-activo-fijo-semestral-enero-junio-2022",
-   "id": "phoca:transparencia:2512",
-   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-enero-junio-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1930-estadistica-oai-trimestre-abril-junio-2022?download=2513:data-de-informe-estadistica-y-balance-de-gestion-oai-abril-junio-2022",
    "id": "phoca:transparencia:2513",
    "nueva": "/api/documentos/file/data-de-informe-estadistica-y-balance-de-gestion-oai-abril-junio-2022.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/1848-reporte-semestral-enero-junio-2022?download=2512:relacion-de-activo-fijo-semestral-enero-junio-2022",
+   "id": "phoca:transparencia:2512",
+   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-enero-junio-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -13676,15 +13661,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1932-corphotel-daf-cm-2022-0004?download=2519:acta-que-declara-desierto-compra-de-switches",
-   "id": "phoca:transparencia:2519",
-   "nueva": "/api/documentos/file/acta-que-declara-desierto-compra-de-switches.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1932-corphotel-daf-cm-2022-0004?download=2520:certificacion-de-fondos",
    "id": "phoca:transparencia:2520",
    "nueva": "/api/documentos/file/certificacion-de-fondos-18.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1932-corphotel-daf-cm-2022-0004?download=2519:acta-que-declara-desierto-compra-de-switches",
+   "id": "phoca:transparencia:2519",
+   "nueva": "/api/documentos/file/acta-que-declara-desierto-compra-de-switches.pdf",
    "tipo": "documento"
   },
   {
@@ -13784,15 +13769,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1935-corphotel-daf-cm-2022-0005-compra-e-instalacion-de-aire?download=2537:pliego-de-condiciones-v3",
-   "id": "phoca:transparencia:2537",
-   "nueva": "/api/documentos/file/pliego-de-condiciones-v3.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1935-corphotel-daf-cm-2022-0005-compra-e-instalacion-de-aire?download=2538:solicitud-de-compra-v3",
    "id": "phoca:transparencia:2538",
    "nueva": "/api/documentos/file/solicitud-de-compra-v3.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1935-corphotel-daf-cm-2022-0005-compra-e-instalacion-de-aire?download=2537:pliego-de-condiciones-v3",
+   "id": "phoca:transparencia:2537",
+   "nueva": "/api/documentos/file/pliego-de-condiciones-v3.pdf",
    "tipo": "documento"
   },
   {
@@ -13844,15 +13829,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1476-julio-2022-nomina?download=2548:nomina-fijo-julio-2022",
-   "id": "phoca:transparencia:2548",
-   "nueva": "/api/documentos/file/nomina-fijo-julio-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1476-julio-2022-nomina?download=2549:nomina-fijo-julio-2022",
    "id": "phoca:transparencia:2549",
    "nueva": "/api/documentos/file/nomina-fijo-julio-2022.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1476-julio-2022-nomina?download=2548:nomina-fijo-julio-2022",
+   "id": "phoca:transparencia:2548",
+   "nueva": "/api/documentos/file/nomina-fijo-julio-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -13952,15 +13937,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1475-agosto-2022-nomina?download=2584:nomina-de-seguridad-agosto-2022",
-   "id": "phoca:transparencia:2584",
-   "nueva": "/api/documentos/file/nomina-de-seguridad-agosto-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1475-agosto-2022-nomina?download=2585:nomina-empleados-contratados-agosto-2022",
    "id": "phoca:transparencia:2585",
    "nueva": "/api/documentos/file/nomina-empleados-contratados-agosto-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1475-agosto-2022-nomina?download=2584:nomina-de-seguridad-agosto-2022",
+   "id": "phoca:transparencia:2584",
+   "nueva": "/api/documentos/file/nomina-de-seguridad-agosto-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -14006,15 +13991,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1598-agosto-2022-micro-pequenas-y-medianas-empresas?download=2604:relacion-de-procesos-de-compras-a-mipymes-agosto-2022",
-   "id": "phoca:transparencia:2604",
-   "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-agosto-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1463-agosto-2022-ejecucion-presupuestaria?download=2608:ejecucion-presupuestaria-agosto-2022",
    "id": "phoca:transparencia:2608",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-agosto-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/1598-agosto-2022-micro-pequenas-y-medianas-empresas?download=2604:relacion-de-procesos-de-compras-a-mipymes-agosto-2022",
+   "id": "phoca:transparencia:2604",
+   "nueva": "/api/documentos/file/relacion-de-procesos-de-compras-a-mipymes-agosto-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -14216,12 +14201,6 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/1909-reporte-trimestral?download=2658:reporte-311-julio-septiembre-2022",
-   "id": "phoca:transparencia:2658",
-   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/1926-relacion-de-pagos-a-suplidores?download=2657:relacion-de-pagos-a-suplidores-septiembre-2022",
    "id": "phoca:transparencia:2657",
    "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-septiembre-2022.pdf",
@@ -14231,6 +14210,12 @@
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1775-septiembre-2022-informe-mensual-de-cuentas-por-pagar?download=2660:informe-de-cuentas-por-pagar-septiembre-2022",
    "id": "phoca:transparencia:2660",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-septiembre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/1909-reporte-trimestral?download=2658:reporte-311-julio-septiembre-2022",
+   "id": "phoca:transparencia:2658",
+   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -14276,15 +14261,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1939-corphotel-daf-cm-2022-0008-combustible?download=2670:orden-de-compra",
-   "id": "phoca:transparencia:2670",
-   "nueva": "/api/documentos/file/orden-de-compra-16.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1939-corphotel-daf-cm-2022-0008-combustible?download=2671:pliego-de-condiciones",
    "id": "phoca:transparencia:2671",
    "nueva": "/api/documentos/file/pliego-de-condiciones-18.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1939-corphotel-daf-cm-2022-0008-combustible?download=2670:orden-de-compra",
+   "id": "phoca:transparencia:2670",
+   "nueva": "/api/documentos/file/orden-de-compra-16.pdf",
    "tipo": "documento"
   },
   {
@@ -14318,15 +14303,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1351-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-trimestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2022?download=2688:ejecucion-meta-fisica-julio-septiembre-2022",
-   "id": "phoca:transparencia:2688",
-   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-septiembre-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1814-septiembre-2022-relacion-de-ingresos-y-egresos?download=2689:relacion-de-ingresos-y-egresos-septiembre-2022",
    "id": "phoca:transparencia:2689",
    "nueva": "/api/documentos/file/relacion-de-ingresos-y-egresos-septiembre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1351-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-trimestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2022?download=2688:ejecucion-meta-fisica-julio-septiembre-2022",
+   "id": "phoca:transparencia:2688",
+   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-septiembre-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -14444,15 +14429,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1813-octubre-2022-relacion-de-ingresos-y-egresos?download=2720:relacion-de-ingreso-y-egreso-octubre-2022",
-   "id": "phoca:transparencia:2720",
-   "nueva": "/api/documentos/file/relacion-de-ingreso-y-egreso-octubre-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1461-octubre-2022-ejecucion-presupuestaria?download=2721:ejecucion-presupuestaria-octubre-2022",
    "id": "phoca:transparencia:2721",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-octubre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/1813-octubre-2022-relacion-de-ingresos-y-egresos?download=2720:relacion-de-ingreso-y-egreso-octubre-2022",
+   "id": "phoca:transparencia:2720",
+   "nueva": "/api/documentos/file/relacion-de-ingreso-y-egreso-octubre-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -14540,27 +14525,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-t/estructura-organica-de-la-institucion?download=2737:estructura-organica-de-la-institucion",
-   "id": "phoca:transparencia:2737",
-   "nueva": "/api/documentos/file/estructura-organica-de-la-institucion-diciembre-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/plan-estrategico/planes-operativos-anuales/category/1345-2022-planes-operativos?download=2738:informe-de-ejecucion-de-poa-enero-junio-2022",
    "id": "phoca:transparencia:2738",
    "nueva": "/api/documentos/file/informe-de-ejecucion-de-poa-enero-junio-2022-v2.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general?download=2739:estado-de-recaudacion-e-inversion-de-las-rentas-erir-2021",
-   "id": "phoca:transparencia:2739",
-   "nueva": "/api/documentos/file/estado-de-recaudacion-e-inversion-de-las-rentas-erir-2021.pdf",
+   "anterior": "/transparencia/index.php/portal-t/estructura-organica-de-la-institucion?download=2737:estructura-organica-de-la-institucion",
+   "id": "phoca:transparencia:2737",
+   "nueva": "/api/documentos/file/estructura-organica-de-la-institucion-diciembre-2022.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1925-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2022?download=2742:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2022",
    "id": "phoca:transparencia:2742",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-agosto-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general?download=2739:estado-de-recaudacion-e-inversion-de-las-rentas-erir-2021",
+   "id": "phoca:transparencia:2739",
+   "nueva": "/api/documentos/file/estado-de-recaudacion-e-inversion-de-las-rentas-erir-2021.pdf",
    "tipo": "documento"
   },
   {
@@ -14594,15 +14579,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1776-agosto-2022-informe-mensual-de-cuentas-por-pagar?download=2752:informe-de-cuentas-por-pagar-agosto-2022",
-   "id": "phoca:transparencia:2752",
-   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-agosto-2022-v2.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1763-agosto-2022-balance-general-mensual?download=2751:balance-general-agosto-2022",
    "id": "phoca:transparencia:2751",
    "nueva": "/api/documentos/file/balance-general-agosto-2022-v2.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1776-agosto-2022-informe-mensual-de-cuentas-por-pagar?download=2752:informe-de-cuentas-por-pagar-agosto-2022",
+   "id": "phoca:transparencia:2752",
+   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-agosto-2022-v2.pdf",
    "tipo": "documento"
   },
   {
@@ -14624,27 +14609,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1936-corphotel-daf-cm-2022-0007?download=2757:certificacion-de-fondo",
-   "id": "phoca:transparencia:2757",
-   "nueva": "/api/documentos/file/certificacion-de-fondo-30.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1266-informe-corte-semestral-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisanoc-de-digecog?download=2756:erir-al-corte-semestral-2022",
    "id": "phoca:transparencia:2756",
    "nueva": "/api/documentos/file/erir-al-corte-semestral-2022.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1936-corphotel-daf-cm-2022-0007?download=2758:cuota-comprometer",
-   "id": "phoca:transparencia:2758",
-   "nueva": "/api/documentos/file/cuota-comprometer-18.pdf",
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1936-corphotel-daf-cm-2022-0007?download=2757:certificacion-de-fondo",
+   "id": "phoca:transparencia:2757",
+   "nueva": "/api/documentos/file/certificacion-de-fondo-30.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/finanzas/inventario-en-almacen/category/1859-reporte-trimestral-julio-septiembre-2022?download=2759:relacion-de-inventario-de-almacen-trimestre-julio-septiembre-2022",
    "id": "phoca:transparencia:2759",
    "nueva": "/api/documentos/file/inventario-material-gastable.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/1936-corphotel-daf-cm-2022-0007?download=2758:cuota-comprometer",
+   "id": "phoca:transparencia:2758",
+   "nueva": "/api/documentos/file/cuota-comprometer-18.pdf",
    "tipo": "documento"
   },
   {
@@ -14684,15 +14669,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/otros-casos-de-excepcion/category/1941-corphotel-ccc-pepu-2022-0001-soporte-software-contable?download=2766:cuota-comprometer",
-   "id": "phoca:transparencia:2766",
-   "nueva": "/api/documentos/file/cuota-comprometer-19.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/otros-casos-de-excepcion/category/1941-corphotel-ccc-pepu-2022-0001-soporte-software-contable?download=2767:informe-justificativo-proveedor-unico",
    "id": "phoca:transparencia:2767",
    "nueva": "/api/documentos/file/informe-justificativo-proveedor-unico.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/otros-casos-de-excepcion/category/1941-corphotel-ccc-pepu-2022-0001-soporte-software-contable?download=2766:cuota-comprometer",
+   "id": "phoca:transparencia:2766",
+   "nueva": "/api/documentos/file/cuota-comprometer-19.pdf",
    "tipo": "documento"
   },
   {
@@ -14720,15 +14705,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1472-noviembre-2022-nomina?download=2773:nmina-empleados-en-periodo-aprobatorio-noviembre-2022",
-   "id": "phoca:transparencia:2773",
-   "nueva": "/api/documentos/file/nmina-empleados-en-periodo-aprobatorio-noviembre-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/1409-octubre-2022-indice-de-documentos?download=2772:indice-de-informacion-disponible-para-entrega-octubre-2022",
    "id": "phoca:transparencia:2772",
    "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-octubre-2022.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/1472-noviembre-2022-nomina?download=2773:nmina-empleados-en-periodo-aprobatorio-noviembre-2022",
+   "id": "phoca:transparencia:2773",
+   "nueva": "/api/documentos/file/nmina-empleados-en-periodo-aprobatorio-noviembre-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -15050,15 +15035,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1352-2022-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06?download=2854:ejecucion-meta-fisica-julio-diciembre-2022",
-   "id": "phoca:transparencia:2854",
-   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2022.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1352-2022-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06?download=2853:ejecucion-meta-fisica-julio-diciembre-2022",
    "id": "phoca:transparencia:2853",
    "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/1352-2022-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06?download=2854:ejecucion-meta-fisica-julio-diciembre-2022",
+   "id": "phoca:transparencia:2854",
+   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2022.xlsx",
    "tipo": "documento"
   },
   {
@@ -15224,15 +15209,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1943-corphotel-ccc-cp-2022-0001-remozamiento-entrada-y-oficina-la-mansion?download=2896:acta-cancelacion-proceso-corphotel-ccc-cp-2022-0001",
-   "id": "phoca:transparencia:2896",
-   "nueva": "/api/documentos/file/acta-cancelacion-proceso-corphotel-ccc-cp-2022-0001.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/inventario-en-almacen/category/1858-reporte-trimestral-octubre-diciembre-2022?download=2894:relacion-de-inventario-de-almacen-trimestre-octubre-diciembre-2022",
    "id": "phoca:transparencia:2894",
    "nueva": "/api/documentos/file/relacion-de-inventario-de-almacen-trimestre-octubre-diciembre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/comparaciones-de-precios/category/1943-corphotel-ccc-cp-2022-0001-remozamiento-entrada-y-oficina-la-mansion?download=2896:acta-cancelacion-proceso-corphotel-ccc-cp-2022-0001",
+   "id": "phoca:transparencia:2896",
+   "nueva": "/api/documentos/file/acta-cancelacion-proceso-corphotel-ccc-cp-2022-0001.pdf",
    "tipo": "documento"
   },
   {
@@ -15296,15 +15281,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/1958-enero-2023?download=2908:1-informacion-clasificada-enero-2023",
-   "id": "phoca:transparencia:2908",
-   "nueva": "/api/documentos/file/1-informacion-clasificada-enero-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2029-enero-2023?download=2916:9d-nomina-personal-en-periodo-aprobatorio-enero-2023",
    "id": "phoca:transparencia:2916",
    "nueva": "/api/documentos/file/9d-nomina-personal-en-periodo-aprobatorio-enero-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/1958-enero-2023?download=2908:1-informacion-clasificada-enero-2023",
+   "id": "phoca:transparencia:2908",
+   "nueva": "/api/documentos/file/1-informacion-clasificada-enero-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -15434,15 +15419,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general/category/1375-finanzas-estado-financieros-estado-de-cambios-patrimonio-2022?download=2957:estado-cambio-de-patrimonio-enero-diciembre-2022",
-   "id": "phoca:transparencia:2957",
-   "nueva": "/api/documentos/file/estado-cambio-de-patrimonio-enero-diciembre-2022.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/balance-general/category/1376-finanzas-estado-financieros-anexos-y-notas-explicativas-2022?download=2958:nota-explicativa-no-11-enero-diciembre-2022",
    "id": "phoca:transparencia:2958",
    "nueva": "/api/documentos/file/nota-explicativa-no-11-enero-diciembre-2022.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general/category/1375-finanzas-estado-financieros-estado-de-cambios-patrimonio-2022?download=2957:estado-cambio-de-patrimonio-enero-diciembre-2022",
+   "id": "phoca:transparencia:2957",
+   "nueva": "/api/documentos/file/estado-cambio-de-patrimonio-enero-diciembre-2022.pdf",
    "tipo": "documento"
   },
   {
@@ -15800,15 +15785,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/2352-corphotel-daf-cm-2023-0002-adquisicion-de-tickets-de-combustible-para-el-suministro-de-los-meses-de-marzo-hasta-agosto-del-2023?download=3039:pliego-de-condiciones",
-   "id": "phoca:transparencia:3039",
-   "nueva": "/api/documentos/file/pliego-de-condiciones-26.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/2352-corphotel-daf-cm-2023-0002-adquisicion-de-tickets-de-combustible-para-el-suministro-de-los-meses-de-marzo-hasta-agosto-del-2023?download=3038:orden-de-compra",
    "id": "phoca:transparencia:3038",
    "nueva": "/api/documentos/file/orden-de-compra-20.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/compras-menores/category/2352-corphotel-daf-cm-2023-0002-adquisicion-de-tickets-de-combustible-para-el-suministro-de-los-meses-de-marzo-hasta-agosto-del-2023?download=3039:pliego-de-condiciones",
+   "id": "phoca:transparencia:3039",
+   "nueva": "/api/documentos/file/pliego-de-condiciones-26.pdf",
    "tipo": "documento"
   },
   {
@@ -15938,15 +15923,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2029-enero-2023?download=3062:nomina-personal-de-seguridad-enero-2023",
-   "id": "phoca:transparencia:3062",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-enero-2023-corregido.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2028-febrero-2023?download=3066:nomina-personal-de-seguridad-febrero-2023",
    "id": "phoca:transparencia:3066",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-febrero-2023-corregido.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2029-enero-2023?download=3062:nomina-personal-de-seguridad-enero-2023",
+   "id": "phoca:transparencia:3062",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-enero-2023-corregido.xlsx",
    "tipo": "documento"
   },
   {
@@ -15986,15 +15971,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1977-estadistica-trimestral-enero-marzo-2023?download=3078:informe-estadistica-y-balance-de-gestion-oai-enero-marzo-2023",
-   "id": "phoca:transparencia:3078",
-   "nueva": "/api/documentos/file/informe-estadistica-y-balance-de-gestion-oai-enero-marzo-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/plan-estrategico/planes-operativos-anuales/category/1979-2023?download=3080:informe-de-ejecucion-poa-trimestral-enero-marzo-2023",
    "id": "phoca:transparencia:3080",
    "nueva": "/api/documentos/file/informe-de-ejecucion-poa-trimestral-enero-marzo-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/1977-estadistica-trimestral-enero-marzo-2023?download=3078:informe-estadistica-y-balance-de-gestion-oai-enero-marzo-2023",
+   "id": "phoca:transparencia:3078",
+   "nueva": "/api/documentos/file/informe-estadistica-y-balance-de-gestion-oai-enero-marzo-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -16088,15 +16073,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2353-cuentas-por-pagar-a-suplidores?download=3105:informe-cuentas-por-pagar-a-suplidores-marzo-2023",
-   "id": "phoca:transparencia:3105",
-   "nueva": "/api/documentos/file/informe-cuentas-por-pagar-a-suplidores-marzo-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2353-cuentas-por-pagar-a-suplidores?download=3104:informe-cuentas-por-pagar-a-suplidores-marzo-2023",
    "id": "phoca:transparencia:3104",
    "nueva": "/api/documentos/file/informe-cuentas-por-pagar-a-suplidores-marzo-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2353-cuentas-por-pagar-a-suplidores?download=3105:informe-cuentas-por-pagar-a-suplidores-marzo-2023",
+   "id": "phoca:transparencia:3105",
+   "nueva": "/api/documentos/file/informe-cuentas-por-pagar-a-suplidores-marzo-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -16106,15 +16091,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2216-marzo-2023?download=3107:balance-general-marzo-2023",
-   "id": "phoca:transparencia:3107",
-   "nueva": "/api/documentos/file/balance-general-marzo-2023.xls",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2229-marzo-2023?download=3108:informe-cuentas-por-pagar-marzo-2023",
    "id": "phoca:transparencia:3108",
    "nueva": "/api/documentos/file/informe-cuentas-por-pagar-marzo-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2216-marzo-2023?download=3107:balance-general-marzo-2023",
+   "id": "phoca:transparencia:3107",
+   "nueva": "/api/documentos/file/balance-general-marzo-2023.xls",
    "tipo": "documento"
   },
   {
@@ -16460,15 +16445,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2170-mayo-2023?download=3198:relacion-de-compras-a-mipymes-mayo-2023",
-   "id": "phoca:transparencia:3198",
-   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-mayo-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2202-relacion-de-pagos-a-suplidores?download=3201:relacion-de-pagos-a-suplidores-mayo-2023",
    "id": "phoca:transparencia:3201",
    "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-mayo-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2170-mayo-2023?download=3198:relacion-de-compras-a-mipymes-mayo-2023",
+   "id": "phoca:transparencia:3198",
+   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-mayo-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -16670,15 +16655,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2364-reporte-trimestral-311?download=3259:data-estadistica-linea-311-abril-junio-2023",
-   "id": "phoca:transparencia:3259",
-   "nueva": "/api/documentos/file/data-estadistica-linea-311-abril-junio-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2364-reporte-trimestral-311?download=3260:reporte-311-abril-junio-2023",
    "id": "phoca:transparencia:3260",
    "nueva": "/api/documentos/file/reporte-311-abril-junio-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2364-reporte-trimestral-311?download=3259:data-estadistica-linea-311-abril-junio-2023",
+   "id": "phoca:transparencia:3259",
+   "nueva": "/api/documentos/file/data-estadistica-linea-311-abril-junio-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -16730,15 +16715,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2024-junio-2023?download=3269:nomina-personal-de-seguridad-junio-2023",
-   "id": "phoca:transparencia:3269",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-junio-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2024-junio-2023?download=3270:nomina-personal-de-seguridad-junio-2023",
    "id": "phoca:transparencia:3270",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-junio-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2024-junio-2023?download=3269:nomina-personal-de-seguridad-junio-2023",
+   "id": "phoca:transparencia:3269",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-junio-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -16910,15 +16895,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1267-informe-cierre-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisanoc-de-digecog?download=3316:informe-corte-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisacnoc-de-digecog-2022",
-   "id": "phoca:transparencia:3316",
-   "nueva": "/api/documentos/file/informe-corte-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisacnoc-d.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2213-junio-2023?download=3319:balance-general-junio-2023",
    "id": "phoca:transparencia:3319",
    "nueva": "/api/documentos/file/balance-general-junio-2023-done.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/1267-informe-cierre-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisanoc-de-digecog?download=3316:informe-corte-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisacnoc-de-digecog-2022",
+   "id": "phoca:transparencia:3316",
+   "nueva": "/api/documentos/file/informe-corte-anual-basado-en-sistema-de-analisis-de-cumplimiento-de-las-normas-contables-sisacnoc-d.pdf",
    "tipo": "documento"
   },
   {
@@ -16946,15 +16931,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2009-julio-2023?download=3353:ejecucion-presupuestaria-julio-2023",
-   "id": "phoca:transparencia:3353",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-julio-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2009-julio-2023?download=3354:ejecucion-presupuestaria-julio-2023",
    "id": "phoca:transparencia:3354",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-julio-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2009-julio-2023?download=3353:ejecucion-presupuestaria-julio-2023",
+   "id": "phoca:transparencia:3353",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-julio-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -16994,15 +16979,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2023-julio-2023?download=3361:nomina-personal-de-seguridad-julio-2023",
-   "id": "phoca:transparencia:3361",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-julio-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2036-julio-2023?download=3363:proceso-de-pension-julio-2023",
    "id": "phoca:transparencia:3363",
    "nueva": "/api/documentos/file/proceso-de-pension-julio-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2023-julio-2023?download=3361:nomina-personal-de-seguridad-julio-2023",
+   "id": "phoca:transparencia:3361",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-julio-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -17042,15 +17027,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2202-relacion-de-pagos-a-suplidores?download=3370:relacion-de-pagos-a-suplidores-julio-2023",
-   "id": "phoca:transparencia:3370",
-   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-julio-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2353-cuentas-por-pagar-a-suplidores?download=3371:informe-de-cuentas-por-pagar-a-suplidores-julio-2023",
    "id": "phoca:transparencia:3371",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-a-suplidores-julio-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2202-relacion-de-pagos-a-suplidores?download=3370:relacion-de-pagos-a-suplidores-julio-2023",
+   "id": "phoca:transparencia:3370",
+   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-julio-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -17114,15 +17099,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/1964-agosto-2023?download=3386:indice-de-informacion-disponible-para-entrega-agosto-2023",
-   "id": "phoca:transparencia:3386",
-   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-agosto-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1978-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2023?download=3387:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2023",
    "id": "phoca:transparencia:3387",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-julio-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/1964-agosto-2023?download=3386:indice-de-informacion-disponible-para-entrega-agosto-2023",
+   "id": "phoca:transparencia:3386",
+   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-agosto-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -17138,15 +17123,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2008-agosto-2023?download=3390:ejecucion-presupuestaria-agosto-2023",
-   "id": "phoca:transparencia:3390",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-agosto-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2022-agosto-2023?download=3391:nomina-de-empleados-fijos-agosto-2023",
    "id": "phoca:transparencia:3391",
    "nueva": "/api/documentos/file/nomina-de-empleados-fijos-agosto-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2008-agosto-2023?download=3390:ejecucion-presupuestaria-agosto-2023",
+   "id": "phoca:transparencia:3390",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-agosto-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -17372,15 +17357,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2021-septiembre-2023?download=3447:nomina-personal-de-seguridad-septiembre-2023",
-   "id": "phoca:transparencia:3447",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-septiembre-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2034-septiembre-2023?download=3448:proceso-de-pension-septiembre-2023",
    "id": "phoca:transparencia:3448",
    "nueva": "/api/documentos/file/proceso-de-pension-septiembre-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2021-septiembre-2023?download=3447:nomina-personal-de-seguridad-septiembre-2023",
+   "id": "phoca:transparencia:3447",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-septiembre-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -17486,15 +17471,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2369-julio-septiembre-2023?download=3469:reporte-311-julio-septiembre-2023",
-   "id": "phoca:transparencia:3469",
-   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2355-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-trimestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2023?download=3466:ejecucion-meta-fisica-julio-septiembre-2023",
    "id": "phoca:transparencia:3466",
    "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-septiembre-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2369-julio-septiembre-2023?download=3469:reporte-311-julio-septiembre-2023",
+   "id": "phoca:transparencia:3469",
+   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -17690,27 +17675,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2020-octubre-2023?download=3516:nomina-empleados-fijos-octubre-2023",
-   "id": "phoca:transparencia:3516",
-   "nueva": "/api/documentos/file/nomina-empleados-fijos-octubre-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2020-octubre-2023?download=3518:nomina-personal-de-seguridad-octubre-2023",
    "id": "phoca:transparencia:3518",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-octubre-2023.xlsx",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2033-octubre-2023?download=3520:proceso-de-pension-octubre-2023",
-   "id": "phoca:transparencia:3520",
-   "nueva": "/api/documentos/file/proceso-de-pension-octubre-2023.xlsx",
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2020-octubre-2023?download=3516:nomina-empleados-fijos-octubre-2023",
+   "id": "phoca:transparencia:3516",
+   "nueva": "/api/documentos/file/nomina-empleados-fijos-octubre-2023.xlsx",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2033-octubre-2023?download=3519:proceso-de-pension-octubre-2023",
    "id": "phoca:transparencia:3519",
    "nueva": "/api/documentos/file/proceso-de-pension-octubre-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2033-octubre-2023?download=3520:proceso-de-pension-octubre-2023",
+   "id": "phoca:transparencia:3520",
+   "nueva": "/api/documentos/file/proceso-de-pension-octubre-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -17798,21 +17783,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2235-octubre-2023?download=3535:relacion-ingresos-y-egresos-octubre-2023",
-   "id": "phoca:transparencia:3535",
-   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-octubre-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2235-octubre-2023?download=3536:relacion-ingresos-y-egresos-octubre-2023",
    "id": "phoca:transparencia:3536",
    "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-octubre-2023.xlsx",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1978-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2023?download=3550:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-octubre-2023",
-   "id": "phoca:transparencia:3550",
-   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-octubre-2023-d.pdf",
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2235-octubre-2023?download=3535:relacion-ingresos-y-egresos-octubre-2023",
+   "id": "phoca:transparencia:3535",
+   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-octubre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -17822,9 +17801,21 @@
    "tipo": "documento"
   },
   {
+   "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1978-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2023?download=3550:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-octubre-2023",
+   "id": "phoca:transparencia:3550",
+   "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-octubre-2023-d.pdf",
+   "tipo": "documento"
+  },
+  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/1978-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2023?download=3551:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-septiembre-2023",
    "id": "phoca:transparencia:3551",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-septiembre-203.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/1961-noviembre-2023?download=3553:indice-de-informacion-disponible-para-entrega-noviembre-2023",
+   "id": "phoca:transparencia:3553",
+   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-noviembre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -17837,12 +17828,6 @@
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2005-noviembre-2023?download=3554:ejecucion-presupuestaria-noviembre-2023-sigef",
    "id": "phoca:transparencia:3554",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-noviembre-2023-sigef.pdf",
-   "tipo": "documento"
-  },
-  {
-   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/1961-noviembre-2023?download=3553:indice-de-informacion-disponible-para-entrega-noviembre-2023",
-   "id": "phoca:transparencia:3553",
-   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-noviembre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -18026,15 +18011,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2018-diciembre-2023?download=3601:nomina-empleados-en-periodo-probatorio-diciembre-2023",
-   "id": "phoca:transparencia:3601",
-   "nueva": "/api/documentos/file/nomina-empleados-en-periodo-probatorio-diciembre-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2018-diciembre-2023?download=3600:nomina-empleados-en-periodo-probatorio-diciembre-2023",
    "id": "phoca:transparencia:3600",
    "nueva": "/api/documentos/file/nomina-empleados-en-periodo-probatorio-diciembre-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2018-diciembre-2023?download=3601:nomina-empleados-en-periodo-probatorio-diciembre-2023",
+   "id": "phoca:transparencia:3601",
+   "nueva": "/api/documentos/file/nomina-empleados-en-periodo-probatorio-diciembre-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -18110,15 +18095,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2220-diciembre-2023?download=3617:informe-de-cuentas-por-pagar-diciembre-2023",
-   "id": "phoca:transparencia:3617",
-   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-diciembre-2023.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2220-diciembre-2023?download=3616:informe-de-cuentas-por-pagar-diciembre-2023",
    "id": "phoca:transparencia:3616",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-diciembre-2023.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2220-diciembre-2023?download=3617:informe-de-cuentas-por-pagar-diciembre-2023",
+   "id": "phoca:transparencia:3617",
+   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-diciembre-2023.xlsx",
    "tipo": "documento"
   },
   {
@@ -18254,15 +18239,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2370-octubre-diciembre-2023?download=3644:reporte-311-octubre-diciembre-2023",
-   "id": "phoca:transparencia:3644",
-   "nueva": "/api/documentos/file/reporte-311-octubre-diciembre-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2370-octubre-diciembre-2023?download=3643:data-estadistica-linea-311-octubre-diciembre-2023",
    "id": "phoca:transparencia:3643",
    "nueva": "/api/documentos/file/data-estadistica-linea-311-octubre-diciembre-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2370-octubre-diciembre-2023?download=3644:reporte-311-octubre-diciembre-2023",
+   "id": "phoca:transparencia:3644",
+   "nueva": "/api/documentos/file/reporte-311-octubre-diciembre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -18302,15 +18287,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general/category/2204-finanzas-estado-financieros-estado-de-cambios-patrimonio-2023?download=3668:estado-cambio-de-patrimonio-enero-diciembre-2023",
-   "id": "phoca:transparencia:3668",
-   "nueva": "/api/documentos/file/estado-cambio-de-patrimonio-enero-diciembre-2023.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/balance-general/category/2204-finanzas-estado-financieros-estado-de-cambios-patrimonio-2023?download=3669:estado-cambio-de-patrimonio-enero-diciembre-2023",
    "id": "phoca:transparencia:3669",
    "nueva": "/api/documentos/file/estado-cambio-de-patrimonio-enero-diciembre-2023.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general/category/2204-finanzas-estado-financieros-estado-de-cambios-patrimonio-2023?download=3668:estado-cambio-de-patrimonio-enero-diciembre-2023",
+   "id": "phoca:transparencia:3668",
+   "nueva": "/api/documentos/file/estado-cambio-de-patrimonio-enero-diciembre-2023.pdf",
    "tipo": "documento"
   },
   {
@@ -18554,15 +18539,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/2259-reporte-semestral-julio-diciembre-2023?download=3730:relacion-de-activo-fijo-semestral-julio-diciembre-2023",
-   "id": "phoca:transparencia:3730",
-   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-julio-diciembre-2023-done.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=3729:relacion-de-pagos-a-suplidores-enero-2024",
    "id": "phoca:transparencia:3729",
    "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-enero-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/2259-reporte-semestral-julio-diciembre-2023?download=3730:relacion-de-activo-fijo-semestral-julio-diciembre-2023",
+   "id": "phoca:transparencia:3730",
+   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-julio-diciembre-2023-done.pdf",
    "tipo": "documento"
   },
   {
@@ -18632,15 +18617,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2471-recursos-humanos-nomina-2024-febrero-2024?download=3747:nomina-empleados-fijos-febrero-2024",
-   "id": "phoca:transparencia:3747",
-   "nueva": "/api/documentos/file/nomina-empleados-fijos-febrero-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2471-recursos-humanos-nomina-2024-febrero-2024?download=3746:nomina-empleados-en-periodo-probatorio-febrero-2024",
    "id": "phoca:transparencia:3746",
    "nueva": "/api/documentos/file/nomina-empleados-en-periodo-probatorio-febrero-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2471-recursos-humanos-nomina-2024-febrero-2024?download=3747:nomina-empleados-fijos-febrero-2024",
+   "id": "phoca:transparencia:3747",
+   "nueva": "/api/documentos/file/nomina-empleados-fijos-febrero-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -18734,15 +18719,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2673-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2024-febrero-2024?download=3763:informe-de-cuentas-por-pagar-febrero-2024",
-   "id": "phoca:transparencia:3763",
-   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-febrero-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2673-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2024-febrero-2024?download=3764:informe-de-cuentas-por-pagar-febrero-2024",
    "id": "phoca:transparencia:3764",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-febrero-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2673-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2024-febrero-2024?download=3763:informe-de-cuentas-por-pagar-febrero-2024",
+   "id": "phoca:transparencia:3763",
+   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-febrero-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -18782,15 +18767,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/2443-presupuesto-presupuestos-aprobados-2024?download=3783:presupuesto-2024-aprobado",
-   "id": "phoca:transparencia:3783",
-   "nueva": "/api/documentos/file/presupuesto-2024-aprobado.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/2415-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2024?download=3786:reporte-de-evaluacin-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-enero-2024",
    "id": "phoca:transparencia:3786",
    "nueva": "/api/documentos/file/reporte-de-evaluacin-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-enero-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/2443-presupuesto-presupuestos-aprobados-2024?download=3783:presupuesto-2024-aprobado",
+   "id": "phoca:transparencia:3783",
+   "nueva": "/api/documentos/file/presupuesto-2024-aprobado.xlsx",
    "tipo": "documento"
   },
   {
@@ -18866,15 +18851,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2442-portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias-reportes-de-quejas-reclamaciones-y-sugerencias-2024-reporte-trimestral-enero-marzo-2024?download=3803:reporte-311-enero-marzo-2024",
-   "id": "phoca:transparencia:3803",
-   "nueva": "/api/documentos/file/reporte-311-enero-marzo-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2442-portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias-reportes-de-quejas-reclamaciones-y-sugerencias-2024-reporte-trimestral-enero-marzo-2024?download=3802:reporte-311-enero-marzo-2024",
    "id": "phoca:transparencia:3802",
    "nueva": "/api/documentos/file/reporte-311-enero-marzo-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2442-portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias-reportes-de-quejas-reclamaciones-y-sugerencias-2024-reporte-trimestral-enero-marzo-2024?download=3803:reporte-311-enero-marzo-2024",
+   "id": "phoca:transparencia:3803",
+   "nueva": "/api/documentos/file/reporte-311-enero-marzo-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -18944,12 +18929,6 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2470-recursos-humanos-nomina-2024-marzo-2024?download=3816:nomina-personal-de-seguridad-marzo-2024",
-   "id": "phoca:transparencia:3816",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-marzo-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2470-recursos-humanos-nomina-2024-marzo-2024?download=3815:nomina-personal-de-seguridad-marzo-2024",
    "id": "phoca:transparencia:3815",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-marzo-2024.pdf",
@@ -18959,6 +18938,12 @@
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2601-compras-micro-pequenas-y-medianas-empresas-2024-marzo-2024?download=3817:relacion-de-compras-a-mipymes-marzo2024",
    "id": "phoca:transparencia:3817",
    "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-marzo2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2470-recursos-humanos-nomina-2024-marzo-2024?download=3816:nomina-personal-de-seguridad-marzo-2024",
+   "id": "phoca:transparencia:3816",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-marzo-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -18986,15 +18971,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2659-finanzas-informes-financieros-balance-general-mensual-2024-marzo-2024?download=3823:balance-general-marzo-2024",
-   "id": "phoca:transparencia:3823",
-   "nueva": "/api/documentos/file/balance-general-marzo-2024.xls",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2659-finanzas-informes-financieros-balance-general-mensual-2024-marzo-2024?download=3822:balance-general-marzo-2024",
    "id": "phoca:transparencia:3822",
    "nueva": "/api/documentos/file/balance-general-marzo-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2659-finanzas-informes-financieros-balance-general-mensual-2024-marzo-2024?download=3823:balance-general-marzo-2024",
+   "id": "phoca:transparencia:3823",
+   "nueva": "/api/documentos/file/balance-general-marzo-2024.xls",
    "tipo": "documento"
   },
   {
@@ -19298,15 +19283,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/2586-compras-relacion-de-compras-por-debajo-del-umbral-2024-mayo-2024?download=3905:relacion-de-compras-por-debajo-del-umbral-mayo-2024",
-   "id": "phoca:transparencia:3905",
-   "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-mayo-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/2481-recursos-humanos-jubilaciones-pensiones-y-retiros-2024-mayo-2024?download=3904:proceso-de-pension-mayo-2024",
    "id": "phoca:transparencia:3904",
    "nueva": "/api/documentos/file/proceso-de-pension-mayo-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/2586-compras-relacion-de-compras-por-debajo-del-umbral-2024-mayo-2024?download=3905:relacion-de-compras-por-debajo-del-umbral-mayo-2024",
+   "id": "phoca:transparencia:3905",
+   "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-mayo-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -19316,15 +19301,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2599-compras-micro-pequenas-y-medianas-empresas-2024-mayo-2024?download=3907:relacion-de-compras-a-mipymes-mayo-2024",
-   "id": "phoca:transparencia:3907",
-   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-mayo-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2599-compras-micro-pequenas-y-medianas-empresas-2024-mayo-2024?download=3908:relacion-de-compras-a-mipymes-mayo-2024",
    "id": "phoca:transparencia:3908",
    "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-mayo-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2599-compras-micro-pequenas-y-medianas-empresas-2024-mayo-2024?download=3907:relacion-de-compras-a-mipymes-mayo-2024",
+   "id": "phoca:transparencia:3907",
+   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-mayo-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -19394,15 +19379,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2452-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2024-mayo-2024?download=3922:ejecucion-presupuestaria-mayo-2024-sigef",
-   "id": "phoca:transparencia:3922",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-mayo-2024-sigef.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2670-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2024-mayo-2024?download=3921:informe-de-cuentas-por-pagar-mayo-2024",
    "id": "phoca:transparencia:3921",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-mayo-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2452-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2024-mayo-2024?download=3922:ejecucion-presupuestaria-mayo-2024-sigef",
+   "id": "phoca:transparencia:3922",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-mayo-2024-sigef.pdf",
    "tipo": "documento"
   },
   {
@@ -19802,15 +19787,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general/category/2735-finanzas-estado-financieros-estado-de-situacion-2024?download=4022:estado-de-situacion-enero-junio-2024",
-   "id": "phoca:transparencia:4022",
-   "nueva": "/api/documentos/file/estado-de-situacion-enero-junio-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/balance-general/category/2736-finanzas-estado-financieros-estado-de-rendimiento-financiero-2024?download=4023:estado-de-rendimiento-financiero-enero-junio-2024",
    "id": "phoca:transparencia:4023",
    "nueva": "/api/documentos/file/estado-de-rendimiento-financiero-enero-junio-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general/category/2735-finanzas-estado-financieros-estado-de-situacion-2024?download=4022:estado-de-situacion-enero-junio-2024",
+   "id": "phoca:transparencia:4022",
+   "nueva": "/api/documentos/file/estado-de-situacion-enero-junio-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -20054,15 +20039,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2596-compras-micro-pequenas-y-medianas-empresas-2024-agosto-2024?download=4084:relacion-de-compras-a-mipymes-agosto-2024",
-   "id": "phoca:transparencia:4084",
-   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2596-compras-micro-pequenas-y-medianas-empresas-2024-agosto-2024?download=4083:relacion-de-compras-a-mipymes-agosto-2024",
    "id": "phoca:transparencia:4083",
    "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/2596-compras-micro-pequenas-y-medianas-empresas-2024-agosto-2024?download=4084:relacion-de-compras-a-mipymes-agosto-2024",
+   "id": "phoca:transparencia:4084",
+   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -20102,15 +20087,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2465-recursos-humanos-nomina-2024-agosto-2024?download=4099:nomina-personal-de-seguridad-agosto-2024-done",
-   "id": "phoca:transparencia:4099",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2024-done.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2465-recursos-humanos-nomina-2024-agosto-2024?download=4100:nomina-personal-de-seguridad-agosto-2024-done",
    "id": "phoca:transparencia:4100",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2024-done.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2465-recursos-humanos-nomina-2024-agosto-2024?download=4099:nomina-personal-de-seguridad-agosto-2024-done",
+   "id": "phoca:transparencia:4099",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2024-done.pdf",
    "tipo": "documento"
   },
   {
@@ -20372,15 +20357,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/2581-compras-relacion-de-compras-por-debajo-del-umbral-2024-octubre-2024?download=4176:relacion-de-compras-por-debajo-del-umbral-octubre-2024",
-   "id": "phoca:transparencia:4176",
-   "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-octubre-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/2581-compras-relacion-de-compras-por-debajo-del-umbral-2024-octubre-2024?download=4177:relacion-de-compras-por-debajo-del-umbral-octubre-2024",
    "id": "phoca:transparencia:4177",
    "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-octubre-2024.xls",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/2581-compras-relacion-de-compras-por-debajo-del-umbral-2024-octubre-2024?download=4176:relacion-de-compras-por-debajo-del-umbral-octubre-2024",
+   "id": "phoca:transparencia:4176",
+   "nueva": "/api/documentos/file/relacion-de-compras-por-debajo-del-umbral-octubre-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -20462,15 +20447,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4191:relacion-de-pagos-a-suplidores-octubre-2024",
-   "id": "phoca:transparencia:4191",
-   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-octubre-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/comision-de-etica-publica-cep/listado-de-miembros?download=4192:listado-miembro-comision-cigcn-2024",
    "id": "phoca:transparencia:4192",
    "nueva": "/api/documentos/file/listado-miembro-comision-cigcn-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4191:relacion-de-pagos-a-suplidores-octubre-2024",
+   "id": "phoca:transparencia:4191",
+   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-octubre-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -20660,12 +20645,6 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2677-finanzas-relacion-de-ingresos-y-egresos-2024-noviembre-2024?download=4238:relacion-ingresos-y-egresos-noviembre-2024",
-   "id": "phoca:transparencia:4238",
-   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-noviembre-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2446-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2024-noviembre-2024?download=4240:ejecucion-presupuestaria-noviembre-2024",
    "id": "phoca:transparencia:4240",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-noviembre-2024.pdf",
@@ -20678,15 +20657,21 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4242:relacion-de-pagos-a-suplidores-noviembre-2024",
-   "id": "phoca:transparencia:4242",
-   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-noviembre-2024.pdf",
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2677-finanzas-relacion-de-ingresos-y-egresos-2024-noviembre-2024?download=4238:relacion-ingresos-y-egresos-noviembre-2024",
+   "id": "phoca:transparencia:4238",
+   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-noviembre-2024.xlsx",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2446-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2024-noviembre-2024?download=4241:ejecucion-presupuestaria-noviembre-2024",
    "id": "phoca:transparencia:4241",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-noviembre-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4242:relacion-de-pagos-a-suplidores-noviembre-2024",
+   "id": "phoca:transparencia:4242",
+   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-noviembre-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -20774,15 +20759,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4270:relacion-de-pagos-a-suplidores-diciembre-2024",
-   "id": "phoca:transparencia:4270",
-   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-diciembre-2024.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/2663-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2024-diciembre-2024?download=4269:informe-de-cuentas-por-pagar-diciembre-2024",
    "id": "phoca:transparencia:4269",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-diciembre-2024.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/2631-compras-estado-de-cuenta-a-suplidores-2024-relacion-de-pagos-a-suplidores?download=4270:relacion-de-pagos-a-suplidores-diciembre-2024",
+   "id": "phoca:transparencia:4270",
+   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-diciembre-2024.pdf",
    "tipo": "documento"
   },
   {
@@ -20846,15 +20831,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2458-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2024?download=4294:ejecucion-meta-fisica-julio-diciembre-2024",
-   "id": "phoca:transparencia:4294",
-   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2458-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2024?download=4293:ejecucion-meta-fisica-julio-diciembre-2024",
    "id": "phoca:transparencia:4293",
    "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2458-presupuesto-ejecuciones-presupuestarias-informes-fisicos-financieros-semestrales-entregado-a-digepres-conforme-a-la-ley-423-06-2024?download=4294:ejecucion-meta-fisica-julio-diciembre-2024",
+   "id": "phoca:transparencia:4294",
+   "nueva": "/api/documentos/file/ejecucion-meta-fisica-julio-diciembre-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -20882,27 +20867,27 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2676-finanzas-relacion-de-ingresos-y-egresos-2024-diciembre-2024?download=4300:relacion-ingresos-y-egresos-diciembre-2024-sigef",
-   "id": "phoca:transparencia:4300",
-   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-diciembre-2024-sigef.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2445-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2024-diciembre-2024?download=4299:ejecucion-presupuestaria-diciembre-2024",
    "id": "phoca:transparencia:4299",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-diciembre-2024.xlsx",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2676-finanzas-relacion-de-ingresos-y-egresos-2024-diciembre-2024?download=4302:relacion-ingresos-y-egresos-diciembre-2024",
-   "id": "phoca:transparencia:4302",
-   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-diciembre-2024.xlsx",
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2676-finanzas-relacion-de-ingresos-y-egresos-2024-diciembre-2024?download=4300:relacion-ingresos-y-egresos-diciembre-2024-sigef",
+   "id": "phoca:transparencia:4300",
+   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-diciembre-2024-sigef.pdf",
    "tipo": "documento"
   },
   {
    "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2676-finanzas-relacion-de-ingresos-y-egresos-2024-diciembre-2024?download=4301:relacion-ingresos-y-egresos-diciembre-2024",
    "id": "phoca:transparencia:4301",
    "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-diciembre-2024.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/2676-finanzas-relacion-de-ingresos-y-egresos-2024-diciembre-2024?download=4302:relacion-ingresos-y-egresos-diciembre-2024",
+   "id": "phoca:transparencia:4302",
+   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-diciembre-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -21134,15 +21119,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/3108-finanzas-relacion-de-ingresos-y-egresos-2025-enero-2025?download=4359:relacion-ingresos-y-egresos-enero-2025-sigef",
-   "id": "phoca:transparencia:4359",
-   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-enero-2025-sigef.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/2813-oai-informacion-clasificada-2025-enero-2025?download=4358:informacion-clasificada-enero-2025",
    "id": "phoca:transparencia:4358",
    "nueva": "/api/documentos/file/informacion-clasificada-enero-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/ingresos-y-egresos/category/3108-finanzas-relacion-de-ingresos-y-egresos-2025-enero-2025?download=4359:relacion-ingresos-y-egresos-enero-2025-sigef",
+   "id": "phoca:transparencia:4359",
+   "nueva": "/api/documentos/file/relacion-ingresos-y-egresos-enero-2025-sigef.pdf",
    "tipo": "documento"
   },
   {
@@ -21158,15 +21143,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/2860-presupuesto-presupuestos-aprobados-2025?download=4375:programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025",
-   "id": "phoca:transparencia:4375",
-   "nueva": "/api/documentos/file/programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/2860-presupuesto-presupuestos-aprobados-2025?download=4374:programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025",
    "id": "phoca:transparencia:4374",
    "nueva": "/api/documentos/file/programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/presupuesto-aprobado-del-ano/category/2860-presupuesto-presupuestos-aprobados-2025?download=4375:programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025",
+   "id": "phoca:transparencia:4375",
+   "nueva": "/api/documentos/file/programacion-indicativa-anual-de-las-metas-fisicas-financieras-2025.xlsx",
    "tipo": "documento"
   },
   {
@@ -21206,15 +21191,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2872-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-febrero-2025?download=4391:ejecucion-presupuestaria-febrero-2025-sigef",
-   "id": "phoca:transparencia:4391",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-febrero-2025-sigef.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/2812-oai-informacion-clasificada-2025-febrero-2025?download=4390:informacion-clasificada-febrero-2025",
    "id": "phoca:transparencia:4390",
    "nueva": "/api/documentos/file/informacion-clasificada-febrero-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2872-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-febrero-2025?download=4391:ejecucion-presupuestaria-febrero-2025-sigef",
+   "id": "phoca:transparencia:4391",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-febrero-2025-sigef.pdf",
    "tipo": "documento"
   },
   {
@@ -21512,15 +21497,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/estadisticas-institucionales/category/2853-estadisticas-2025-estadistica-trimestral-enero-marzo-2025?download=4479:data-estadistica-enero-marzo-2025",
-   "id": "phoca:transparencia:4479",
-   "nueva": "/api/documentos/file/data-estadistica-enero-marzo-2025.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3081-finanzas-informes-financieros-balance-general-mensual-2025-febrero-2025?download=4477:balance-general-febrero-2025",
    "id": "phoca:transparencia:4477",
    "nueva": "/api/documentos/file/balance-general-febrero-2025.xls",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/estadisticas-institucionales/category/2853-estadisticas-2025-estadistica-trimestral-enero-marzo-2025?download=4479:data-estadistica-enero-marzo-2025",
+   "id": "phoca:transparencia:4479",
+   "nueva": "/api/documentos/file/data-estadistica-enero-marzo-2025.xlsx",
    "tipo": "documento"
   },
   {
@@ -21560,15 +21545,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/comision-de-etica-publica-cep/plan-de-trabajo-e-informes-de-logros-y-seguimiento/category/3208-comision-de-integridad-gubernamental-y-cumplimiento-normativo-cigcn-plan-de-trabajo-2024?download=4487:poa-cigcn-corphotels-2024",
-   "id": "phoca:transparencia:4487",
-   "nueva": "/api/documentos/file/poa-cigcn-corphotels-2024.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/3049-compras-estado-de-cuenta-a-suplidores-2025-relacion-de-pago-a-proveedores?download=4486:pagos-a-proveedores-marzo-2025",
    "id": "phoca:transparencia:4486",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-a-suplidores-marzo-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/comision-de-etica-publica-cep/plan-de-trabajo-e-informes-de-logros-y-seguimiento/category/3208-comision-de-integridad-gubernamental-y-cumplimiento-normativo-cigcn-plan-de-trabajo-2024?download=4487:poa-cigcn-corphotels-2024",
+   "id": "phoca:transparencia:4487",
+   "nueva": "/api/documentos/file/poa-cigcn-corphotels-2024.xlsx",
    "tipo": "documento"
   },
   {
@@ -21680,15 +21665,21 @@
    "tipo": "documento"
   },
   {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/3048-compras-estado-de-cuenta-a-suplidores-2025-cuentas-por-pagar-a-suplidores?download=4514:relacion-de-pagos-a-suplidores-abril-2025",
+   "id": "phoca:transparencia:4514",
+   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-abril-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3079-finanzas-informes-financieros-balance-general-mensual-2025-abril-2025?download=4527:balance-general-abril-2025",
    "id": "phoca:transparencia:4527",
    "nueva": "/api/documentos/file/balance-general-abril-2025.pdf",
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/3048-compras-estado-de-cuenta-a-suplidores-2025-cuentas-por-pagar-a-suplidores?download=4514:relacion-de-pagos-a-suplidores-abril-2025",
-   "id": "phoca:transparencia:4514",
-   "nueva": "/api/documentos/file/relacion-de-pagos-a-suplidores-abril-2025.xlsx",
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3078-finanzas-informes-financieros-balance-general-mensual-2025-mayo-2025?download=4529:balance-general-mayo-2025",
+   "id": "phoca:transparencia:4529",
+   "nueva": "/api/documentos/file/balance-general-mayo-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -21701,12 +21692,6 @@
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3078-finanzas-informes-financieros-balance-general-mensual-2025-mayo-2025?download=4530:balance-general-mayo-2025",
    "id": "phoca:transparencia:4530",
    "nueva": "/api/documentos/file/balance-general-mayo-2025.xls",
-   "tipo": "documento"
-  },
-  {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3078-finanzas-informes-financieros-balance-general-mensual-2025-mayo-2025?download=4529:balance-general-mayo-2025",
-   "id": "phoca:transparencia:4529",
-   "nueva": "/api/documentos/file/balance-general-mayo-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -21764,15 +21749,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/plan-estrategico/planes-operativos-anuales/category/2834-plan-estrategico-planes-operativos-2025?download=4548:plan-anual-operativo-2025b",
-   "id": "phoca:transparencia:4548",
-   "nueva": "/api/documentos/file/plan-anual-operativo-2025b.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/portal-de-transparencia-estandarizado/category/2832-reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-2025?download=4549:reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2025",
    "id": "phoca:transparencia:4549",
    "nueva": "/api/documentos/file/reporte-de-evaluacion-del-indice-de-transparencia-estandarizado-emitido-por-la-digeig-abril-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/plan-estrategico/planes-operativos-anuales/category/2834-plan-estrategico-planes-operativos-2025?download=4548:plan-anual-operativo-2025b",
+   "id": "phoca:transparencia:4548",
+   "nueva": "/api/documentos/file/plan-anual-operativo-2025b.pdf",
    "tipo": "documento"
   },
   {
@@ -21986,15 +21971,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2868-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-junio-2025?download=4610:ejecucion-presupuestaria-junio-2025",
-   "id": "phoca:transparencia:4610",
-   "nueva": "/api/documentos/file/ejecucion-presupuestaria-junio-2025.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2868-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-junio-2025?download=4609:ejecucion-presupuestaria-junio-2025",
    "id": "phoca:transparencia:4609",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-junio-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2868-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-junio-2025?download=4610:ejecucion-presupuestaria-junio-2025",
+   "id": "phoca:transparencia:4610",
+   "nueva": "/api/documentos/file/ejecucion-presupuestaria-junio-2025.xlsx",
    "tipo": "documento"
   },
   {
@@ -22238,15 +22223,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2884-recursos-humanos-nomina-2025-junio-2025?download=4666:nomina-empleados-fijos-junio-2025-sc",
-   "id": "phoca:transparencia:4666",
-   "nueva": "/api/documentos/file/nomina-empleados-fijos-junio-2025-sc.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2884-recursos-humanos-nomina-2025-junio-2025?download=4667:nomina-empleados-nombramiento-temporal-junio-2025-sc",
    "id": "phoca:transparencia:4667",
    "nueva": "/api/documentos/file/nomina-empleados-nombramiento-temporal-junio-2025-sc.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2884-recursos-humanos-nomina-2025-junio-2025?download=4666:nomina-empleados-fijos-junio-2025-sc",
+   "id": "phoca:transparencia:4666",
+   "nueva": "/api/documentos/file/nomina-empleados-fijos-junio-2025-sc.xlsx",
    "tipo": "documento"
   },
   {
@@ -22580,15 +22565,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/3002-compras-relacion-de-compras-por-debajo-del-umbral-2025-junio-2025?download=4729:relacion-de-compra-por-debajo-del-umbral-junio-2025-c",
-   "id": "phoca:transparencia:4729",
-   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-junio-2025-c.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/3002-compras-relacion-de-compras-por-debajo-del-umbral-2025-junio-2025?download=4730:relacion-de-compra-por-debajo-del-umbral-junio-2025-c",
    "id": "phoca:transparencia:4730",
    "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-junio-2025-c.xls",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/listado-de-compras-y-contrataciones-realizadas-y-aprobadas/category/3002-compras-relacion-de-compras-por-debajo-del-umbral-2025-junio-2025?download=4729:relacion-de-compra-por-debajo-del-umbral-junio-2025-c",
+   "id": "phoca:transparencia:4729",
+   "nueva": "/api/documentos/file/relacion-de-compra-por-debajo-del-umbral-junio-2025-c.pdf",
    "tipo": "documento"
   },
   {
@@ -22676,15 +22661,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4766:nomina-empleados-fijo-agosto-2025",
-   "id": "phoca:transparencia:4766",
-   "nueva": "/api/documentos/file/nomina-empleados-fijo-agosto-2025.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4767:nomina-empleados-fijo-agosto-2025",
    "id": "phoca:transparencia:4767",
    "nueva": "/api/documentos/file/nomina-empleados-fijo-agosto-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4766:nomina-empleados-fijo-agosto-2025",
+   "id": "phoca:transparencia:4766",
+   "nueva": "/api/documentos/file/nomina-empleados-fijo-agosto-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -22700,15 +22685,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4770:nomina-personal-de-seguridad-agosto-2025",
-   "id": "phoca:transparencia:4770",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2025.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4771:nomina-personal-de-seguridad-agosto-2025",
    "id": "phoca:transparencia:4771",
    "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2882-recursos-humanos-nomina-2025-agosto-2025?download=4770:nomina-personal-de-seguridad-agosto-2025",
+   "id": "phoca:transparencia:4770",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-agosto-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -22724,15 +22709,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/3013-compras-micro-pequenas-y-medianas-empresas-2025-agosto-2025?download=4775:relacion-de-compras-a-mipymes-agosto-2025",
-   "id": "phoca:transparencia:4775",
-   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2025.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/3013-compras-micro-pequenas-y-medianas-empresas-2025-agosto-2025?download=4774:relacion-de-compras-a-mipymes-agosto-2025",
    "id": "phoca:transparencia:4774",
    "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/micro-pequenas-y-medianas-empresas/category/3013-compras-micro-pequenas-y-medianas-empresas-2025-agosto-2025?download=4775:relacion-de-compras-a-mipymes-agosto-2025",
+   "id": "phoca:transparencia:4775",
+   "nueva": "/api/documentos/file/relacion-de-compras-a-mipymes-agosto-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -22874,15 +22859,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2857-acceso-al-311-reporte-de-quejas-reclamaciones-y-sugerencias-2025-reporte-trimestral-julio-septiembre-2025?download=4820:reporte-311-julio-septiembre-2025",
-   "id": "phoca:transparencia:4820",
-   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2025.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/presupuesto/ejecucion-del-presupuesto/category/2865-presupuesto-ejecuciones-presupuestarias-ejecucion-presupuestaria-2025-septiembre-2025?download=4821:ejecucion-presupuestaria-septiembre-2025",
    "id": "phoca:transparencia:4821",
    "nueva": "/api/documentos/file/ejecucion-presupuestaria-septiembre-2025.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/portal-311-sobre-quejas-reclamaciones-sugerencias-y-denuncias/estadisticas-de-quejas-reclamaciones-y-sugerencias/category/2857-acceso-al-311-reporte-de-quejas-reclamaciones-y-sugerencias-2025-reporte-trimestral-julio-septiembre-2025?download=4820:reporte-311-julio-septiembre-2025",
+   "id": "phoca:transparencia:4820",
+   "nueva": "/api/documentos/file/reporte-311-julio-septiembre-2025.xlsx",
    "tipo": "documento"
   },
   {
@@ -23066,15 +23051,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/2804-oai-informacion-clasificada-2025-octubre-2025?download=4866:informacion-clasificada-octubre-2025",
-   "id": "phoca:transparencia:4866",
-   "nueva": "/api/documentos/file/informacion-clasificada-octubre-2025.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/2880-recursos-humanos-nomina-2025-octubre-2025?download=4868:nomina-empleados-fijos-octubre-2025",
    "id": "phoca:transparencia:4868",
    "nueva": "/api/documentos/file/nomina-empleados-fijos-octubre-2025.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/2804-oai-informacion-clasificada-2025-octubre-2025?download=4866:informacion-clasificada-octubre-2025",
+   "id": "phoca:transparencia:4866",
+   "nueva": "/api/documentos/file/informacion-clasificada-octubre-2025.pdf",
    "tipo": "documento"
   },
   {
@@ -23972,15 +23957,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/datos-abiertos/category/382-propiedades-corphotels?download=5078:propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26",
-   "id": "phoca:transparencia:5078",
-   "nueva": "/api/documentos/file/propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26.ods",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/datos-abiertos/category/382-propiedades-corphotels?download=5077:propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26",
    "id": "phoca:transparencia:5077",
    "nueva": "/api/documentos/file/propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26.csv",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/datos-abiertos/category/382-propiedades-corphotels?download=5078:propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26",
+   "id": "phoca:transparencia:5078",
+   "nueva": "/api/documentos/file/propiedades-supervisadas-por-corphotels-y-sus-coordenadas-2019-2025-ene26.ods",
    "tipo": "documento"
   },
   {
@@ -24644,15 +24629,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/3255-oai-indice-de-documentos-2026-mayo-2026?download=5233:indice-de-informacion-disponible-para-entrega-mayo-2026",
-   "id": "phoca:transparencia:5233",
-   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-mayo-2026.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/3484-compras-estado-de-cuenta-a-suplidores-2026-relacion-de-pagos-a-proveedores?download=5232:pagos-a-proveedores-abril-2026-c",
    "id": "phoca:transparencia:5232",
    "nueva": "/api/documentos/file/pagos-a-proveedores-abril-2026-c.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/indice-de-documentos/category/3255-oai-indice-de-documentos-2026-mayo-2026?download=5233:indice-de-informacion-disponible-para-entrega-mayo-2026",
+   "id": "phoca:transparencia:5233",
+   "nueva": "/api/documentos/file/indice-de-informacion-disponible-para-entrega-mayo-2026.pdf",
    "tipo": "documento"
   },
   {
@@ -24710,15 +24695,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/3332-recursos-humanos-jubilaciones-pensiones-y-retiros-2026-mayo-2026?download=5243:nomina-personal-en-proceso-de-pension-mayo-2026",
-   "id": "phoca:transparencia:5243",
-   "nueva": "/api/documentos/file/nomina-personal-en-proceso-de-pension-mayo-2026.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/3332-recursos-humanos-jubilaciones-pensiones-y-retiros-2026-mayo-2026?download=5244:nomina-personal-en-proceso-de-pension-mayo-2026",
    "id": "phoca:transparencia:5244",
    "nueva": "/api/documentos/file/nomina-personal-en-proceso-de-pension-mayo-2026.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/jubilaciones-pensiones-y-retiros/category/3332-recursos-humanos-jubilaciones-pensiones-y-retiros-2026-mayo-2026?download=5243:nomina-personal-en-proceso-de-pension-mayo-2026",
+   "id": "phoca:transparencia:5243",
+   "nueva": "/api/documentos/file/nomina-personal-en-proceso-de-pension-mayo-2026.pdf",
    "tipo": "documento"
   },
   {
@@ -24956,15 +24941,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/3562-finanzas-reporte-de-activos-fijos-2026-reporte-semestral-enero-junio-2026?download=5298:relacion-de-activo-fijo-semestral-enero-junio-2026",
-   "id": "phoca:transparencia:5298",
-   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-enero-junio-2026.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/oai/estadisticas-y-balances-de-la-gestion-oai/category/3263-oai-estadisticas-y-balances-de-la-gestion-oai-2026-abril-junio-2026?download=5299:data-de-informe-estadistica-y-balance-de-gestion-oai-abril-junio-2026",
    "id": "phoca:transparencia:5299",
    "nueva": "/api/documentos/file/data-de-informe-estadistica-y-balance-de-gestion-oai-abril-junio-2026.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/activos-fijos/category/3562-finanzas-reporte-de-activos-fijos-2026-reporte-semestral-enero-junio-2026?download=5298:relacion-de-activo-fijo-semestral-enero-junio-2026",
+   "id": "phoca:transparencia:5298",
+   "nueva": "/api/documentos/file/relacion-de-activo-fijo-semestral-enero-junio-2026.xlsx",
    "tipo": "documento"
   },
   {
@@ -25154,15 +25139,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/balance-general/category/3520-finanzas-estado-financieros-estado-de-ejecucion-presupuestaria-2026?download=5344:estado-presupuestario-enero-junio-2026",
-   "id": "phoca:transparencia:5344",
-   "nueva": "/api/documentos/file/estado-presupuestario-enero-junio-2026.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/balance-general/category/3516-finanzas-estado-financieros-anexos-y-notas-explicativas-2026?download=5347:notas-de-la-7-la-26",
    "id": "phoca:transparencia:5347",
    "nueva": "/api/documentos/file/notas-de-la-7-la-26.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/balance-general/category/3520-finanzas-estado-financieros-estado-de-ejecucion-presupuestaria-2026?download=5344:estado-presupuestario-enero-junio-2026",
+   "id": "phoca:transparencia:5344",
+   "nueva": "/api/documentos/file/estado-presupuestario-enero-junio-2026.xlsx",
    "tipo": "documento"
   },
   {
@@ -25226,15 +25211,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/3317-recursos-humanos-nomina-2026-julio-2026?download=5360:nomina-personal-de-seguridad-julio-2026",
-   "id": "phoca:transparencia:5360",
-   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-julio-2026.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3527-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2026-julio-2026?download=5361:informe-de-cuentas-por-pagar-julio-2026",
    "id": "phoca:transparencia:5361",
    "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-julio-2026.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/3317-recursos-humanos-nomina-2026-julio-2026?download=5360:nomina-personal-de-seguridad-julio-2026",
+   "id": "phoca:transparencia:5360",
+   "nueva": "/api/documentos/file/nomina-personal-de-seguridad-julio-2026.pdf",
    "tipo": "documento"
   },
   {
@@ -25346,15 +25331,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/3239-oai-informacion-clasificada-2026-agosto-2026?download=5395:informacin-clasificada-agosto-2026",
-   "id": "phoca:transparencia:5395",
-   "nueva": "/api/documentos/file/informacin-clasificada-agosto-2026.pdf",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/recursos-humanos/nomina/category/3316-recursos-humanos-nomina-2026-agosto-2026?download=5396:nomina-empleados-fijos-agosto-2026",
    "id": "phoca:transparencia:5396",
    "nueva": "/api/documentos/file/nomina-empleados-fijos-agosto-2026.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/oai/informacion-clasificada/category/3239-oai-informacion-clasificada-2026-agosto-2026?download=5395:informacin-clasificada-agosto-2026",
+   "id": "phoca:transparencia:5395",
+   "nueva": "/api/documentos/file/informacin-clasificada-agosto-2026.pdf",
    "tipo": "documento"
   },
   {
@@ -25490,15 +25475,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/datos-abiertos/category/1212-estadisticas-de-la-gestion-oai?download=5419:estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto",
-   "id": "phoca:transparencia:5419",
-   "nueva": "/api/documentos/file/estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto.ods",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/datos-abiertos/category/1212-estadisticas-de-la-gestion-oai?download=5420:estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto",
    "id": "phoca:transparencia:5420",
    "nueva": "/api/documentos/file/estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto.xlsx",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/datos-abiertos/category/1212-estadisticas-de-la-gestion-oai?download=5419:estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto",
+   "id": "phoca:transparencia:5419",
+   "nueva": "/api/documentos/file/estadisticas-de-la-gestion-de-la-oficina-de-acceso-a-la-informacion-corphotels-2021-2026-agosto.ods",
    "tipo": "documento"
   },
   {
@@ -25508,15 +25493,15 @@
    "tipo": "documento"
   },
   {
-   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3526-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2026-agosto-2026?download=5422:informe-de-cuentas-por-pagar-agosto-2026",
-   "id": "phoca:transparencia:5422",
-   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-agosto-2026.xlsx",
-   "tipo": "documento"
-  },
-  {
    "anterior": "/transparencia/index.php/compras-y-contrataciones-publicas/estado-de-cuentas-de-suplidores/category/3484-compras-estado-de-cuenta-a-suplidores-2026-relacion-de-pagos-a-proveedores?download=5423:pagos-a-proveedores-agosto-2026",
    "id": "phoca:transparencia:5423",
    "nueva": "/api/documentos/file/pagos-a-proveedores-agosto-2026.pdf",
+   "tipo": "documento"
+  },
+  {
+   "anterior": "/transparencia/index.php/finanzas/informes-financieros/category/3526-finanzas-informes-financieros-informe-mensual-de-cuentas-por-pagar-2026-agosto-2026?download=5422:informe-de-cuentas-por-pagar-agosto-2026",
+   "id": "phoca:transparencia:5422",
+   "nueva": "/api/documentos/file/informe-de-cuentas-por-pagar-agosto-2026.xlsx",
    "tipo": "documento"
   },
   {

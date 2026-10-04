@@ -8,6 +8,8 @@ import * as migration_20261003_231816_servicios_ficha_parcial from './20261003_2
 import * as migration_20261003_233744_s4_transparencia from './20261003_233744_s4_transparencia';
 import * as migration_20261004_014941_s5_migracion from './20261004_014941_s5_migracion';
 import * as migration_20261004_015945_portada_carrusel from './20261004_015945_portada_carrusel';
+import * as migration_20261004_025036_s6_seo from './20261004_025036_s6_seo';
+import * as migration_20261004_030000_s6_busqueda from './20261004_030000_s6_busqueda';
 
 export const migrations = [
   {
@@ -58,6 +60,16 @@ export const migrations = [
   {
     up: migration_20261004_015945_portada_carrusel.up,
     down: migration_20261004_015945_portada_carrusel.down,
-    name: '20261004_015945_portada_carrusel'
+    name: '20261004_015945_portada_carrusel',
+  },
+  {
+    up: migration_20261004_025036_s6_seo.up,
+    down: migration_20261004_025036_s6_seo.down,
+    name: '20261004_025036_s6_seo',
+  },
+  {
+    up: migration_20261004_030000_s6_busqueda.up,
+    down: migration_20261004_030000_s6_busqueda.down,
+    name: '20261004_030000_s6_busqueda'
   },
 ];

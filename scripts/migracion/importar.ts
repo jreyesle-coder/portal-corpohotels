@@ -28,6 +28,7 @@ import {
   type PaginaAnterior,
 } from "./comun";
 import { type Equivalencia, MAPA_PORTAL, MAPA_TRANSPARENCIA, SERVICIOS_K2 } from "./mapas";
+import { refrescarIndiceAhora } from "../../src/busqueda/refrescar";
 
 const inventario: Inventario = JSON.parse(readFileSync(ARCHIVO_INVENTARIO, "utf8"));
 const payload = await getPayload({ config });
@@ -225,6 +226,7 @@ for (const [clave, eq] of Object.entries(MAPA_TRANSPARENCIA)) {
 }
 redirigir("/transparencia/index.php", RUTA_TRANSPARENCIA, "prefijo", "Inicio y páginas internas de Joomla sin equivalente propio");
 redirigir("/transparencia/", RUTA_TRANSPARENCIA, "exacta", "Inicio de transparencia");
+redirigir("/transparencia/index.php/resultado-de-busqueda", "/buscar", "prefijo", "Buscador del portal de transparencia anterior");
 // Rutas directas a la carpeta de archivos de Phoca: el documento migrado está en su sección.
 redirigir("/transparencia/phocadownload", RUTA_TRANSPARENCIA, "prefijo", "Ruta directa a un archivo del portal de transparencia anterior");
 
@@ -543,4 +545,6 @@ console.log(
   `Listo. Documentos: ${resultado.documentos.nuevos} nuevos, ${resultado.documentos.existentes} ya migrados, ${resultado.documentos.omitidos.length} omitidos. ` +
     `Textos: ${resultado.textos.nuevos}. Noticias: ${resultado.noticias.nuevas} nuevas, ${resultado.noticias.existentes} existentes. Redirecciones: ${filas.length}.`,
 );
+// El índice del buscador se refresca al terminar la carga (S6).
+await refrescarIndiceAhora();
 process.exit(0);

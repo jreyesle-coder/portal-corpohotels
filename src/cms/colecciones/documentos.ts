@@ -4,6 +4,7 @@ import { tieneRol, todos } from "../acceso";
 import { normalizarNombreArchivo, TIPOS_DOCUMENTO } from "../archivos";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
 import { campoOrigen } from "../campos";
+import { refrescarBusqueda, refrescarBusquedaAlBorrar } from "@/busqueda/refrescar";
 
 /**
  * Gestor documental. Cada descarga muestra descripción, tamaño, fecha de creación y tipo
@@ -47,8 +48,8 @@ export const Documentos: CollectionConfig = {
   hooks: {
     beforeOperation: [normalizarNombreArchivo],
     beforeChange: [validarArea],
-    afterChange: [auditarCambios],
-    afterDelete: [auditarEliminacion],
+    afterChange: [auditarCambios, refrescarBusqueda],
+    afterDelete: [auditarEliminacion, refrescarBusquedaAlBorrar],
   },
   upload: { mimeTypes: TIPOS_DOCUMENTO },
   fields: [

@@ -3,6 +3,7 @@ import { con, leerPublicado, PUEDEN_EDITAR, PUEDEN_PUBLICAR } from "../acceso";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
 import { campoSeo, campoSlug } from "../campos";
 import { controlPublicacion } from "../flujo-editorial";
+import { refrescarBusqueda, refrescarBusquedaAlBorrar } from "@/busqueda/refrescar";
 
 /** Páginas institucionales (Sobre nosotros, Términos de uso, etc.; estructura A2 4.02 en S2). */
 export const Paginas: CollectionConfig = {
@@ -22,8 +23,8 @@ export const Paginas: CollectionConfig = {
   },
   hooks: {
     beforeChange: [controlPublicacion],
-    afterChange: [auditarCambios],
-    afterDelete: [auditarEliminacion],
+    afterChange: [auditarCambios, refrescarBusqueda],
+    afterDelete: [auditarEliminacion, refrescarBusquedaAlBorrar],
   },
   fields: [
     { name: "titulo", label: "Título", type: "text", required: true, maxLength: 160 },

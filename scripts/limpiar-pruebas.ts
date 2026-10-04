@@ -4,6 +4,7 @@
  */
 import config from "@payload-config";
 import { getPayload } from "payload";
+import { refrescarIndiceAhora } from "../src/busqueda/refrescar";
 
 const payload = await getPayload({ config });
 const sistema = { overrideAccess: true } as const;
@@ -16,6 +17,8 @@ await borrar("noticias", { titulo: { like: "Noticia de prueba" } });
 await borrar("documentos", {
   or: [{ titulo: { like: "Memoria institucional " } }, { titulo: { like: "Prueba transparencia " } }, { titulo: { equals: "Otro" } }],
 });
+const redirecciones = await payload.delete({ collection: "redirecciones", where: { nota: { equals: "prueba automatizada" } }, ...sistema });
+borrados.redirecciones = redirecciones.docs.length;
 // Textos de transparencia de las pruebas (el contenido es JSON de Lexical: se revisa ya leído).
 const textos = await payload.find({ collection: "textos-transparencia", pagination: false, depth: 0, ...sistema });
 const deTextos = textos.docs.filter((t) => JSON.stringify(t.contenido).includes("prueba automatizada"));
@@ -35,4 +38,6 @@ const encuestas = await payload.delete({
 });
 borrados.encuestas = encuestas.docs.length;
 console.log("Contenido de prueba eliminado:", borrados);
+// El índice del buscador se refresca al terminar la carga (S6).
+await refrescarIndiceAhora();
 process.exit(0);

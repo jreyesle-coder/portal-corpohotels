@@ -208,6 +208,7 @@ export interface Noticia {
      */
     descripcion?: string | null;
     noIndexar?: boolean | null;
+    noSeguir?: boolean | null;
   };
   origen?: {
     url?: string | null;
@@ -349,6 +350,7 @@ export interface Pagina {
      */
     descripcion?: string | null;
     noIndexar?: boolean | null;
+    noSeguir?: boolean | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -598,6 +600,7 @@ export interface Servicio {
      */
     descripcion?: string | null;
     noIndexar?: boolean | null;
+    noSeguir?: boolean | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -1083,6 +1086,7 @@ export interface NoticiasSelect<T extends boolean = true> {
         titulo?: T;
         descripcion?: T;
         noIndexar?: T;
+        noSeguir?: T;
       };
   origen?:
     | T
@@ -1112,6 +1116,7 @@ export interface PaginasSelect<T extends boolean = true> {
         titulo?: T;
         descripcion?: T;
         noIndexar?: T;
+        noSeguir?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1170,6 +1175,7 @@ export interface ServiciosSelect<T extends boolean = true> {
         titulo?: T;
         descripcion?: T;
         noIndexar?: T;
+        noSeguir?: T;
       };
   updatedAt?: T;
   createdAt?: T;

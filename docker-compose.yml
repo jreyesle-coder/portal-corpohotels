@@ -20,7 +20,8 @@ services:
       SMTP_HOST: mailpit
       SMTP_PORT: "1025"
       SMTP_FROM: no-responder@corphotels.gob.do
-      MATOMO_URL: http://localhost:8080
+      # El portal reenvía las estadísticas a Matomo por la red interna (el navegador no lo contacta).
+      MATOMO_URL: http://matomo
       MATOMO_SITE_ID: "1"
       AZURE_STORAGE_BASE_URL: http://localhost:10000/devstoreaccount1
       PAYLOAD_SECRET: clave-de-desarrollo-solo-para-docker-compose-local

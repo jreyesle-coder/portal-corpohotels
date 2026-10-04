@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DatosEstructurados } from "./datos-estructurados";
 
 export type Miga = { etiqueta: string; href?: string };
 
@@ -10,6 +11,17 @@ export function RastroNavegacion({ migas }: { migas: Miga[] }) {
   const todas: Miga[] = [{ etiqueta: "Inicio", href: "/" }, ...migas];
   return (
     <nav aria-label="Rastro de navegación" className="border-b border-borde bg-superficie">
+      <DatosEstructurados
+        datos={{
+          "@type": "BreadcrumbList",
+          itemListElement: todas.map((m, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: m.etiqueta,
+            ...(m.href ? { item: m.href } : {}),
+          })),
+        }}
+      />
       <ol className="contenedor flex flex-wrap items-center gap-x-2 gap-y-1 py-3 text-sm">
         {todas.map((miga, i) => {
           const ultima = i === todas.length - 1;

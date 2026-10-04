@@ -13,7 +13,13 @@ async function destinoDe(params: Props["params"]) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = await destinoDe(params);
-  return d ? { title: `${d.titulo} | ${d.seccion.titulo}`, description: d.seccion.descripcion } : {};
+  return d
+    ? {
+        title: `${d.titulo} | ${d.seccion.titulo}`,
+        // Descripción propia de cada subsección (A2 6.01.e).
+        description: `${d.titulo}: información de transparencia de CORPHOTELS en ${d.seccion.titulo}.`,
+      }
+    : {};
 }
 
 /** Subsección de transparencia con sus documentos. */

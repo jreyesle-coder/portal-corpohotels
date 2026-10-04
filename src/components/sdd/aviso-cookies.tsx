@@ -11,7 +11,7 @@ import { useSyncExternalStore } from "react";
 export const CLAVE_CONSENTIMIENTO = "portal.estadisticas";
 const EVENTO = "portal:consentimiento";
 
-function leer(): string {
+export function leer(): string {
   try {
     return localStorage.getItem(CLAVE_CONSENTIMIENTO) ?? "pendiente";
   } catch {
@@ -19,7 +19,7 @@ function leer(): string {
   }
 }
 
-function suscribir(aviso: () => void) {
+export function suscribir(aviso: () => void) {
   window.addEventListener(EVENTO, aviso);
   return () => window.removeEventListener(EVENTO, aviso);
 }

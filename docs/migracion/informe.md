@@ -16,7 +16,7 @@ Generado el 2026-10-04 con `npm run migracion:informe`. Contenido extraído del 
 | Documentos no migrados | 47 |
 | Textos de transparencia cargados | 0 (ya existían 9) |
 | Noticias migradas | 0 (ya existían 173) |
-| URL verificadas | 10691: 9221 con 301, 2 existen igual, 1468 justificadas, 0 sin resolver |
+| URL verificadas | 10691: 9378 con 301, 4 existen igual, 1309 justificadas, 0 sin resolver |
 
 La tabla completa de equivalencias (ID anterior → URL nueva) está en [equivalencias.csv](equivalencias.csv) y la verificación URL por URL en [verificacion-urls.csv](verificacion-urls.csv).
 
@@ -125,14 +125,11 @@ Páginas del portal anterior que no corresponden a ninguna sección del portal n
 | /index.php/galeria-de-fotos/category/7-complejo-ecoturistico-la-mansion | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
 | /index.php/galeria-de-fotos/category/8-inauguracion-casa-club-ercilia-pepin | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
 | /index.php/galeria-de-fotos/category/9-compromiso-social | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
-| /index.php/mapa-de-sitio | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
-| /index.php/mapa-de-sitio?id=1&view=html | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
 | /index.php/nombre-de-usuario | — | articulo |
 | /index.php/POLITICAS DE PRIVACIDAD Estas Políticas (en adelante, las & | [Error 404] La página que estás buscando no existe o ha ocurrido un error inesperado. | k2-item |
 | /index.php/propiedades-disponibles-de-inversion | Propiedades disponibles de inversión | k2-item |
 | /index.php/propiedades/propiedades-disponibles-de-inversion | Propiedades disponibles de inversión | k2-item |
 | /index.php/registro | — | articulo |
-| /index.php/resultado-de-busqueda | Resultado de búsqueda | articulo |
 
 ### URL que no se redirigen (justificadas)
 
@@ -141,7 +138,6 @@ Páginas del portal anterior que no corresponden a ninguna sección del portal n
 | Subdominio anterior (ch.corphotels.gob.do): su redirección se configura en el DNS y Front Door en el corte (S9, novedad N-32). | 249 |
 | Recurso técnico de Joomla (scripts, estilos e iconos); no es contenido. | 221 |
 | Recurso técnico de la plantilla o del sistema Joomla; no es contenido. | 184 |
-| Mapa del sitio y buscador: el portal nuevo los tiene desde S6; la redirección se agrega entonces. | 155 |
 | Perfil o listado por autor de K2: expone nombres de usuario del Joomla (riesgo 1 de requerimientos); se retira a propósito. | 112 |
 | Imagen de la plantilla, logo o banner del portal anterior; no es contenido (el portal nuevo usa los vigentes). | 75 |
 | Dirección malformada registrada por el archivo web; nunca fue contenido. | 69 |
@@ -158,12 +154,12 @@ Páginas del portal anterior que no corresponden a ninguna sección del portal n
 | Sección «De interés» con un artículo de otra institución sin fecha; sin equivalente en A2 4.02 (informe de migración). | 11 |
 | Página de error del portal anterior; no es contenido. | 11 |
 | Recurso técnico de la plantilla anterior (estilos, scripts o fuentes); no es contenido. | 8 |
-| Enlace malformado que generaba la plantilla anterior; nunca fue contenido. | 8 |
+| Enlace malformado que generaba la plantilla anterior; nunca fue contenido. | 6 |
 | Registro e inicio de sesión de usuarios de Joomla: el portal nuevo no tiene cuentas públicas. | 4 |
-| Archivo técnico: el portal nuevo publica el suyo (S6). | 3 |
 | Panel de administración de Joomla: no se publica en el portal nuevo (A2 5.02.a). | 2 |
 | Foto del personal: dato personal que no se migra; la información del despacho está en «Conoce al Gerente General». | 2 |
 | Contenido conservado como borrador en el CMS hasta que se decida su ubicación (novedad N-33). | 2 |
+| Archivo técnico: el portal nuevo publica el suyo (S6). | 1 |
 
 ## Errores heredados para revisión
 
@@ -243,8 +239,8 @@ _Ninguna._
 | finanzas/informes-financieros | balance general octubre 2021 | 2 |
 | presupuesto/ejecucion | ejecucion presupuestaria octubre 2021 | 2 |
 | finanzas/ingresos-egresos | relacion de ingresos y egresos octubre 2021 | 2 |
-| compras/comparaciones-precios | acta de adjudicacion | 4 |
 | compras/comparaciones-precios | cuota comprometer | 3 |
+| compras/comparaciones-precios | acta de adjudicacion | 4 |
 | compras/comparaciones-precios | listado de participantes | 2 |
 | compras/comparaciones-precios | certificacion de fondos | 4 |
 | compras/compras-menores | lista de participantes | 4 |
@@ -270,8 +266,8 @@ _Ninguna._
 | recursos-humanos/nomina | nomina personal de seguridad octubre 2021 | 2 |
 | recursos-humanos/nomina | nomina personal fijo octubre 2021 | 2 |
 | recursos-humanos/nomina | nomina personal de seguridad noviembre 2021 | 2 |
-| recursos-humanos/nomina | nomina personal contratado diciembre 2021 | 2 |
 | recursos-humanos/nomina | nomina personal de seguridad diciembre 2021 | 2 |
+| recursos-humanos/nomina | nomina personal contratado diciembre 2021 | 2 |
 | recursos-humanos/nomina | nomina personal fijo diciembre 2021 | 2 |
 | finanzas/estados-financieros | estado de cambio de patrimono julio - diciembre 2021 | 2 |
 | finanzas/estados-financieros | estado de flujo de efectivo julio - diciembre 2021 | 2 |

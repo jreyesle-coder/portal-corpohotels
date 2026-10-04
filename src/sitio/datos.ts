@@ -291,3 +291,15 @@ export const documentosRecientes = cache(async (secciones: string[] | null, limi
     })
   ).docs,
 );
+
+/** Todo lo publicado e indexable, para el mapa del sitio y sitemap.xml (A2 6.01.i). */
+export const contenidoIndexable = cache(async () => {
+  const p = await cms();
+  const indexable = { "seo.noIndexar": { not_equals: true } } as const;
+  const [noticias, servicios, sobreNosotros] = await Promise.all([
+    p.find({ collection: "noticias", where: indexable, sort: "-fecha", limit: 5000, ...publico, depth: 0, select: { titulo: true, slug: true, fecha: true, updatedAt: true } }),
+    p.find({ collection: "servicios", where: indexable, sort: "nombre", limit: 500, ...publico, depth: 0, select: { nombre: true, slug: true, updatedAt: true } }),
+    subpaginas("sobre-nosotros"),
+  ]);
+  return { noticias: noticias.docs, servicios: servicios.docs, sobreNosotros: sobreNosotros.filter((s) => !s.seo?.noIndexar) };
+});

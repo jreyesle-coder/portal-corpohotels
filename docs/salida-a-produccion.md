@@ -18,5 +18,7 @@ Condiciones que deben cumplirse antes de desplegar en producción (S8) y del cor
 | 12 | Informe de migración revisado y firmado por la OAI (equivalencias a validar) y Comunicaciones (noticias y contenido sin lugar) | `docs/migracion/informe.md` | N-31, N-33, N-38 |
 | 13 | Subdominios anteriores redirigidos al portal nuevo | DNS y Front Door | N-32 |
 | 14 | Avance automático del carrusel confirmado o desactivado según la preauditoría | CMS: Portada › Ajustes de la portada | N-34 |
+| 15 | Extensión `unaccent` permitida en PostgreSQL de Azure (`azure.extensions`) antes de aplicar las migraciones | Las migraciones terminan sin error | N-39 |
+| 16 | Matomo de producción configurado como el local (IP del visitante desde el portal, IP anonimizada, meta «Envío de formulario», archivado por cron) y `MATOMO_URL`/`MATOMO_SITE_ID` en el App Service | Prueba `tests/s6-busqueda-seo.spec.ts` contra QA; primer informe con `docs/estadisticas/plantilla-informe-cigetic.md` | N-40, A2 5.04.3 |
 
 Esta lista se completa en cada sprint y se verifica en la preauditoría de S9 junto con la matriz de [requerimientos.md](requerimientos.md).

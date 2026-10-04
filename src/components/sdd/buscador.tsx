@@ -2,7 +2,7 @@ import { IconoLupa } from "./iconos";
 
 /**
  * Herramienta de búsqueda. Escritorio: 40 px de alto por 246 px de ancho (A2 3.02.b).
- * El motor de búsqueda (A2 2.01.i.ii) se construye en S6 sobre /buscar.
+ * Envía a /buscar, el buscador del portal (A2 2.01.i.ii, src/busqueda/buscar.ts).
  */
 export function FormularioBusqueda({
   id,

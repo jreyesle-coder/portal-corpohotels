@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { DatosEstructurados } from "@/components/sdd/datos-estructurados";
 import { EnlaceExterno } from "@/components/sdd/enlace-externo";
 import { PlantillaPagina } from "@/components/sdd/plantilla-pagina";
 import { fechaLarga } from "@/components/sdd/tarjeta-noticia";
@@ -12,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const n = await obtenerNoticia((await params).slug);
-  return n ? metadatos(n.titulo, n.seo, n.resumen) : {};
+  return n ? metadatos(n.titulo, n.seo, n.resumen, n.contenido) : {};
 }
 
 /** Noticia: título, fecha, lugar, imagen y fuente al final con enlace directo (A2 4.02, 4.01.d–e). */
@@ -34,6 +35,18 @@ export default async function Noticia({ params }: Props) {
         </p>
       }
     >
+      <DatosEstructurados
+        datos={{
+          "@type": "NewsArticle",
+          headline: noticia.titulo,
+          datePublished: noticia.fecha,
+          dateModified: noticia.updatedAt,
+          description: noticia.resumen,
+          ...(variante?.url ? { image: [variante.url] } : {}),
+          contentLocation: { "@type": "Place", name: noticia.lugar },
+          publisher: { "@type": "GovernmentOrganization", name: "CORPHOTELS" },
+        }}
+      />
       {variante?.url && (
         <figure className="mb-6 max-w-3xl">
           <Image

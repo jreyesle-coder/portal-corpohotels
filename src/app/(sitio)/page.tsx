@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { BannersInformativos } from "@/components/sdd/banners-informativos";
 import { Carrusel } from "@/components/sdd/carrusel";
+import { DatosEstructurados } from "@/components/sdd/datos-estructurados";
 import { EnlaceExterno } from "@/components/sdd/enlace-externo";
+import { urlSitio } from "@/config";
 import { enlacesInteres } from "@/contenido/sitio";
 import { buscarDestino, PORTALES, RUTA_TRANSPARENCIA } from "@/contenido/transparencia";
 import {
@@ -48,6 +50,19 @@ export default async function Inicio() {
   return (
     <>
       {/* El título de la portada es el nombre de la institución (A2 7.01.m); visualmente lo ocupa el carrusel. */}
+      <DatosEstructurados
+        datos={{
+          "@type": "GovernmentOrganization",
+          name: institucion.nombre,
+          alternateName: institucion.siglas,
+          url: urlSitio().toString(),
+          logo: new URL("/brand/icono-azul.png", urlSitio()).toString(),
+          telephone: institucion.telefono,
+          ...(institucion.correo ? { email: institucion.correo } : {}),
+          address: { "@type": "PostalAddress", streetAddress: institucion.direccion, addressCountry: "DO" },
+          sameAs: institucion.redes.map((r) => r.url),
+        }}
+      />
       <h1 className="sr-only">
         {institucion.nombre} ({institucion.siglas})
       </h1>

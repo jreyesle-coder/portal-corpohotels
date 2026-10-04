@@ -1,15 +1,28 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { urlSitio } from "@/config";
 import { organismo } from "@/contenido/sitio";
 import { MarcoPortal } from "@/components/sdd/marco-portal";
 import "../globals.css";
 
-export const metadata: Metadata = {
+/**
+ * Metadatos comunes (A2 6.01): título «Página | Sitio | palabras clave» (6.01.d; la portada lleva
+ * solo el nombre oficial, 7.01.m), descripción de respaldo y dirección canónica de cada página
+ * (6.01.g.iii), que calcula el proxy. Cada página define su propio título y descripción.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const canonica = (await headers()).get("x-ruta-canonica");
+  return { ...metadata, alternates: canonica ? { canonical: canonica } : undefined };
+}
+
+const metadata: Metadata = {
   metadataBase: urlSitio(),
   title: {
     default: organismo.tituloPortada,
-    template: `%s | ${organismo.siglas}`,
+    template: `%s | ${organismo.siglas} | Fomento hotelero y turístico`,
   },
+  description:
+    "Portal oficial de la Corporación de Fomento de la Industria Hotelera y Desarrollo del Turismo (CORPHOTELS): servicios, noticias, transparencia y contactos.",
   applicationName: organismo.siglas,
   icons: {
     icon: [

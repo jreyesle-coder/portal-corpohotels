@@ -52,11 +52,14 @@ export const campoSeo: Field = {
       maxLength: 160,
       admin: { description: "Resumen propio de esta página. Máximo 160 caracteres." },
     },
+    // A2 6.01.j: «NoIndex, Follow» (no aparece en los buscadores, pero se siguen sus enlaces) o
+    // «Index, NoFollow» (aparece, pero no se respaldan sus enlaces).
     {
-      name: "noIndexar",
-      label: "No indexar en buscadores",
-      type: "checkbox",
-      defaultValue: false,
+      type: "row",
+      fields: [
+        { name: "noIndexar", label: "No indexar en buscadores (NoIndex)", type: "checkbox", defaultValue: false },
+        { name: "noSeguir", label: "No seguir sus enlaces (NoFollow)", type: "checkbox", defaultValue: false },
+      ],
     },
   ],
 };
