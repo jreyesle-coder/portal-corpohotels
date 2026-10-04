@@ -21,7 +21,7 @@ jobs:
     name: Código, tipos y dependencias
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -38,7 +38,7 @@ jobs:
     name: Secretos en el repositorio
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Gitleaks
@@ -53,7 +53,7 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: github/codeql-action/init@v3
         with:
           languages: javascript-typescript
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: estatico
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Configuración de prueba
         run: |
           echo "CLAVE_CIFRADO_DATOS=$(openssl rand -base64 32)" > .env
