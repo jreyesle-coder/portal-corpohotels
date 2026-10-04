@@ -64,7 +64,7 @@
     "png-to-ico": "^3.0.2",
     "simple-icons": "^16.33.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^7"
   },
   "type": "module",
   "overrides": {
