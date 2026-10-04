@@ -3,6 +3,7 @@ import { OPCIONES_DESTINO, PERIODOS } from "@/contenido/transparencia";
 import { tieneRol, todos } from "../acceso";
 import { normalizarNombreArchivo, TIPOS_DOCUMENTO } from "../archivos";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
+import { campoOrigen } from "../campos";
 
 /**
  * Gestor documental. Cada descarga muestra descripción, tamaño, fecha de creación y tipo
@@ -162,5 +163,6 @@ export const Documentos: CollectionConfig = {
       relationTo: "categorias",
       admin: { position: "sidebar" },
     },
+    campoOrigen,
   ],
 };

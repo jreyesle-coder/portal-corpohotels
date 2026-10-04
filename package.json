@@ -19,7 +19,11 @@
     "sembrar": "payload run scripts/sembrar.ts",
     "limpiar-pruebas": "payload run scripts/limpiar-pruebas.ts",
     "fichas-pendientes": "payload run scripts/fichas-pendientes.ts",
-    "transparencia-pendientes": "payload run scripts/transparencia-pendientes.ts"
+    "transparencia-pendientes": "payload run scripts/transparencia-pendientes.ts",
+    "migracion:rastrear": "payload run scripts/migracion/rastrear.ts",
+    "migracion:importar": "payload run scripts/migracion/importar.ts",
+    "migracion:verificar": "payload run scripts/migracion/verificar.ts",
+    "migracion:informe": "payload run scripts/migracion/informe.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.90.2",

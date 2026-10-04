@@ -82,6 +82,7 @@ export interface Config {
     encuestas: Encuesta;
     usuarios: Usuario;
     bitacora: Bitacora;
+    redirecciones: Redireccione;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -104,6 +105,7 @@ export interface Config {
     encuestas: EncuestasSelect<false> | EncuestasSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
     bitacora: BitacoraSelect<false> | BitacoraSelect<true>;
+    redirecciones: RedireccionesSelect<false> | RedireccionesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -203,6 +205,10 @@ export interface Noticia {
     descripcion?: string | null;
     noIndexar?: boolean | null;
   };
+  origen?: {
+    url?: string | null;
+    identificador?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -218,6 +224,10 @@ export interface Medio {
    */
   alt: string;
   credito?: string | null;
+  origen?: {
+    url?: string | null;
+    identificador?: string | null;
+  };
   _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -453,6 +463,10 @@ export interface Documento {
    */
   tipoNorma?: ('constitucion' | 'ley' | 'decreto' | 'resolucion' | 'reglamento' | 'normativa' | 'otra') | null;
   categoria?: (number | null) | Categoria;
+  origen?: {
+    url?: string | null;
+    identificador?: string | null;
+  };
   _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -858,6 +872,21 @@ export interface Bitacora {
     | null;
 }
 /**
+ * Direcciones del portal anterior que llevan a su equivalente en el portal nuevo (301).
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "redirecciones".
+ */
+export interface Redireccione {
+  id: number;
+  origen: string;
+  destino: string;
+  tipo: 'exacta' | 'prefijo' | 'identificador';
+  nota?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -940,6 +969,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'bitacora';
         value: number | Bitacora;
+      } | null)
+    | ({
+        relationTo: 'redirecciones';
+        value: number | Redireccione;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1010,6 +1043,12 @@ export interface NoticiasSelect<T extends boolean = true> {
         titulo?: T;
         descripcion?: T;
         noIndexar?: T;
+      };
+  origen?:
+    | T
+    | {
+        url?: T;
+        identificador?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1175,6 +1214,12 @@ export interface MenusSelect<T extends boolean = true> {
 export interface MediosSelect<T extends boolean = true> {
   alt?: T;
   credito?: T;
+  origen?:
+    | T
+    | {
+        url?: T;
+        identificador?: T;
+      };
   _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1237,6 +1282,12 @@ export interface DocumentosSelect<T extends boolean = true> {
   periodo?: T;
   tipoNorma?: T;
   categoria?: T;
+  origen?:
+    | T
+    | {
+        url?: T;
+        identificador?: T;
+      };
   _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1328,6 +1379,18 @@ export interface BitacoraSelect<T extends boolean = true> {
   titulo?: T;
   ip?: T;
   detalle?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "redirecciones_select".
+ */
+export interface RedireccionesSelect<T extends boolean = true> {
+  origen?: T;
+  destino?: T;
+  tipo?: T;
+  nota?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

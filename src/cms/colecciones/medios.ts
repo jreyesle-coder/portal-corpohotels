@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 import { con, PUEDEN_EDITAR, PUEDEN_PUBLICAR, todos } from "../acceso";
 import { normalizarNombreArchivo } from "../archivos";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
+import { campoOrigen } from "../campos";
 
 /**
  * Imágenes del portal. Texto alternativo obligatorio y dimensiones guardadas para declarar ancho y
@@ -46,5 +47,6 @@ export const Medios: CollectionConfig = {
       },
     },
     { name: "credito", label: "Crédito o autor", type: "text", maxLength: 120 },
+    campoOrigen,
   ],
 };

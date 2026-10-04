@@ -19,6 +19,7 @@ import { Paginas } from "@/cms/colecciones/paginas";
 import { PreguntasFrecuentes } from "@/cms/colecciones/preguntas";
 import { Servicios } from "@/cms/colecciones/servicios";
 import { Categorias, Etiquetas } from "@/cms/colecciones/taxonomias";
+import { Redirecciones } from "@/cms/colecciones/redirecciones";
 import { TextosTransparencia } from "@/cms/colecciones/textos-transparencia";
 import { Usuarios } from "@/cms/colecciones/usuarios";
 import { Institucion } from "@/cms/globales/institucion";
@@ -70,6 +71,7 @@ export default buildConfig({
     Encuestas,
     Usuarios,
     Bitacora,
+    Redirecciones,
   ],
   globals: [Institucion],
   editor: lexicalEditor(),

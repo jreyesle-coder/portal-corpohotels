@@ -44,3 +44,6 @@ next-env.d.ts
 # pruebas
 /test-results/
 /playwright-report/
+
+# migración (S5): HTML y archivos descargados del portal anterior
+/migracion/cache/

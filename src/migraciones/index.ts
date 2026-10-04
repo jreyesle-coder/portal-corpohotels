@@ -46,6 +46,6 @@ export const migrations = [
   {
     up: migration_20261003_233744_s4_transparencia.up,
     down: migration_20261003_233744_s4_transparencia.down,
-    name: '20261003_233744_s4_transparencia'
+    name: '20261003_233744_s4_transparencia',
   },
 ];

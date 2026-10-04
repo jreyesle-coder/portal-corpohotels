@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { con, leerPublicado, PUEDEN_EDITAR, PUEDEN_PUBLICAR } from "../acceso";
 import { auditarCambios, auditarEliminacion } from "../bitacora";
-import { campoSeo, campoSlug } from "../campos";
+import { campoOrigen, campoSeo, campoSlug } from "../campos";
 import { controlPublicacion } from "../flujo-editorial";
 
 /** Noticias: título, fecha, lugar, imagen y fuente (A2 4.02); fuente externa citada (4.01.d–e). */
@@ -79,5 +79,6 @@ export const Noticias: CollectionConfig = {
       admin: { position: "sidebar", description: "El editor la marca cuando el borrador está listo para publicar." },
     },
     campoSeo,
+    campoOrigen,
   ],
 };

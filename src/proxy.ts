@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import pg from "pg";
 import { RUTAS_TRANSPARENCIA } from "./contenido/transparencia";
+import { buscarRedireccion, RUTAS_ANTERIORES } from "./migracion/redireccion";
 
 /**
  * Antes de que la solicitud llegue al portal:
@@ -9,7 +10,10 @@ import { RUTAS_TRANSPARENCIA } from "./contenido/transparencia";
  *    (PANEL_HABILITADO=0) no existen el panel, el inicio de sesión ni la API de escritura: solo se
  *    sirven los archivos de imágenes y documentos. El panel corre como app aparte, sin acceso público.
  *
- * 2. Contenido inexistente (noticias, servicios, páginas de «Sobre nosotros» y secciones de
+ * 2. Direcciones del portal anterior (Joomla): responden 301 a su equivalente según la tabla de
+ *    redirecciones que genera la migración (S5); si no tienen equivalente, 404.
+ *
+ * 3. Contenido inexistente (noticias, servicios, páginas de «Sobre nosotros» y secciones de
  *    transparencia): si el slug no está
  *    publicado, se reescribe a una ruta inexistente para que responda el 404 institucional
  *    renderizado en el servidor (A2 2.01.b.xii). En Next 16, notFound() dentro de una página
@@ -58,8 +62,29 @@ async function existe(seccion: string, slug: string): Promise<boolean> {
   }
 }
 
+const cacheRedirecciones = new Map<string, { destino: string | null; vence: number }>();
+
+async function redireccion(rutaConConsulta: string): Promise<string | null> {
+  const guardado = cacheRedirecciones.get(rutaConConsulta);
+  if (guardado && guardado.vence > Date.now()) return guardado.destino;
+  try {
+    const destino = await buscarRedireccion(pool(), rutaConConsulta);
+    if (cacheRedirecciones.size > 5000) cacheRedirecciones.clear();
+    cacheRedirecciones.set(rutaConConsulta, { destino, vence: Date.now() + VIGENCIA_MS });
+    return destino;
+  } catch {
+    return null;
+  }
+}
+
 export async function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
+
+  if (RUTAS_ANTERIORES.test(pathname)) {
+    const destino = await redireccion(pathname + search);
+    if (destino) return NextResponse.redirect(new URL(destino, request.url), 301);
+    return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+  }
 
   if (pathname.startsWith("/gestion") || pathname.startsWith("/auth/") || pathname.startsWith("/api/")) {
     if (process.env.PANEL_HABILITADO !== "0") return NextResponse.next();
@@ -95,5 +120,11 @@ export const config = {
     "/servicios/:slug/solicitud",
     "/sobre-nosotros/:slug",
     "/transparencia/:path+",
+    // Portal anterior (Joomla).
+    "/index.php",
+    "/index.php/:path*",
+    "/images/:path*",
+    "/media/k2/:path*",
+    "/component/:path*",
   ],
 };

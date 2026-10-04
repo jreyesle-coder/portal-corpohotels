@@ -60,3 +60,18 @@ export const campoSeo: Field = {
     },
   ],
 };
+
+/**
+ * Procedencia del contenido migrado del portal anterior (S5): URL e identificador en el Joomla.
+ * Permite repetir la migración sin duplicar y generar las redirecciones 301.
+ */
+export const campoOrigen: Field = {
+  name: "origen",
+  label: "Origen en el portal anterior",
+  type: "group",
+  admin: { position: "sidebar", readOnly: true, condition: (datos) => Boolean(datos?.origen?.url) },
+  fields: [
+    { name: "url", label: "URL anterior", type: "text", index: true },
+    { name: "identificador", label: "Identificador anterior", type: "text", index: true },
+  ],
+};
