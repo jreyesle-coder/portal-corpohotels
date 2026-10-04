@@ -9,4 +9,5 @@ regexes = [
   '''Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==''',
   '''clave-de-desarrollo-solo-para-docker-compose-local''',
 ]
-paths = ['''package-lock\.json''', '''migracion/datos/.*''', '''docs/migracion/.*''']
+# Informes de escáneres (ZAP): contienen identificadores públicos de Next que parecen claves.
+paths = ['''package-lock\.json''', '''migracion/datos/.*''', '''docs/migracion/.*''', '''docs/seguridad/zap/.*''']
