@@ -25,9 +25,11 @@ async function consultar<T>(sql: string, parametros: unknown[] = []): Promise<T[
 }
 
 async function ir(page: Page, ruta: string) {
+  // El aviso de cookies no tapa el formulario: la decisión ya está registrada. (Inyectar estilos lo
+  // impide la CSP del portal, S7.)
+  await page.addInitScript(() => localStorage.setItem("portal.estadisticas", "rechazadas"));
   await page.goto(ruta);
   await page.waitForLoadState("load");
-  await page.addStyleTag({ content: "[data-aviso-cookies]{display:none!important}" });
 }
 
 async function llenarSugerencia(page: Page, correo: string) {

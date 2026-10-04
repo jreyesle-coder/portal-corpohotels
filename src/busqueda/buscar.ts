@@ -71,7 +71,8 @@ const CONSULTA = `
    LIMIT $5 OFFSET $6`;
 
 export async function buscar(texto: string, tipo: TipoBusqueda | "", pagina: number) {
-  const q = texto.trim().slice(0, 100);
+  // Sin caracteres de control (PostgreSQL rechaza el byte nulo; hallazgo de ZAP, S7).
+  const q = texto.replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, 100);
   const exigirFicha = obtenerConfig().EXIGIR_FICHA_A5_COMPLETA === "1" ? "1" : "0";
   const { rows } = await pool().query(CONSULTA, [
     q,

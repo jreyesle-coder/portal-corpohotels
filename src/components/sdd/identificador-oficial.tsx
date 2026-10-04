@@ -20,7 +20,7 @@ export function IdentificadorOficial({ opcion }: { opcion: "A" | "B" }) {
   return (
     <section aria-label="Identificador oficial del Gobierno" className={`${tono} text-[12px] leading-tight`} data-identificador>
       <div className="contenedor flex min-h-[27px] items-center gap-2 py-1 esc:h-[27px] esc:py-0">
-        <Image src="/sdd/bandera-rd.png" alt="Bandera de la República Dominicana" width={18} height={12} priority />
+        <Image src="/sdd/bandera-rd.png" alt="Bandera de la República Dominicana" width={18} height={12} loading="eager" />
         <p className="min-w-0 flex-1 esc:flex-none">Esta es una web oficial del Gobierno de la República Dominicana</p>
         <button
           type="button"

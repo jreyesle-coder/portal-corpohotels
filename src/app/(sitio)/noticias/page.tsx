@@ -14,7 +14,8 @@ type Props = { searchParams: Promise<{ pagina?: string }> };
 /** Noticias (A2 4.02): listado paginado, de la más reciente a la más antigua. */
 export default async function Noticias({ searchParams }: Props) {
   const solicitada = Number.parseInt((await searchParams).pagina ?? "1", 10);
-  const pagina = Number.isFinite(solicitada) && solicitada > 0 ? solicitada : 1;
+  // Acotada: un número fuera de rango no debe llegar a la base de datos (hallazgo de ZAP, S7).
+  const pagina = Number.isFinite(solicitada) && solicitada > 0 ? Math.min(solicitada, 1000) : 1;
   const resultado = await listarNoticias(pagina);
   const enlace = (n: number) => (n === 1 ? "/noticias" : `/noticias?pagina=${n}`);
 
@@ -24,9 +25,9 @@ export default async function Noticias({ searchParams }: Props) {
         <p>No hay noticias en esta página.</p>
       ) : (
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {resultado.docs.map((n) => (
+          {resultado.docs.map((n, i) => (
             <li key={n.id}>
-              <TarjetaNoticia noticia={n} nivel={2} />
+              <TarjetaNoticia noticia={n} nivel={2} destacada={i === 0} />
             </li>
           ))}
         </ul>

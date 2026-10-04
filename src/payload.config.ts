@@ -7,6 +7,7 @@ import { es } from "@payloadcms/translations/languages/es";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import nodemailer from "nodemailer";
 import { Banners } from "@/cms/colecciones/banners";
 import { Bitacora } from "@/cms/colecciones/bitacora";
 import { Casos } from "@/cms/colecciones/casos";
@@ -48,6 +49,8 @@ export default buildConfig({
   graphQL: { disable: true },
   admin: {
     user: Usuarios.slug,
+    // Avatar propio: sin Gravatar, el panel no consulta servicios de terceros (CSP, Ley 172-13).
+    avatar: "default",
     meta: { titleSuffix: " · CMS CORPHOTELS", robots: "noindex, nofollow" },
     dateFormat: "dd/MM/yyyy HH:mm",
     components: {
@@ -84,12 +87,13 @@ export default buildConfig({
     defaultFromAddress: c.SMTP_FROM,
     defaultFromName: "CORPHOTELS",
     skipVerify: true,
-    transportOptions: {
+    // nodemailer 10 (corrige vulnerabilidades altas de la 9, S7): el transporte se crea aquí.
+    transport: nodemailer.createTransport({
       host: c.SMTP_HOST,
       port: c.SMTP_PORT,
       secure: c.SMTP_PORT === 465,
       auth: c.SMTP_USER ? { user: c.SMTP_USER, pass: c.SMTP_PASSWORD } : undefined,
-    },
+    }),
   }),
   upload: { limits: { fileSize: 50_000_000 } },
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },

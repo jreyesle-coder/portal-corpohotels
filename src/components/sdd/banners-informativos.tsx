@@ -27,7 +27,7 @@ export function BannersInformativos({ banners }: { banners: BannerInformativo[] 
     "flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-primario text-primario hover:bg-primario-claro";
 
   return (
-    <div aria-roledescription="carrusel" aria-label="Banners informativos" className="flex items-center gap-3" data-banners>
+    <div role="group" aria-roledescription="carrusel" aria-label="Banners informativos" className="flex items-center gap-3" data-banners>
       {total > 1 && (
         <button type="button" aria-controls={id} onClick={() => ir(actual - 1)} className={`${flecha} hidden sm:flex`}>
           <IconoChevron width={20} height={20} className="rotate-90" />

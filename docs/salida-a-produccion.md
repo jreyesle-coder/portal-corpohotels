@@ -20,5 +20,10 @@ Condiciones que deben cumplirse antes de desplegar en producción (S8) y del cor
 | 14 | Avance automático del carrusel confirmado o desactivado según la preauditoría | CMS: Portada › Ajustes de la portada | N-34 |
 | 15 | Extensión `unaccent` permitida en PostgreSQL de Azure (`azure.extensions`) antes de aplicar las migraciones | Las migraciones terminan sin error | N-39 |
 | 16 | Matomo de producción configurado como el local (IP del visitante desde el portal, IP anonimizada, meta «Envío de formulario», archivado por cron) y `MATOMO_URL`/`MATOMO_SITE_ID` en el App Service | Prueba `tests/s6-busqueda-seo.spec.ts` contra QA; primer informe con `docs/estadisticas/plantilla-informe-cigetic.md` | N-40, A2 5.04.3 |
+| 17 | Reglas de la rama `main` en GitHub: pull request revisado, comprobaciones del pipeline obligatorias y bloqueo por alertas altas de CodeQL; Dependabot y escaneo de secretos activos | Configuración de GitHub (`docs/seguridad/sdlc.md`, sección 4) | N-42, A8 3.04.4 |
+| 18 | Escaneo activo de OWASP ZAP contra QA sin alertas de riesgo alto | `node scripts/seguridad/evaluar-zap.mjs` sobre el informe | A8 3.04.4 |
+| 19 | Prueba de penetración externa y auditoría WCAG externa sin hallazgos críticos ni altos abiertos | Informes de los proveedores contratados | A8 2.03.2, riesgo 14 |
+| 20 | Prueba con lector de pantalla completada | `docs/calidad/auditoria-wcag.md`, sección 2 | A2 cap. 7 |
+| 21 | Excepciones de dependencias revisadas en su fecha | `docs/seguridad/excepciones-dependencias.md` | N-41 |
 
 Esta lista se completa en cada sprint y se verifica en la preauditoría de S9 junto con la matriz de [requerimientos.md](requerimientos.md).

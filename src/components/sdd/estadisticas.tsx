@@ -40,9 +40,9 @@ export function Estadisticas({ sitio }: { sitio: number }) {
     }
     const url = `${ruta}${parametros.size ? `?${parametros}` : ""}`;
     if (anterior.current === url) return;
-    if (anterior.current) paq.push(["setReferrerUrl", anterior.current]);
+    if (anterior.current) paq.push(["setReferrerUrl", window.location.origin + anterior.current]);
     anterior.current = url;
-    paq.push(["setCustomUrl", url]);
+    paq.push(["setCustomUrl", window.location.origin + url]);
     paq.push(["setDocumentTitle", document.title]);
     // Búsquedas internas: alimentan el informe de palabras clave (A2 5.04.3).
     if (ruta === "/buscar" && parametros.get("q")) {

@@ -6,6 +6,7 @@ export const HOST = "https://corphotels.gob.do";
  * Devuelve null si la URL es de otro dominio. Incluye www y http, que el portal actual también sirve.
  */
 export function normalizarUrl(url: string): string | null {
+  if (/[\u0000-\u001f\u007f]/.test(url)) return null;
   let u: URL;
   try {
     u = new URL(url.replace(/^\/\//, "https://"), HOST);
@@ -15,7 +16,14 @@ export function normalizarUrl(url: string): string | null {
   const host = u.hostname.replace(/^www\./, "").replace(/:\d+$/, "");
   if (host !== "corphotels.gob.do") return null;
   // «/transparencia/../index.php» del menú de transparencia.
-  let ruta = decodeURIComponent(u.pathname).replace(/\/transparencia\/\.\.\//, "/").replace(/\/{2,}/g, "/");
+  let decodificada: string;
+  try {
+    decodificada = decodeURIComponent(u.pathname);
+  } catch {
+    // Codificación inválida (por ejemplo «%E0%A4%A»): no es una URL del portal anterior.
+    return null;
+  }
+  let ruta = decodificada.replace(/\/transparencia\/\.\.\//, "/").replace(/\/{2,}/g, "/");
   if (ruta === "/index.php/") ruta = "/index.php";
   const consulta = [...u.searchParams.entries()]
     .filter(([k]) => !/^(utm_|fbclid|gclid|lang$|Itemid$)/.test(k))

@@ -1,0 +1,20 @@
+# Actualización semanal de dependencias (A2 5.05.n: software en su última versión estable).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      payload:
+        patterns: ["payload", "@payloadcms/*"]
+      next:
+        patterns: ["next", "react", "react-dom"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly

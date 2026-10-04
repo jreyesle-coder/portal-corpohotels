@@ -7,7 +7,8 @@ export const fechaLarga = (iso: string) =>
   new Date(iso).toLocaleDateString("es-DO", { day: "numeric", month: "long", year: "numeric", timeZone: "America/Santo_Domingo" });
 
 /** Tarjeta de noticia: título, fecha, lugar e imagen (A2 4.02). */
-export function TarjetaNoticia({ noticia, nivel = 3 }: { noticia: Noticia; nivel?: 2 | 3 }) {
+/** `destacada`: la primera tarjeta visible se carga con prioridad (mejor LCP, S7). */
+export function TarjetaNoticia({ noticia, nivel = 3, destacada = false }: { noticia: Noticia; nivel?: 2 | 3; destacada?: boolean }) {
   const imagen = comoMedio(noticia.imagen);
   const Titulo = `h${nivel}` as const;
   const variante = imagen?.sizes?.tarjeta?.url ? imagen.sizes.tarjeta : imagen;
@@ -20,6 +21,7 @@ export function TarjetaNoticia({ noticia, nivel = 3 }: { noticia: Noticia; nivel
           width={variante.width ?? 800}
           height={variante.height ?? 450}
           className="aspect-video w-full object-cover"
+          {...(destacada ? { fetchPriority: "high" as const, loading: "eager" as const } : {})}
           sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
         />
       )}

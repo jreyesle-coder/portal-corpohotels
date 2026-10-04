@@ -5,7 +5,7 @@ import { PaginaNoEncontrada } from "@/components/sdd/pagina-no-encontrada";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `Página no encontrada | ${organismo.siglas}`,
+  title: `Página no encontrada | ${organismo.siglas} | Fomento hotelero y turístico`,
   icons: { icon: [{ url: "/favicon.ico", sizes: "16x16 32x32 48x48" }] },
 };
 

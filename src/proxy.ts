@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import pg from "pg";
 import { RUTAS_TRANSPARENCIA } from "./contenido/transparencia";
 import { buscarRedireccion, RUTAS_ANTERIORES } from "./migracion/redireccion";
+import { nonceNuevo, POLITICA_PANEL, politicaContenido } from "./seguridad/cabeceras";
 
 /**
  * Antes de que la solicitud llegue al portal:
@@ -13,7 +14,9 @@ import { buscarRedireccion, RUTAS_ANTERIORES } from "./migracion/redireccion";
  * 2. Direcciones del portal anterior (Joomla): responden 301 a su equivalente según la tabla de
  *    redirecciones que genera la migración (S5); si no tienen equivalente, 404.
  *
- * 3. Contenido inexistente (noticias, servicios, páginas de «Sobre nosotros» y secciones de
+ * 3. Cabeceras de seguridad de cada página: CSP con nonce (A8 3.03) y dirección canónica (A2 6.01).
+ *
+ * 4. Contenido inexistente (noticias, servicios, páginas de «Sobre nosotros» y secciones de
  *    transparencia): si el slug no está
  *    publicado, se reescribe a una ruta inexistente para que responda el 404 institucional
  *    renderizado en el servidor (A2 2.01.b.xii). En Next 16, notFound() dentro de una página
@@ -83,19 +86,23 @@ export async function proxy(request: NextRequest) {
   if (RUTAS_ANTERIORES.test(pathname)) {
     const destino = await redireccion(pathname + search);
     if (destino) return NextResponse.redirect(new URL(destino, request.url), 301);
-    return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+    return pagina(request, NO_EXISTE);
   }
 
   if (pathname.startsWith("/gestion") || pathname.startsWith("/auth/") || pathname.startsWith("/api/")) {
-    if (process.env.PANEL_HABILITADO !== "0") return NextResponse.next();
+    if (process.env.PANEL_HABILITADO !== "0") {
+      const r = NextResponse.next();
+      if (pathname.startsWith("/gestion")) r.headers.set("Content-Security-Policy", politicaPanel());
+      return r;
+    }
     const esArchivo = request.method === "GET" && ARCHIVOS_PUBLICOS.test(pathname);
     if (esArchivo || pathname === "/api/salud") return NextResponse.next();
-    return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+    return pagina(request, NO_EXISTE);
   }
 
   // Las secciones de transparencia son fijas por norma: se validan sin consultar la base de datos.
   if (pathname.startsWith("/transparencia/") && !RUTAS_TRANSPARENCIA.has(pathname.replace(/\/$/, ""))) {
-    return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+    return pagina(request, NO_EXISTE);
   }
 
   const coincidencia = CONTENIDO.exec(pathname);
@@ -104,20 +111,38 @@ export async function proxy(request: NextRequest) {
     const seccion = solicitud ? (base === "servicios" ? "servicios/solicitud" : "") : base;
     const valido = /^[a-z0-9-]{1,120}$/.test(slug);
     if (!valido || !CONSULTAS[seccion] || !(await existe(seccion, slug))) {
-      return NextResponse.rewrite(new URL(NO_EXISTE, request.url));
+      return pagina(request, NO_EXISTE);
     }
   }
+  return pagina(request);
+}
 
-  // Dirección canónica de la página (A2 6.01.g.iii): la ruta sin parámetros, salvo los que cambian
-  // el contenido (página de un listado, año de transparencia). El layout la publica en <link rel=canonical>.
+const desarrollo = process.env.NODE_ENV === "development";
+const politicaPanel = () => (desarrollo ? POLITICA_PANEL.replace("'unsafe-inline'", "'unsafe-inline' 'unsafe-eval'") : POLITICA_PANEL);
+
+/**
+ * Respuesta de una página del portal: CSP con nonce propio (A8 3.03) y dirección canónica (A2
+ * 6.01.g.iii). Con `reescribir`, la página es el 404 institucional.
+ */
+function pagina(request: NextRequest, reescribir?: string) {
+  const nonce = nonceNuevo();
+  const csp = politicaContenido(nonce, { desarrollo, https: (process.env.SITE_URL ?? "").startsWith("https://") });
   const cabeceras = new Headers(request.headers);
+  cabeceras.set("x-nonce", nonce);
+  cabeceras.set("Content-Security-Policy", csp);
+  // Dirección canónica: la ruta sin parámetros, salvo los que cambian el contenido (página de un
+  // listado, año de transparencia). El layout la publica en <link rel=canonical>.
   const canonica = new URLSearchParams();
   for (const p of ["pagina", "anio"]) {
     const v = request.nextUrl.searchParams.get(p);
     if (v && /^\d{1,4}$/.test(v)) canonica.set(p, v);
   }
-  cabeceras.set("x-ruta-canonica", pathname.replace(/(.)\/$/, "$1") + (canonica.size ? `?${canonica}` : ""));
-  return NextResponse.next({ request: { headers: cabeceras } });
+  cabeceras.set("x-ruta-canonica", request.nextUrl.pathname.replace(/(.)\/$/, "$1") + (canonica.size ? `?${canonica}` : ""));
+  const respuesta = reescribir
+    ? NextResponse.rewrite(new URL(reescribir, request.url), { request: { headers: cabeceras } })
+    : NextResponse.next({ request: { headers: cabeceras } });
+  respuesta.headers.set("Content-Security-Policy", csp);
+  return respuesta;
 }
 
 export const config = {

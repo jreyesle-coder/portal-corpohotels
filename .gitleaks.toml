@@ -1,0 +1,12 @@
+# Búsqueda de secretos (A8 3.03.1). Se excluyen valores públicos y documentados de desarrollo:
+# la cuenta de Azurite y las claves de Docker Compose local, que no sirven en ningún otro entorno.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Credenciales públicas de desarrollo local"
+regexes = [
+  '''Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==''',
+  '''clave-de-desarrollo-solo-para-docker-compose-local''',
+]
+paths = ['''package-lock\.json''', '''migracion/datos/.*''', '''docs/migracion/.*''']

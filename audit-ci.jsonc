@@ -1,0 +1,8 @@
+{
+  // Filtro de dependencias del pipeline (A2 5.05.n, A8 3.04.4): falla ante cualquier
+  // vulnerabilidad alta o crítica, salvo las excepciones justificadas en
+  // docs/seguridad/excepciones-dependencias.md (cada una con fecha de revisión).
+  "$schema": "https://github.com/IBM/audit-ci/raw/main/docs/schema.json",
+  "high": true,
+  "allowlist": ["GHSA-vfj7-8cjw-p6xm"]
+}

@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import { Poppins } from "next/font/google";
 import { Suspense } from "react";
 import { obtenerConfigCms } from "@/config";
@@ -29,12 +30,14 @@ export async function MarcoPortal({ children }: { children: React.ReactNode }) {
     obtenerMenu("pie-informate"),
   ]);
   const sitioMatomo = obtenerConfigCms().MATOMO_SITE_ID;
+  // Nonce de la política de contenido (A8 3.03): el único script en línea propio lo lleva.
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <html lang="es" className={poppins.variable} suppressHydrationWarning>
       {/* eslint-disable-next-line @next/next/no-head-element -- documento raíz del App Router, no Pages Router */}
       <head>
         {/* Aplica tamaño de texto y contraste guardados antes del primer pintado (A2 7.01.v). */}
-        <script dangerouslySetInnerHTML={{ __html: scriptPreferencias }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: scriptPreferencias }} />
       </head>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         {/* Enlace para saltar bloques (A2 7.01.k). */}

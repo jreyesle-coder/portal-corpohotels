@@ -56,7 +56,8 @@ export default async function Noticia({ params }: Props) {
             height={variante.height ?? 900}
             className="h-auto w-full rounded-lg"
             sizes="(min-width: 800px) 48rem, 100vw"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
           {imagen?.credito && <figcaption className="mt-1 text-sm text-texto-suave">Foto: {imagen.credito}</figcaption>}
         </figure>

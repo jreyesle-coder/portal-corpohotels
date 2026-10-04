@@ -1,0 +1,91 @@
+# Pipeline de calidad y seguridad (A2 5.05.n, A8 3.04.4; S7). Bloquea el cambio si hay errores de
+# código, de tipos, vulnerabilidades altas o críticas en dependencias, secretos en el repositorio,
+# hallazgos de CodeQL o alertas de riesgo alto en la prueba dinámica con OWASP ZAP.
+name: Calidad y seguridad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calidad-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  estatico:
+    name: Código, tipos y dependencias
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Análisis estático (ESLint)
+        run: npm run lint -- --max-warnings=0
+      - name: Tipos (TypeScript)
+        run: npm run typecheck
+      - name: Dependencias vulnerables (altas y críticas)
+        run: npx audit-ci --config audit-ci.jsonc
+
+  secretos:
+    name: Secretos en el repositorio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest \
+            detect --source /repo --config /repo/.gitleaks.toml --redact --verbose --exit-code 1
+
+  codeql:
+    name: CodeQL (OWASP Top 10)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+          queries: security-extended
+      - uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:javascript-typescript"
+
+  dinamico:
+    name: Prueba dinámica (OWASP ZAP)
+    runs-on: ubuntu-latest
+    needs: estatico
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configuración de prueba
+        run: |
+          echo "CLAVE_CIFRADO_DATOS=$(openssl rand -base64 32)" > .env
+      - name: Portal en Docker Compose (igual que en Azure)
+        run: docker compose up -d --build --wait portal
+      - name: Esperar el portal
+        run: |
+          for i in $(seq 1 60); do curl -fs http://localhost:3000/api/salud && exit 0; sleep 3; done
+          docker compose logs portal; exit 1
+      - name: OWASP ZAP (línea base)
+        run: |
+          mkdir -p zap && chmod 777 zap
+          docker run --rm --network host -v "$PWD/zap:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable \
+            zap-baseline.py -t http://localhost:3000 -J informe-zap.json -r informe-zap.html -I -m 3
+      - name: Bloquear si hay alertas de riesgo alto
+        run: node scripts/seguridad/evaluar-zap.mjs zap/informe-zap.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: informe-zap
+          path: zap/

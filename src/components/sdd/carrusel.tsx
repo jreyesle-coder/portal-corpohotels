@@ -92,7 +92,7 @@ export function Carrusel({
                 src={d.imagen.url}
                 alt={d.imagen.alt}
                 fill
-                priority={i === 0}
+                {...(i === 0 ? { fetchPriority: "high" as const, loading: "eager" as const } : {})}
                 sizes="100vw"
                 className="object-cover"
               />

@@ -48,7 +48,7 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 a S6 y del diseño contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
+| `npm run test:e2e` | Pruebas de S0 a S7 y del diseño contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
 | `npm run fichas-pendientes` | Lista los servicios publicados sin ficha A5 completa; falla si hay alguno (paso obligatorio antes de producción) |
@@ -98,6 +98,14 @@ Las equivalencias del menú anterior con la estructura nueva están en `scripts/
 - Cada página tiene título «Página | CORPHOTELS | Fomento hotelero y turístico», meta descripción propia y URL canónica (el proxy la calcula). NoIndex y NoFollow se marcan por página en la pestaña «Buscadores (SEO)» del CMS.
 - `/mapa-del-sitio`, `/sitemap.xml`, `/robots.txt` y marcado Schema.org (organización, noticias, servicios y rastro de navegación).
 - Estadísticas: Matomo solo mide si la persona acepta en el aviso de cookies, sin cookies y sin terceros: el navegador habla con `/estadisticas/…` y el portal reenvía a Matomo. Instalación local: asistente en http://localhost:8080 (usuario y clave en `.env`), luego en el contenedor `config/config.ini.php` › `[General]` › `proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"`, y la meta «Envío de formulario» (evento de categoría «Formulario»). Informe mensual: `docs/estadisticas/plantilla-informe-cigetic.md`.
+
+## Seguridad y calidad (S7)
+
+- Cabeceras de seguridad en toda respuesta y CSP con nonce por solicitud en las páginas (`src/seguridad/cabeceras.ts`, `src/proxy.ts`). Errores sin rastros técnicos (`error.tsx`, `global-error.tsx`).
+- Pipeline `.github/workflows/calidad.yml`: ESLint sin advertencias, TypeScript, `audit-ci` (bloquea vulnerabilidades altas y críticas), Gitleaks, CodeQL y línea base de OWASP ZAP (bloquea alertas de riesgo alto). Dependabot semanal.
+- Escaneo activo local: `docker run --rm -v <carpeta>:/zap/wrk ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://host.docker.internal:3100 -J informe.json -I` y luego `node scripts/seguridad/evaluar-zap.mjs informe.json`.
+- Lighthouse: `BASE=http://localhost:3100 node scripts/calidad-lighthouse.mjs` (meta ≥ 90; resultados en `docs/calidad/lighthouse/`).
+- Documentos: `docs/seguridad/sdlc.md` (ciclo de desarrollo seguro y OWASP Top 10), `docs/seguridad/excepciones-dependencias.md`, `docs/calidad/auditoria-wcag.md` (incluye la prueba con lector de pantalla).
 
 ## Configuración
 

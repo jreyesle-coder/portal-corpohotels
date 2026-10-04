@@ -34,7 +34,7 @@ export function Cabecera({
               alt=""
               width={29}
               height={44}
-              priority
+              loading="eager"
               className="h-[44px] w-auto esc:h-[40px]"
               data-medida="logo"
             />
