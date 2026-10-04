@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { EXPERIMENTAL_TableFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import { azureStorage } from "@payloadcms/storage-azure";
 import { es } from "@payloadcms/translations/languages/es";
 import { buildConfig } from "payload";
@@ -10,6 +10,7 @@ import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { Banners } from "@/cms/colecciones/banners";
 import { Bitacora } from "@/cms/colecciones/bitacora";
 import { Casos } from "@/cms/colecciones/casos";
+import { Diapositivas } from "@/cms/colecciones/diapositivas";
 import { Documentos } from "@/cms/colecciones/documentos";
 import { Encuestas } from "@/cms/colecciones/encuestas";
 import { Medios } from "@/cms/colecciones/medios";
@@ -23,6 +24,7 @@ import { Redirecciones } from "@/cms/colecciones/redirecciones";
 import { TextosTransparencia } from "@/cms/colecciones/textos-transparencia";
 import { Usuarios } from "@/cms/colecciones/usuarios";
 import { Institucion } from "@/cms/globales/institucion";
+import { Portada } from "@/cms/globales/portada";
 import { RUTA_PANEL } from "@/cms/rutas";
 import { obtenerConfigCms } from "@/config";
 import { migrations } from "./migraciones";
@@ -59,6 +61,7 @@ export default buildConfig({
     Noticias,
     Paginas,
     Servicios,
+    Diapositivas,
     Banners,
     PreguntasFrecuentes,
     Categorias,
@@ -73,8 +76,9 @@ export default buildConfig({
     Bitacora,
     Redirecciones,
   ],
-  globals: [Institucion],
-  editor: lexicalEditor(),
+  globals: [Institucion, Portada],
+  // Tablas: las usan los textos de transparencia (declaraciones juradas, miembros de comisiones).
+  editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()] }),
   // Correo transaccional (local: Mailpit; Azure: Communication Services o relé de Microsoft 365).
   email: nodemailerAdapter({
     defaultFromAddress: c.SMTP_FROM,

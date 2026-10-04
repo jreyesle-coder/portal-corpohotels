@@ -14,5 +14,9 @@ Condiciones que deben cumplirse antes de desplegar en producción (S8) y del cor
 | 8 | Clave `CLAVE_CIFRADO_DATOS` en Key Vault con respaldo y procedimiento de rotación | Entregables del proveedor | N-24 |
 | 9 | Ninguna sección de transparencia sin contenido: documentos, texto de la OAI o constancia de «no aplica» | `npm run transparencia-pendientes` debe terminar sin pendientes; paso obligatorio del pipeline de despliegue a producción | A2 4.01.h, 4.03; N-28 |
 | 10 | Estructura de transparencia confirmada por la OAI con la resolución DIGEIG vigente y las inconsistencias de la A2 aclaradas | Acta o correo de la OAI | N-26, N-27 |
+| 11 | Migración repetida en el corte con el contenido al día, hacia el Blob de Azure, y verificación de URL contra producción con 0 sin resolver | `npm run migracion:rastrear`, `migracion:importar` y `migracion:verificar` (con `BASE_VERIFICACION` de producción) | Requerimientos S5, S9 |
+| 12 | Informe de migración revisado y firmado por la OAI (equivalencias a validar) y Comunicaciones (noticias y contenido sin lugar) | `docs/migracion/informe.md` | N-31, N-33, N-38 |
+| 13 | Subdominios anteriores redirigidos al portal nuevo | DNS y Front Door | N-32 |
+| 14 | Avance automático del carrusel confirmado o desactivado según la preauditoría | CMS: Portada › Ajustes de la portada | N-34 |
 
 Esta lista se completa en cada sprint y se verifica en la preauditoría de S9 junto con la matriz de [requerimientos.md](requerimientos.md).

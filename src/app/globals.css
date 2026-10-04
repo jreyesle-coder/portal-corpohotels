@@ -101,7 +101,7 @@ body {
   /* Contenedor centrado e igual en las tres divisiones (A2 3.01.b). */
   .contenedor {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1320px;
     margin-inline: auto;
     padding-inline: 1rem;
   }

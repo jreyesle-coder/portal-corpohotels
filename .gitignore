@@ -47,3 +47,4 @@ next-env.d.ts
 
 # migración (S5): HTML y archivos descargados del portal anterior
 /migracion/cache/
+/migracion/datos/inventario.json

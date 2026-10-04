@@ -5,13 +5,13 @@
  *
  * Fuentes: migracion/datos/urls-indexadas.txt (Internet Archive; se le puede añadir la exportación de
  * Google Search Console) y las URL recorridas por el extractor (migracion/datos/inventario.json).
- * Uso: npm run migracion:verificar [-- --base=http://localhost:3000]
+ * Uso: npm run migracion:verificar   (BASE_VERIFICACION=http://localhost:3100 para otro servidor)
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { ARCHIVO_INVENTARIO, ARCHIVO_URLS_INDEXADAS, DIR_MIGRACION, type Inventario, normalizarUrl } from "./comun";
 
-const BASE = process.argv.find((a) => a.startsWith("--base="))?.slice(7) ?? process.env.SITE_URL ?? "http://localhost:3000";
+const BASE = process.env.BASE_VERIFICACION ?? "http://localhost:3000";
 const SALIDA = path.resolve(DIR_MIGRACION, "../docs/migracion/verificacion-urls.csv");
 
 /** URL que no necesitan redirección, con su justificación (se documentan en el informe). */
@@ -31,7 +31,18 @@ const JUSTIFICACIONES: [RegExp, string][] = [
   [/^\/(transparencia\/)?index\.php\/(mapa-de-sitio|resultado-de-busqueda)(\/|\?|$)/, "Mapa del sitio y buscador: el portal nuevo los tiene desde S6; la redirección se agrega entonces."],
   [/^\/(\.well-known|wp-|xmlrpc|cgi-bin|phpmyadmin)/i, "Sondeo automático de robots; nunca fue contenido del portal."],
   [/^\/(robots\.txt|sitemap\.xml|favicon\.ico|humans\.txt|ads\.txt)$/, "Archivo técnico: el portal nuevo publica el suyo (S6)."],
-  [/^\/-?\d+(\.\d+)?$/, "Dirección malformada registrada por el archivo web; nunca fue contenido."],
+  [/^\/[\d/,.\-]+$|\s|%20/, "Dirección malformada registrada por el archivo web; nunca fue contenido."],
+  [/^\/images\/FotosPersonal\//, "Foto del personal: dato personal que no se migra; la información del despacho está en «Conoce al Gerente General»."],
+  [/^\/images\/phocagallery\//, "Foto de la galería rota del portal anterior (novedad N-33)."],
+  [/^\/media\/k2\//, "Imagen de K2 sin contenido migrado que la use (miniaturas, avatares o artículos retirados)."],
+  [/^\/(transparencia\/)?images\/|^\/transparencia\/[\w.-]+\.(png|jpe?g|gif)$/i, "Imagen de la plantilla, logo o banner del portal anterior; no es contenido (el portal nuevo usa los vigentes)."],
+  [/^\/(transparencia\/)?index\.php\/component\/|^\/index\.php\?/, "Ruta interna de un componente de Joomla (K2, formularios, correo, votos, fuentes RSS) sin contenido propio."],
+  [/^\/cdn-cgi\//, "Recurso del servicio Cloudflare que usaba el portal anterior; no es contenido."],
+  [/^\/(feed\/?|feeds\/.*|atom\.xml|feed\.xml|app-ads\.txt|installation\/?|joomla\/.*)$/, "Sondeo automático de robots; nunca fue contenido del portal."],
+  [
+    /^\/(transparencia\/)?([A-Za-z0-9]+(\.[A-Za-z0-9_-]+)+|MSXML2\.XMLHTTP|multipart\/form-data|n\/a|Trident\/?|true\/?|Version\/?)$/,
+    "Fragmento de código JavaScript que el archivo web registró como si fuera una dirección; nunca fue una página.",
+  ],
 ];
 
 type Fuente = { url: string; host: string; origen: string };
@@ -98,28 +109,30 @@ async function verificar(f: Fuente) {
     filas.push({ url: `${f.host}${f.url}`, origen: f.origen, resultado: "justificada", detalle: `Subdominio anterior (${f.host}): su redirección se configura en el DNS y Front Door en el corte (S9, novedad N-32).` });
     return;
   }
-  const justificacion = JUSTIFICACIONES.find(([patron]) => patron.test(f.url));
-  if (justificacion) {
-    filas.push({ url: f.url, origen: f.origen, resultado: "justificada", detalle: justificacion[1] });
-    return;
-  }
+  // Primero la redirección: una URL con equivalente nunca se da por justificada. Se siguen las
+  // redirecciones permanentes (301 del proxy y 308 con que Next quita la barra final).
   const r = await estado(f.url);
-  if (r.codigo === 301 && r.ubicacion) {
-    const destino = new URL(r.ubicacion, BASE);
+  let falla = `Responde ${r.codigo || r.ubicacion}`;
+  if ((r.codigo === 301 || r.codigo === 308) && r.ubicacion) {
+    const destino = new URL(r.ubicacion, new URL(f.url, BASE));
     const ruta = destino.pathname + destino.search;
     const final = await destinoValido(ruta);
-    filas.push(
-      final === 200
-        ? { url: f.url, origen: f.origen, resultado: "301", detalle: ruta }
-        : { url: f.url, origen: f.origen, resultado: "FALLA", detalle: `301 a ${ruta}, que responde ${final}` },
-    );
-    return;
+    if (final === 200) {
+      filas.push({ url: f.url, origen: f.origen, resultado: "301", detalle: ruta });
+      return;
+    }
+    falla = `${r.codigo} a ${ruta}, que termina en ${final}`;
   }
   if (r.codigo === 200) {
     filas.push({ url: f.url, origen: f.origen, resultado: "existe", detalle: "La misma dirección existe en el portal nuevo" });
     return;
   }
-  filas.push({ url: f.url, origen: f.origen, resultado: "FALLA", detalle: `Responde ${r.codigo || r.ubicacion}` });
+  const justificacion = JUSTIFICACIONES.find(([patron]) => patron.test(f.url));
+  if (justificacion) {
+    filas.push({ url: f.url, origen: f.origen, resultado: "justificada", detalle: justificacion[1] });
+    return;
+  }
+  filas.push({ url: f.url, origen: f.origen, resultado: "FALLA", detalle: falla });
 }
 
 const lista = [...fuentes.values()];

@@ -10,7 +10,7 @@ const fecha = (iso?: string | null) =>
  * se abre en pestaña nueva (A2 2.01.g).
  */
 export function Descarga({ documento, periodo }: { documento: Documento; periodo?: string | null }) {
-  const tipo = tipoLegible(documento.mimeType);
+  const tipo = tipoLegible(documento.mimeType, documento.filename);
   const tamano = tamanoLegible(documento.filesize);
   return (
     <article className="rounded-lg border border-borde bg-fondo p-4" data-descarga>

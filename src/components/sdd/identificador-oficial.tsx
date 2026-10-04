@@ -15,7 +15,7 @@ export function IdentificadorOficial({ opcion }: { opcion: "A" | "B" }) {
   const [abierto, setAbierto] = useState(false);
   const idDetalle = useId();
   const azul = opcion === "A";
-  const tono = azul ? "bg-oscuro text-sobre-oscuro" : "bg-fondo text-titulo border-b border-borde";
+  const tono = azul ? "bg-oscuro text-sobre-oscuro" : "bg-fondo text-titulo shadow-[inset_0_-1px_0_var(--borde)]";
 
   return (
     <section aria-label="Identificador oficial del Gobierno" className={`${tono} text-[12px] leading-tight`} data-identificador>

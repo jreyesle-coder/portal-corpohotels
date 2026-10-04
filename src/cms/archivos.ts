@@ -19,6 +19,8 @@ const TIPOS: Record<string, string> = {
   "application/vnd.ms-excel": "Excel",
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "Excel",
   "application/vnd.ms-powerpoint": "PowerPoint",
+  // Word, Excel y PowerPoint 97-2003 (.doc, .xls, .ppt): el CMS los detecta por su contenido con este tipo.
+  "application/x-cfb": "Office 97-2003",
   "application/vnd.openxmlformats-officedocument.presentationml.presentation": "PowerPoint",
   "application/vnd.oasis.opendocument.text": "ODT",
   "application/vnd.oasis.opendocument.spreadsheet": "ODS",
@@ -33,8 +35,11 @@ const TIPOS: Record<string, string> = {
 /** Formatos de documento permitidos: ofimáticos, abiertos (NORTIC A3) y comprimidos. */
 export const TIPOS_DOCUMENTO = Object.keys(TIPOS);
 
-export function tipoLegible(mime?: string | null): string {
+const OFFICE_ANTIGUO: Record<string, string> = { doc: "Word", xls: "Excel", ppt: "PowerPoint" };
+
+export function tipoLegible(mime?: string | null, nombreArchivo?: string | null): string {
   if (!mime) return "Archivo";
+  if (mime === "application/x-cfb") return OFFICE_ANTIGUO[nombreArchivo?.split(".").pop()?.toLowerCase() ?? ""] ?? TIPOS[mime];
   return TIPOS[mime] ?? mime.split("/")[1]?.toUpperCase() ?? "Archivo";
 }
 

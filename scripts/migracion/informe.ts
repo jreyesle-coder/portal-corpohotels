@@ -104,7 +104,8 @@ No se corrigieron en la migración: se migró el contenido tal como estaba publi
 | Títulos repetidos dentro de una misma sección (posibles duplicados, o PDF y Excel del mismo informe) | ${r.hallazgos.titulosRepetidos.length} | OAI |
 | Noticias con restos de herramientas de redacción en el texto (por ejemplo «Reporte-Saneamiento-San Gil-14-…») | ${r.hallazgos.textoConMarcasDeHerramientas.length} | Comunicaciones |
 | Noticias sin lugar en la entrada (se puso «República Dominicana») | ${r.noticias.sinLugar.length} | Comunicaciones |
-| Imágenes dentro del texto de las noticias (no se migran: el texto conserva la noticia; las fotos principales sí) | ${r.noticias.imagenesEnTexto} | Comunicaciones |
+| Imágenes dentro del texto de noticias y páginas (no se migran; las fotos principales de las noticias sí) | ${r.noticias.imagenesEnTexto} | Comunicaciones |
+| Noticias sin foto principal (quedan como borrador hasta que se les agregue; A2 4.02) | ${r.noticias.sinImagen.length} | Comunicaciones |
 | Páginas del portal anterior que ya respondían con error | ${r.hallazgos.enlacesRotos.length} | TIC |
 
 ### Noticias con restos de herramientas de redacción
@@ -114,6 +115,10 @@ ${r.hallazgos.textoConMarcasDeHerramientas.map((u: string) => `- ${u}`).join("\n
 ### Noticias sin lugar
 
 ${r.noticias.sinLugar.map((u: string) => `- ${u}`).join("\n") || "_Ninguna._"}
+
+### Noticias sin foto principal
+
+${r.noticias.sinImagen.map((u: string) => `- ${u}`).join("\n") || "_Ninguna._"}
 
 ### Títulos repetidos (primeros 100)
 

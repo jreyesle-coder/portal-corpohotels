@@ -2,7 +2,8 @@ import type pg from "pg";
 import { normalizarUrl } from "./normalizar";
 
 /** Rutas del portal anterior (Joomla): todo lo que no existe en el portal nuevo. */
-export const RUTAS_ANTERIORES = /^\/(index\.php|transparencia\/index\.php|transparencia\/images\/|images\/|media\/k2\/|component\/)/;
+export const RUTAS_ANTERIORES =
+  /^\/(index\.php|transparencia\/index\.php|transparencia\/images\/|transparencia\/phocadownload\/|images\/|media\/k2\/|component\/)/;
 
 export const instalacion = (url: string): "portal" | "transparencia" => (url.startsWith("/transparencia/") ? "transparencia" : "portal");
 
@@ -28,7 +29,8 @@ const CONSULTA = `
   WHERE origen = ANY($2::text[])
      OR (tipo = 'prefijo' AND left($1, length(origen)) = origen
          AND (length($1) = length(origen) OR substr($1, length(origen) + 1, 1) IN ('/', '?')))
-  ORDER BY CASE tipo WHEN 'identificador' THEN 0 WHEN 'exacta' THEN 1 ELSE 2 END, length(origen) DESC
+  ORDER BY CASE tipo WHEN 'identificador' THEN 0 WHEN 'exacta' THEN 1 ELSE 2 END,
+           array_position($2::text[], origen::text) NULLS LAST, length(origen) DESC
   LIMIT 1`;
 
 /** Destino de una URL del portal anterior, o null si no tiene equivalente. */

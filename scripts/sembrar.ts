@@ -150,7 +150,17 @@ for (const p of semilla.paginas) {
     documentos: p.documentos.map((c) => documentos.get(c)).filter(Boolean),
   });
 }
-console.log(`✓ ${semilla.paginas.length + 2} páginas`);
+// Arrendatarios: sección propia de CORPHOTELS (pedido de TIC). Contenido inicial; el definitivo lo
+// completa el área responsable desde el CMS (novedad N-35).
+await guardar("paginas", "slug", "arrendatarios", {
+  titulo: "Arrendatarios",
+  slug: "arrendatarios",
+  contenido: lexical(
+    "<p>Esta sección reúne los servicios y la información para las personas y empresas que arriendan propiedades en los complejos administrados por CORPHOTELS, como el Complejo Vacacional Ercilia Pepín y el Complejo Ecoturístico La Mansión.</p>" +
+      "<p>Desde aquí puede solicitar la no objeción para realizar obras o intervenciones en su propiedad, actualizar sus datos de contacto y consultar el balance de su cuenta. Si tiene alguna duda, comuníquese con nosotros por los medios indicados en Contactos.</p>",
+  ),
+});
+console.log(`✓ ${semilla.paginas.length + 3} páginas`);
 
 // Se publican todos con la información del portal actual (decisión de TIC); los que no tienen la
 // ficha A5 completa quedan marcados en el CMS y se completan antes de producción (novedad N-20).

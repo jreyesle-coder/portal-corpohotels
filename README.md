@@ -48,7 +48,7 @@ docker compose up --build
 | `npm run start:local` | Ejecuta la compilación standalone como en Docker |
 | `npm run iconos` | Regenera favicon e íconos desde `public/brand/icono-azul.svg` |
 | `npm run typecheck` / `npm run lint` | Tipos y lint |
-| `npm run test:e2e` | Pruebas de S0 a S4 contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
+| `npm run test:e2e` | Pruebas de S0 a S5 y del diseño contra la compilación de producción (requiere Docker Compose y `npm run sembrar`) |
 | `npm run licencias` | Regenera `LICENCIAS-TERCEROS.md` (A2 5.02.a.i) |
 | `npm run sembrar` | Carga el contenido inicial del portal en el CMS (idempotente) |
 | `npm run fichas-pendientes` | Lista los servicios publicados sin ficha A5 completa; falla si hay alguno (paso obligatorio antes de producción) |
@@ -75,6 +75,22 @@ docker compose up --build
 - `/transparencia` con las 19 secciones de la A2 4.03 (Resolución DIGEIG 002-2021): menú vertical expandible a la izquierda en escritorio y cinco grupos más Contactos en móvil (A2 4.04). La estructura está en `src/contenido/transparencia.ts`; no se edita en el CMS porque la norma fija orden y nombres.
 - La OAI (rol OAI) carga los documentos en el panel, grupo «Archivos» › Documentos, con área «Transparencia», sección, año y periodo. Las secciones de publicación periódica se muestran por año, el más reciente primero.
 - Los textos de cada sección (datos del RAI, miembros de la CEP, presentación…) se editan en el grupo «Transparencia» › Textos de transparencia.
+
+## Diseño de la portada
+
+- Disposición tomada de hacienda.gob.do (pedido de TIC): cabecera azul (opción B de A2 3.02.a), contenido de hasta 1320 px y franjas de color de borde a borde.
+- Carrusel principal: Portada › Carrusel principal en el CMS (noticias o avisos con fechas de vigencia). Si no hay diapositivas, muestra las últimas noticias con foto. El avance automático se apaga en Portada › Ajustes de la portada (novedad N-34).
+- Franjas: Transparencia (accesos y últimos documentos), banners informativos, Servicios y Publicaciones, e instituciones relacionadas.
+- «Arrendatarios» va al final del menú principal (`/arrendatarios`, novedad N-35).
+
+## Migración del portal anterior (S5)
+
+1. `npm run migracion:rastrear`: recorre el sitio público de los dos Joomla y deja el inventario en `migracion/datos/inventario.json` (el HTML descargado queda en `migracion/cache/`).
+2. `npm run migracion:importar`: carga documentos, textos de transparencia, noticias e imágenes en el CMS y genera la tabla de redirecciones 301. Se puede repetir: lo ya migrado no se duplica.
+3. `BASE_VERIFICACION=http://localhost:3100 npm run migracion:verificar`: prueba cada URL indexada del portal anterior y escribe `docs/migracion/verificacion-urls.csv`; falla si alguna queda sin resolver.
+4. `npm run migracion:informe`: escribe `docs/migracion/informe.md` (para la revisión de cada dueño) y `docs/migracion/equivalencias.csv` (ID anterior → URL nueva).
+
+Las equivalencias del menú anterior con la estructura nueva están en `scripts/migracion/mapas.ts`. El proxy aplica las redirecciones (`src/migracion/redireccion.ts`).
 
 ## Configuración
 

@@ -70,6 +70,7 @@ export interface Config {
     noticias: Noticia;
     paginas: Pagina;
     servicios: Servicio;
+    diapositivas: Diapositiva;
     banners: Banner;
     'preguntas-frecuentes': PreguntasFrecuente;
     categorias: Categoria;
@@ -93,6 +94,7 @@ export interface Config {
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     paginas: PaginasSelect<false> | PaginasSelect<true>;
     servicios: ServiciosSelect<false> | ServiciosSelect<true>;
+    diapositivas: DiapositivasSelect<false> | DiapositivasSelect<true>;
     banners: BannersSelect<false> | BannersSelect<true>;
     'preguntas-frecuentes': PreguntasFrecuentesSelect<false> | PreguntasFrecuentesSelect<true>;
     categorias: CategoriasSelect<false> | CategoriasSelect<true>;
@@ -117,9 +119,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     institucion: Institucion;
+    portada: Portada;
   };
   globalsSelect: {
     institucion: InstitucionSelect<false> | InstitucionSelect<true>;
+    portada: PortadaSelect<false> | PortadaSelect<true>;
   };
   locale: null;
   widgets: {
@@ -600,6 +604,38 @@ export interface Servicio {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * Lo que pasa en el carrusel grande de la portada. El avance automático se ajusta en Portada › Ajustes.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "diapositivas".
+ */
+export interface Diapositiva {
+  id: number;
+  /**
+   * Si elige una noticia, se usan su foto, su título y su enlace; los campos de abajo son opcionales.
+   */
+  noticia?: (number | null) | Noticia;
+  /**
+   * Obligatorio si no elige una noticia.
+   */
+  titulo?: string | null;
+  /**
+   * Horizontal, al menos 1600 × 600 px. Obligatoria si no elige una noticia.
+   */
+  imagen?: (number | null) | Medio;
+  /**
+   * Ruta interna (/servicios) o enlace https:// de un portal del Estado.
+   */
+  enlace?: string | null;
+  textoBoton?: string | null;
+  desde?: string | null;
+  hasta?: string | null;
+  orden?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "banners".
  */
@@ -923,6 +959,10 @@ export interface PayloadLockedDocument {
         value: number | Servicio;
       } | null)
     | ({
+        relationTo: 'diapositivas';
+        value: number | Diapositiva;
+      } | null)
+    | ({
         relationTo: 'banners';
         value: number | Banner;
       } | null)
@@ -1131,6 +1171,23 @@ export interface ServiciosSelect<T extends boolean = true> {
         descripcion?: T;
         noIndexar?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "diapositivas_select".
+ */
+export interface DiapositivasSelect<T extends boolean = true> {
+  noticia?: T;
+  titulo?: T;
+  imagen?: T;
+  enlace?: T;
+  textoBoton?: T;
+  desde?: T;
+  hasta?: T;
+  orden?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1473,6 +1530,20 @@ export interface Institucion {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portada".
+ */
+export interface Portada {
+  id: number;
+  /**
+   * Siempre con botón de pausa; se detiene al pasar el mouse o con el teclado.
+   */
+  avanceAutomatico?: boolean | null;
+  segundos?: number | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "institucion_select".
  */
 export interface InstitucionSelect<T extends boolean = true> {
@@ -1504,6 +1575,17 @@ export interface InstitucionSelect<T extends boolean = true> {
         url?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portada_select".
+ */
+export interface PortadaSelect<T extends boolean = true> {
+  avanceAutomatico?: T;
+  segundos?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

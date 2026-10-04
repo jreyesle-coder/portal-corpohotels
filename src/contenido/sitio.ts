@@ -19,7 +19,7 @@ export const organismo = {
 };
 
 /** Cabecera opción A (fondo blanco) u opción B (fondo azul), A2 3.02.a. */
-export const OPCION_CABECERA: "A" | "B" = "A";
+export const OPCION_CABECERA: "A" | "B" = "B";
 
 export type EnlaceMenu = {
   etiqueta: string;
@@ -48,6 +48,8 @@ export const menuPrincipal: EnlaceMenu[] = [
   { etiqueta: "Transparencia", href: "/transparencia" },
   { etiqueta: "Noticias", href: "/noticias" },
   { etiqueta: "Contactos", href: "/contactos" },
+  // Sección propia de CORPHOTELS, después de la estructura obligatoria para no alterar su orden (A2 4.01.a).
+  { etiqueta: "Arrendatarios", href: "/arrendatarios" },
 ];
 
 /** Sección "Infórmate" del pie (A2 3.02.f). */

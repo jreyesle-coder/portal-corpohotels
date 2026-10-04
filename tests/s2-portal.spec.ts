@@ -73,14 +73,19 @@ test.describe("Estructura obligatoria (A2 4.02)", () => {
 });
 
 test.describe("Contenido", () => {
-  test("la portada muestra servicios, noticias recientes y banners", async ({ page }) => {
+  test("la portada muestra noticias en el carrusel, servicios, transparencia y banners", async ({ page }) => {
     await ir(page, "/");
+    // Noticias o información de alto impacto (A2 3.04.b.i): el carrusel principal enlaza noticias.
+    await expect(page.locator("[data-carrusel] a[href^='/noticias/']").first()).toBeAttached();
     await expect(page.getByRole("heading", { name: "Servicios", level: 2 })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Noticias recientes", level: 2 })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Transparencia", level: 2 })).toBeVisible();
+    await expect(page.locator("[data-banners]")).toBeVisible();
     const imagenes = page.locator("main img");
     expect(await imagenes.count()).toBeGreaterThan(2);
     for (const img of await imagenes.all()) {
       expect(await img.getAttribute("alt")).toBeTruthy();
+      // Dimensiones declaradas (sin saltos de diseño), salvo las que llenan un contenedor de alto fijo.
+      if ((await img.getAttribute("data-nimg")) === "fill") continue;
       expect(await img.getAttribute("width")).toBeTruthy();
       expect(await img.getAttribute("height")).toBeTruthy();
     }
@@ -161,8 +166,8 @@ test.describe("Aviso de cookies (Ley 172-13)", () => {
     await expect(aviso).toBeVisible();
     await expect(page.locator("[aria-modal=true]")).toHaveCount(0);
     // La página sigue operable mientras el aviso está visible.
-    await page.getByRole("link", { name: "Ver todas las noticias" }).click();
-    await expect(page).toHaveURL(/\/noticias$/);
+    await page.getByRole("link", { name: "Ver todos los servicios" }).click();
+    await expect(page).toHaveURL(/\/servicios$/);
     await aviso.getByRole("button", { name: "Rechazar estadísticas" }).click();
     await expect(aviso).toBeHidden();
     await page.reload();

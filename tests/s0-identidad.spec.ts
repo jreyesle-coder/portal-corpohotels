@@ -99,7 +99,7 @@ test.describe("Cabecera (A2 3.02.b escritorio, 3.04.a móvil)", () => {
     for (const seccion of ["Ventanillas", "Portales", "Instituciones"]) {
       await expect(page.getByRole("heading", { name: seccion, exact: true })).toBeVisible();
     }
-    const enlace311 = page.getByRole("link", { name: /Sistema 311/ });
+    const enlace311 = page.locator("[data-cabecera]").getByRole("link", { name: /Sistema 311/ });
     await expect(enlace311).toHaveAttribute("target", "_blank");
   });
 

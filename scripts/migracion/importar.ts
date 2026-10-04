@@ -32,7 +32,17 @@ import { type Equivalencia, MAPA_PORTAL, MAPA_TRANSPARENCIA, SERVICIOS_K2 } from
 const inventario: Inventario = JSON.parse(readFileSync(ARCHIVO_INVENTARIO, "utf8"));
 const payload = await getPayload({ config });
 const editorConfig = await editorConfigFactory.default({ config: payload.config });
-const lexical = (html: string) => convertHTMLToLexical({ editorConfig, html, JSDOM });
+/**
+ * Las imágenes dentro del texto apuntan a archivos del Joomla que no están en el CMS: se quitan
+ * (las noticias conservan su foto principal) y el informe las cuenta.
+ */
+let imagenesQuitadas = 0;
+const lexical = (html: string) =>
+  convertHTMLToLexical({
+    editorConfig,
+    html: html.replace(/<img\b[^>]*>/gi, () => (imagenesQuitadas++, "")),
+    JSDOM,
+  });
 const sistema = { overrideAccess: true, depth: 0 } as const;
 const AGENTE = "Portal CORPHOTELS - migracion de contenido (TIC)";
 
@@ -41,7 +51,7 @@ const resultado = {
   generado: new Date().toISOString(),
   documentos: { nuevos: 0, existentes: 0, omitidos: [] as { id: string; titulo: string; motivo: string }[] },
   textos: { nuevos: 0, existentes: 0 },
-  noticias: { nuevas: 0, existentes: 0, sinLugar: [] as string[], imagenesEnTexto: 0 },
+  noticias: { nuevas: 0, existentes: 0, sinLugar: [] as string[], sinImagen: [] as string[], imagenesEnTexto: 0 },
   equivalenciasARevisar: [] as { anterior: string; destino: string; motivo: string; documentos: number }[],
   sinEquivalente: [] as { url: string; titulo: string; tipo: string }[],
   hallazgos: {
@@ -138,7 +148,7 @@ async function descargar(ruta: string, clave: string): Promise<{ data: Buffer; n
 
 async function porOrigen(collection: "documentos" | "noticias" | "medios", id: string) {
   const r = await payload.find({ collection, where: { "origen.identificador": { equals: id } }, limit: 1, ...sistema, ...(collection === "noticias" ? { draft: true } : {}) });
-  return r.docs[0] as unknown as { id: number; filename?: string; url?: string; slug?: string } | undefined;
+  return r.docs[0] as unknown as { id: number; filename?: string; url?: string; slug?: string; _status?: string } | undefined;
 }
 
 /** Ejecuta tareas con concurrencia limitada. */
@@ -215,6 +225,8 @@ for (const [clave, eq] of Object.entries(MAPA_TRANSPARENCIA)) {
 }
 redirigir("/transparencia/index.php", RUTA_TRANSPARENCIA, "prefijo", "Inicio y páginas internas de Joomla sin equivalente propio");
 redirigir("/transparencia/", RUTA_TRANSPARENCIA, "exacta", "Inicio de transparencia");
+// Rutas directas a la carpeta de archivos de Phoca: el documento migrado está en su sección.
+redirigir("/transparencia/phocadownload", RUTA_TRANSPARENCIA, "prefijo", "Ruta directa a un archivo del portal de transparencia anterior");
 
 // --- Transparencia: documentos -----------------------------------------------------------------
 
@@ -416,18 +428,18 @@ async function importarNoticia(p: PaginaAnterior, idK2: string) {
     const porTitulo = (await payload.find({ collection: "noticias", where: { titulo: { equals: titulo } }, limit: 1, draft: true, ...sistema })).docs[0];
     if (porTitulo) {
       await payload.update({ collection: "noticias", id: porTitulo.id, data: { origen: { url: p.url, identificador: idOrigen } } as never, ...sistema });
-      existente = { id: porTitulo.id as number, slug: porTitulo.slug };
+      existente = { id: porTitulo.id as number, slug: porTitulo.slug, _status: porTitulo._status ?? undefined };
     }
   }
   if (existente) {
     resultado.noticias.existentes++;
+    // Un borrador (noticia sin foto) no se publica: su URL anterior cae en el listado de noticias.
+    if (existente._status === "draft") return;
     redirigir(idOrigen, `/noticias/${existente.slug}`, "identificador", "Noticia del portal anterior");
     resultado.equivalencias.push({ anterior: p.url, id: idOrigen, nueva: `/noticias/${existente.slug}`, tipo: "noticia" });
     return;
   }
   const doc = new JSDOM(`<div>${p.html}</div>`).window.document;
-  const imagenesEnTexto = doc.querySelectorAll("img").length;
-  resultado.noticias.imagenesEnTexto += imagenesEnTexto;
   const primero = doc.querySelector("p strong, p b");
   const lineaLugar = primero?.textContent?.trim() ?? "";
   const lugar = /^([^\d,–—-][^\d–—-]*?)\s*[,–—-]\s*\d{1,2}\s+de\s+[a-záéíóú]+/i.exec(lineaLugar)?.[1]?.trim().replace(/[,.]$/, "");
@@ -437,6 +449,10 @@ async function importarNoticia(p: PaginaAnterior, idK2: string) {
   const resumenBase = (parrafos[0] ?? titulo).replace(lineaLugar, "").trim() || titulo;
   const resumen = resumenBase.length > 300 ? `${resumenBase.slice(0, 296).replace(/\s+\S*$/, "")}…` : resumenBase;
   const imagen = p.imagen ? await importarImagen(p.imagen, titulo) : undefined;
+  // La foto principal es obligatoria (A2 4.02): sin ella, la noticia queda como borrador para que
+  // Comunicaciones la complete; mientras, su URL anterior lleva al listado de noticias.
+  const publicar = imagen !== undefined;
+  if (!publicar) resultado.noticias.sinImagen.push(p.url);
   try {
     const n = await payload.create({
       collection: "noticias",
@@ -449,11 +465,13 @@ async function importarNoticia(p: PaginaAnterior, idK2: string) {
         contenido: lexical(p.html),
         fuente: { nombre: "CORPHOTELS", url: "" },
         origen: { url: p.url, identificador: idOrigen },
-        _status: "published",
+        _status: publicar ? "published" : "draft",
       } as never,
+      ...(publicar ? {} : { draft: true }),
       ...sistema,
     });
     resultado.noticias.nuevas++;
+    if (!publicar) return;
     redirigir(idOrigen, `/noticias/${(n as { slug: string }).slug}`, "identificador", "Noticia del portal anterior");
     resultado.equivalencias.push({ anterior: p.url, id: idOrigen, nueva: `/noticias/${(n as { slug: string }).slug}`, tipo: "noticia" });
   } catch (e) {
@@ -519,6 +537,7 @@ await registrarEvento(payload, {
   detalle: { documentos: resultado.documentos.nuevos, noticias: resultado.noticias.nuevas },
 });
 
+resultado.noticias.imagenesEnTexto = imagenesQuitadas;
 writeFileSync(path.join(DIR_MIGRACION, "datos", "resultado.json"), JSON.stringify(resultado, null, 1));
 console.log(
   `Listo. Documentos: ${resultado.documentos.nuevos} nuevos, ${resultado.documentos.existentes} ya migrados, ${resultado.documentos.omitidos.length} omitidos. ` +

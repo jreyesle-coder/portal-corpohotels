@@ -223,3 +223,71 @@ export const textoTransparencia = cache(async (seccion: string) => {
   });
   return docs[0] ?? null;
 });
+
+export const obtenerPortada = cache(async () => {
+  const respaldo = { avanceAutomatico: true, segundos: 7 };
+  if (compilando()) return respaldo;
+  try {
+    const p = await (await cms()).findGlobal({ slug: "portada", ...publico });
+    return { avanceAutomatico: p.avanceAutomatico ?? true, segundos: p.segundos ?? 7 };
+  } catch {
+    return respaldo;
+  }
+});
+
+/**
+ * Diapositivas vigentes del carrusel principal. Si Comunicaciones no ha cargado ninguna, se
+ * muestran las últimas noticias con foto, para que la portada nunca quede vacía (A2 4.01.h).
+ */
+export const listarDiapositivas = cache(async () => {
+  const ahora = new Date().toISOString();
+  const { docs } = await (await cms()).find({
+    collection: "diapositivas",
+    where: {
+      and: [
+        { or: [{ desde: { exists: false } }, { desde: { less_than_equal: ahora } }] },
+        { or: [{ hasta: { exists: false } }, { hasta: { greater_than: ahora } }] },
+      ],
+    },
+    sort: "orden",
+    limit: 8,
+    ...publico,
+    depth: 2,
+  });
+  const propias = docs.flatMap((d) => {
+    const noticia = typeof d.noticia === "object" && d.noticia ? d.noticia : null;
+    const imagen = comoMedio(d.imagen) ?? comoMedio(noticia?.imagen);
+    const titulo = d.titulo || noticia?.titulo;
+    if (!imagen?.url || !titulo) return [];
+    return [{ id: d.id, titulo, imagen, enlace: d.enlace || (noticia ? `/noticias/${noticia.slug}` : null), textoBoton: d.textoBoton }];
+  });
+  if (propias.length) return propias;
+  const { docs: noticias } = await (await cms()).find({
+    collection: "noticias",
+    where: { imagen: { exists: true } },
+    sort: "-fecha",
+    limit: 5,
+    ...publico,
+  });
+  return noticias.flatMap((n) => {
+    const imagen = comoMedio(n.imagen);
+    return imagen?.url ? [{ id: `n${n.id}`, titulo: n.titulo, imagen, enlace: `/noticias/${n.slug}`, textoBoton: "Leer más" }] : [];
+  });
+});
+
+/** Últimos documentos de transparencia de unas secciones (franjas de la portada). */
+export const documentosRecientes = cache(async (secciones: string[] | null, limite = 4) =>
+  (
+    await (await cms()).find({
+      collection: "documentos",
+      where: {
+        area: { equals: "transparencia" },
+        ...(secciones ? { seccionTransparencia: { in: secciones } } : {}),
+      },
+      sort: "-fechaCreacion",
+      limit: limite,
+      ...publico,
+      depth: 0,
+    })
+  ).docs,
+);
